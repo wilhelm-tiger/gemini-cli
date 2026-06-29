@@ -3,6 +3,7 @@ name: 'Testing: E2E (Chained)'
 on:
   push:
     branches:
+      - 'master'
       - 'main'
   merge_group:
   workflow_run:
