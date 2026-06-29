@@ -2,9 +2,9 @@ name: 'Links'
 
 on:
   push:
-    branches: ['main']
+    branches: ['master', 'main']
   pull_request:
-    branches: ['main']
+    branches: ['master', 'main']
   repository_dispatch:
   workflow_dispatch:
   schedule:
@@ -12,8 +12,8 @@ on:
 
 jobs:
   linkChecker:
-    if: |-
-      ${{ github.repository == 'google-gemini/gemini-cli' }}
+    # if: |-
+    #   ${{ github.repository == 'google-gemini/gemini-cli' }}
     runs-on: 'ubuntu-latest'
     steps:
       - uses: 'actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8' # ratchet:actions/checkout@v5

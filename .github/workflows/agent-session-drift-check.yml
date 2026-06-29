@@ -5,6 +5,7 @@ name: 'Agent Session Drift Check'
 on:
   pull_request:
     branches:
+      - 'master'
       - 'main'
       - 'release/**'
     paths:
@@ -19,7 +20,7 @@ jobs:
   check-drift:
     name: 'Check Agent Session Drift'
     runs-on: 'ubuntu-latest'
-    if: "github.repository == 'google-gemini/gemini-cli'"
+    # if: "github.repository == 'google-gemini/gemini-cli'"
     permissions:
       contents: 'read'
       pull-requests: 'write'
