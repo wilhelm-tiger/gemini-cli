@@ -3,6 +3,7 @@ name: 'On Merge Smoke Test'
 on:
   push:
     branches:
+      - 'master'
       - 'main'
       - 'release/**'
   workflow_dispatch:
@@ -20,7 +21,6 @@ on:
 
 jobs:
   smoke-test:
-    if: "github.repository == 'google-gemini/gemini-cli'"
     runs-on: 'ubuntu-latest'
     permissions:
       contents: 'write'
