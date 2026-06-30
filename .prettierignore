@@ -24,3 +24,6 @@ Thumbs.db
 packages/sdk/test-data/*.json
 *.mdx
 packages/vscode-ide-companion/NOTICES.txt
+docs-site/
+.github/workflows/deploy-docs-site.yml
+CONTRIBUTING.md

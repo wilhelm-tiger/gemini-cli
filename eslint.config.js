@@ -65,6 +65,7 @@ export default tseslint.config(
       '.gemini/**',
       '.gemini-linters/**',
       '**/*.d.ts',
+      'docs-site/**'
     ],
   },
   eslint.configs.recommended,

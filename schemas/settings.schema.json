@@ -707,8 +707,8 @@
         },
         "summarizeToolOutput": {
           "title": "Summarize Tool Output",
-          "description": "Enables or disables summarization of tool output. Configure per-tool token budgets (for example {\"run_shell_command\": {\"tokenBudget\": 2000}}). Currently only the run_shell_command tool supports summarization.",
-          "markdownDescription": "Enables or disables summarization of tool output. Configure per-tool token budgets (for example {\"run_shell_command\": {\"tokenBudget\": 2000}}). Currently only the run_shell_command tool supports summarization.\n\n- Category: `Model`\n- Requires restart: `no`",
+          "description": "Enables or disables summarization of tool output. Configure per-tool token budgets (for example `{\"run_shell_command\": {\"tokenBudget\": 2000}}`). Currently only the run_shell_command tool supports summarization.",
+          "markdownDescription": "Enables or disables summarization of tool output. Configure per-tool token budgets (for example `{\"run_shell_command\": {\"tokenBudget\": 2000}}`). Currently only the run_shell_command tool supports summarization.\n\n- Category: `Model`\n- Requires restart: `no`",
           "type": "object",
           "additionalProperties": {
             "$ref": "#/$defs/SummarizeToolOutputSettings"
