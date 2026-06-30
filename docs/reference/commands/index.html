@@ -1,0 +1,916 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-reference/commands" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.10.1">
+<title data-rh="true">CLI commands | Gemini CLI</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://gemini-cli.example.com/docs/reference/commands"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="CLI commands | Gemini CLI"><meta data-rh="true" name="description" content="Gemini CLI supports several built-in commands to help you manage your session,"><meta data-rh="true" property="og:description" content="Gemini CLI supports several built-in commands to help you manage your session,"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://gemini-cli.example.com/docs/reference/commands"><link data-rh="true" rel="alternate" href="https://gemini-cli.example.com/docs/reference/commands" hreflang="en"><link data-rh="true" rel="alternate" href="https://gemini-cli.example.com/docs/reference/commands" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Command reference","item":"https://gemini-cli.example.com/docs/reference/commands"}]}</script><link rel="stylesheet" href="/assets/css/styles.001c7fc8.css">
+<script src="/assets/js/runtime~main.3bcf4e27.js" defer="defer"></script>
+<script src="/assets/js/main.95884027.js" defer="defer"></script>
+</head>
+<body>
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Skip to main content"><a class="skipToContent_aM_4" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><b class="navbar__title text--truncate">Gemini CLI</b></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/docs/">Docs</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href="https://github.com/google/gemini-cli" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_ZiGE"><use href="#theme-svg-external-link"></use></svg></a><div class="toggle_DDoQ colorModeToggle_bDqT"><button class="clean-btn toggleButton_dJob toggleButtonDisabled_qdNO" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_VwgV lightToggleIcon_hJPv"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_VwgV darkToggleIcon_H5Lk"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_VwgV systemToggleIcon_iMbw"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_qkiT"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_mVk5"><div class="docsWrapper_S0Bd"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_Fj1y" type="button"></button><div class="docRoot_Npys"><aside class="theme-doc-sidebar-container docSidebarContainer_V19I"><div class="sidebarViewport_qQvC"><div class="sidebar_ywz6"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_F6Xr"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_TKuJ menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="true" href="/docs/"><span title="Get started" class="categoryLinkLabel_OZUK">Get started</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/"><span title="Overview" class="linkLabel_SneK">Overview</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/get-started/"><span title="Quickstart" class="linkLabel_SneK">Quickstart</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/get-started/installation"><span title="Installation" class="linkLabel_SneK">Installation</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/get-started/authentication"><span title="Authentication" class="linkLabel_SneK">Authentication</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/cli/cli-reference"><span title="CLI cheatsheet" class="linkLabel_SneK">CLI cheatsheet</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/get-started/gemini-3"><span title="Gemini 3 on Gemini CLI" class="linkLabel_SneK">Gemini 3 on Gemini CLI</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_TKuJ menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="true" href="/docs/cli/tutorials/file-management"><span title="Use Gemini CLI" class="categoryLinkLabel_OZUK">Use Gemini CLI</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/cli/tutorials/file-management"><span title="File management" class="linkLabel_SneK">File management</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/cli/tutorials/skills-getting-started"><span title="Get started with Agent Skills" class="linkLabel_SneK">Get started with Agent Skills</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/cli/tutorials/memory-management"><span title="Manage context and memory" class="linkLabel_SneK">Manage context and memory</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/cli/tutorials/shell-commands"><span title="Execute shell commands" class="linkLabel_SneK">Execute shell commands</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/cli/tutorials/session-management"><span title="Manage sessions and history" class="linkLabel_SneK">Manage sessions and history</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/cli/tutorials/task-planning"><span title="Plan tasks with todos" class="linkLabel_SneK">Plan tasks with todos</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/cli/tutorials/plan-mode-steering"><span title="Use Plan Mode with model steering" class="linkLabel_SneK">Use Plan Mode with model steering</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/cli/tutorials/web-tools"><span title="Web search and fetch" class="linkLabel_SneK">Web search and fetch</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/cli/tutorials/mcp-setup"><span title="Set up an MCP server" class="linkLabel_SneK">Set up an MCP server</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/cli/tutorials/automation"><span title="Automate tasks" class="linkLabel_SneK">Automate tasks</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_TKuJ menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="true" href="/docs/extensions/"><span title="Features" class="categoryLinkLabel_OZUK">Features</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_TKuJ menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/extensions/"><span title="Extensions" class="categoryLinkLabel_OZUK">Extensions</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_TKuJ menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/cli/skills"><span title="Agent Skills" class="categoryLinkLabel_OZUK">Agent Skills</span></a></div></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/cli/auto-memory"><span title="Auto Memory" class="linkLabel_SneK">Auto Memory</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/cli/checkpointing"><span title="Checkpointing" class="linkLabel_SneK">Checkpointing</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/cli/headless"><span title="Headless mode" class="linkLabel_SneK">Headless mode</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/cli/git-worktrees"><span title="Git worktrees" class="linkLabel_SneK">Git worktrees</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_TKuJ menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/hooks/"><span title="Hooks" class="categoryLinkLabel_OZUK">Hooks</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_TKuJ menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/ide-integration/"><span title="IDE integration" class="categoryLinkLabel_OZUK">IDE integration</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_TKuJ menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/tools/mcp-server"><span title="MCP servers" class="categoryLinkLabel_OZUK">MCP servers</span></a></div></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/cli/model-routing"><span title="Model routing" class="linkLabel_SneK">Model routing</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/cli/model"><span title="Model selection" class="linkLabel_SneK">Model selection</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/cli/model-steering"><span title="Model steering" class="linkLabel_SneK">Model steering</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/cli/notifications"><span title="Notifications" class="linkLabel_SneK">Notifications</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/cli/plan-mode"><span title="Plan mode" class="linkLabel_SneK">Plan mode</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/core/subagents"><span title="Subagents" class="linkLabel_SneK">Subagents</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/core/remote-agents"><span title="Remote subagents" class="linkLabel_SneK">Remote subagents</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/cli/rewind"><span title="Rewind" class="linkLabel_SneK">Rewind</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/cli/sandbox"><span title="Sandboxing" class="linkLabel_SneK">Sandboxing</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/cli/settings"><span title="Settings" class="linkLabel_SneK">Settings</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/cli/telemetry"><span title="Telemetry" class="linkLabel_SneK">Telemetry</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/cli/token-caching"><span title="Token caching" class="linkLabel_SneK">Token caching</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_TKuJ menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="true" href="/docs/cli/custom-commands"><span title="Configuration" class="categoryLinkLabel_OZUK">Configuration</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/cli/custom-commands"><span title="Custom commands" class="linkLabel_SneK">Custom commands</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/cli/enterprise"><span title="Enterprise configuration" class="linkLabel_SneK">Enterprise configuration</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/cli/gemini-ignore"><span title="Ignore files (.geminiignore)" class="linkLabel_SneK">Ignore files (.geminiignore)</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/cli/generation-settings"><span title="Model configuration" class="linkLabel_SneK">Model configuration</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/cli/gemini-md"><span title="Project context (GEMINI.md)" class="linkLabel_SneK">Project context (GEMINI.md)</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/cli/settings"><span title="Settings" class="linkLabel_SneK">Settings</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/cli/system-prompt"><span title="System prompt override" class="linkLabel_SneK">System prompt override</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/cli/themes"><span title="Themes" class="linkLabel_SneK">Themes</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/cli/trusted-folders"><span title="Trusted folders" class="linkLabel_SneK">Trusted folders</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a href="https://github.com/google/gemini-cli/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer" class="categoryLink_TKuJ menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="true"><span title="Development" class="categoryLinkLabel_OZUK">Development</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a href="https://github.com/google/gemini-cli/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer" class="menu__link menuExternalLink_B8zI" tabindex="0"><span title="Contribution guide" class="linkLabel_SneK">Contribution guide</span><svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_ZiGE"><use href="#theme-svg-external-link"></use></svg></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/integration-tests"><span title="Integration testing" class="linkLabel_SneK">Integration testing</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/issue-and-pr-automation"><span title="Issue and PR automation" class="linkLabel_SneK">Issue and PR automation</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/local-development"><span title="Local development" class="linkLabel_SneK">Local development</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/npm"><span title="NPM package structure" class="linkLabel_SneK">NPM package structure</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_TKuJ menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/docs/reference/commands"><span title="Reference" class="categoryLinkLabel_OZUK">Reference</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/docs/reference/commands"><span title="Command reference" class="linkLabel_SneK">Command reference</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/reference/configuration"><span title="Configuration reference" class="linkLabel_SneK">Configuration reference</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/reference/keyboard-shortcuts"><span title="Keyboard shortcuts" class="linkLabel_SneK">Keyboard shortcuts</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/reference/memport"><span title="Memory import processor" class="linkLabel_SneK">Memory import processor</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/reference/policy-engine"><span title="Policy engine" class="linkLabel_SneK">Policy engine</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/reference/tools"><span title="Tools reference" class="linkLabel_SneK">Tools reference</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_TKuJ menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="true" href="/docs/resources/faq"><span title="Resources" class="categoryLinkLabel_OZUK">Resources</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/resources/faq"><span title="FAQ" class="linkLabel_SneK">FAQ</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/resources/quota-and-pricing"><span title="Quota and pricing" class="linkLabel_SneK">Quota and pricing</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/resources/tos-privacy"><span title="Terms and privacy" class="linkLabel_SneK">Terms and privacy</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/resources/troubleshooting"><span title="Troubleshooting" class="linkLabel_SneK">Troubleshooting</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/resources/uninstall"><span title="Uninstall" class="linkLabel_SneK">Uninstall</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_TKuJ menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="true" href="/docs/changelogs/"><span title="Releases" class="categoryLinkLabel_OZUK">Releases</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/changelogs/"><span title="Release notes" class="linkLabel_SneK">Release notes</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/changelogs/latest"><span title="Stable release" class="linkLabel_SneK">Stable release</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/changelogs/preview"><span title="Preview release" class="linkLabel_SneK">Preview release</span></a></li></ul></li></ul></nav></div></div></aside><main class="docMainContainer_qMe0"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_Cv5c"><div class="docItemContainer_DBeY"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_ZUA6" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_Rb5Y"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">Reference</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">Command reference</span></li></ul></nav><div class="tocCollapsible__jma theme-doc-toc-mobile tocMobile_f6av"><button type="button" class="clean-btn tocCollapsibleButton_rOIt">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>CLI commands</h1></header>
+<p>Gemini CLI supports several built-in commands to help you manage your session,
+customize the interface, and control its behavior. These commands are prefixed
+with a forward slash (<code>/</code>), an at symbol (<code>@</code>), or an exclamation mark (<code>!</code>).</p>
+<h2 class="anchor anchorTargetStickyNavbar_qfbg" id="slash-commands-">Slash commands (<code>/</code>)<a href="#slash-commands-" class="hash-link" aria-label="Direct link to slash-commands-" title="Direct link to slash-commands-" translate="no">​</a></h2>
+<p>Slash commands provide meta-level control over the CLI itself.</p>
+<h3 class="anchor anchorTargetStickyNavbar_qfbg" id="built-in-commands">Built-in Commands<a href="#built-in-commands" class="hash-link" aria-label="Direct link to Built-in Commands" title="Direct link to Built-in Commands" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_qfbg" id="about"><code>/about</code><a href="#about" class="hash-link" aria-label="Direct link to about" title="Direct link to about" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Description:</strong> Show version info. Share this information when filing issues.</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_qfbg" id="agents"><code>/agents</code><a href="#agents" class="hash-link" aria-label="Direct link to agents" title="Direct link to agents" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Description:</strong> Manage local and remote subagents.</li>
+<li class=""><strong>Sub-commands:</strong>
+<ul>
+<li class=""><strong><code>list</code></strong>:<!-- -->
+<ul>
+<li class=""><strong>Description:</strong> Lists all discovered agents, including built-in, local,
+and remote agents.</li>
+<li class=""><strong>Usage:</strong> <code>/agents list</code></li>
+</ul>
+</li>
+<li class=""><strong><code>reload</code></strong> (alias: <code>refresh</code>):<!-- -->
+<ul>
+<li class=""><strong>Description:</strong> Rescans agent directories (<code>~/.gemini/agents</code> and
+<code>.gemini/agents</code>) and reloads the registry.</li>
+<li class=""><strong>Usage:</strong> <code>/agents reload</code></li>
+</ul>
+</li>
+<li class=""><strong><code>enable</code></strong>:<!-- -->
+<ul>
+<li class=""><strong>Description:</strong> Enables a specific subagent.</li>
+<li class=""><strong>Usage:</strong> <code>/agents enable &lt;agent-name&gt;</code></li>
+</ul>
+</li>
+<li class=""><strong><code>disable</code></strong>:<!-- -->
+<ul>
+<li class=""><strong>Description:</strong> Disables a specific subagent.</li>
+<li class=""><strong>Usage:</strong> <code>/agents disable &lt;agent-name&gt;</code></li>
+</ul>
+</li>
+<li class=""><strong><code>config</code></strong>:<!-- -->
+<ul>
+<li class=""><strong>Description:</strong> Opens a configuration dialog for the specified agent to
+adjust its model, temperature, or execution limits.</li>
+<li class=""><strong>Usage:</strong> <code>/agents config &lt;agent-name&gt;</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_qfbg" id="auth"><code>/auth</code><a href="#auth" class="hash-link" aria-label="Direct link to auth" title="Direct link to auth" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Description:</strong> Open a dialog that lets you change the authentication method.</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_qfbg" id="bug"><code>/bug</code><a href="#bug" class="hash-link" aria-label="Direct link to bug" title="Direct link to bug" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Description:</strong> File an issue about Gemini CLI. By default, the issue is
+filed within the GitHub repository for Gemini CLI. The string you enter after
+<code>/bug</code> will become the headline for the bug being filed. The default <code>/bug</code>
+behavior can be modified using the <code>advanced.bugCommand</code> setting in your
+<code>.gemini/settings.json</code> files.</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_qfbg" id="chat"><code>/chat</code><a href="#chat" class="hash-link" aria-label="Direct link to chat" title="Direct link to chat" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Description:</strong> Alias for <code>/resume</code>. Both commands now expose the same
+session browser action and checkpoint subcommands.</li>
+<li class=""><strong>Menu layout when typing <code>/chat</code> (or <code>/resume</code>)</strong>:<!-- -->
+<ul>
+<li class=""><code>-- auto --</code>
+<ul>
+<li class=""><code>list</code> (selecting this opens the auto-saved session browser)</li>
+</ul>
+</li>
+<li class=""><code>-- checkpoints --</code>
+<ul>
+<li class=""><code>list</code>, <code>save</code>, <code>resume</code>, <code>delete</code>, <code>share</code> (manual tagged checkpoints)</li>
+</ul>
+</li>
+<li class="">Unique prefixes (for example <code>/cha</code> or <code>/resu</code>) resolve to the same grouped
+menu.</li>
+</ul>
+</li>
+<li class=""><strong>Sub-commands:</strong>
+<ul>
+<li class=""><strong><code>debug</code></strong>
+<ul>
+<li class=""><strong>Description:</strong> Export the most recent API request as a JSON payload.</li>
+</ul>
+</li>
+<li class=""><strong><code>delete &lt;tag&gt;</code></strong>
+<ul>
+<li class=""><strong>Description:</strong> Deletes a saved conversation checkpoint.</li>
+<li class=""><strong>Equivalent:</strong> <code>/resume delete &lt;tag&gt;</code></li>
+</ul>
+</li>
+<li class=""><strong><code>list</code></strong>
+<ul>
+<li class=""><strong>Description:</strong> Lists available tags for manually saved checkpoints.</li>
+<li class=""><strong>Note:</strong> This command only lists chats saved within the current project.
+Because chat history is project-scoped, chats saved in other project
+directories will not be displayed.</li>
+<li class=""><strong>Equivalent:</strong> <code>/resume list</code></li>
+</ul>
+</li>
+<li class=""><strong><code>resume &lt;tag&gt;</code></strong>
+<ul>
+<li class=""><strong>Description:</strong> Resumes a conversation from a previous save.</li>
+<li class=""><strong>Note:</strong> You can only resume chats that were saved within the current
+project. To resume a chat from a different project, you must run the
+Gemini CLI from that project&#x27;s directory.</li>
+<li class=""><strong>Equivalent:</strong> <code>/resume resume &lt;tag&gt;</code></li>
+</ul>
+</li>
+<li class=""><strong><code>save &lt;tag&gt;</code></strong>
+<ul>
+<li class=""><strong>Description:</strong> Saves the current conversation history. You must add a
+<code>&lt;tag&gt;</code> for identifying the conversation state.</li>
+<li class=""><strong>Details on checkpoint location:</strong> The default locations for saved chat
+checkpoints are:<!-- -->
+<ul>
+<li class="">Linux/macOS: <code>~/.gemini/tmp/&lt;project_hash&gt;/</code></li>
+<li class="">Windows: <code>C:\Users\&lt;YourUsername&gt;\.gemini\tmp\&lt;project_hash&gt;\</code></li>
+<li class=""><strong>Behavior:</strong> Chats are saved into a project-specific directory,
+determined by where you run the CLI. Consequently, saved chats are only
+accessible when working within that same project.</li>
+<li class=""><strong>Note:</strong> These checkpoints are for manually saving and resuming
+conversation states. For automatic checkpoints created before file
+modifications, see the
+<a class="" href="/docs/cli/checkpointing">Checkpointing documentation</a>.</li>
+<li class=""><strong>Equivalent:</strong> <code>/resume save &lt;tag&gt;</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class=""><strong><code>share [filename]</code></strong>
+<ul>
+<li class=""><strong>Description:</strong> Writes the current conversation to a provided Markdown or
+JSON file. If no filename is provided, then the CLI will generate one.</li>
+<li class=""><strong>Usage:</strong> <code>/chat share file.md</code> or <code>/chat share file.json</code>.</li>
+<li class=""><strong>Equivalent:</strong> <code>/resume share [filename]</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_qfbg" id="clear"><code>/clear</code><a href="#clear" class="hash-link" aria-label="Direct link to clear" title="Direct link to clear" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Description:</strong> Clear the terminal screen, including the visible session
+history and scrollback within the CLI. The underlying session data (for
+history recall) might be preserved depending on the exact implementation, but
+the visual display is cleared.</li>
+<li class=""><strong>Keyboard shortcut:</strong> Press <strong>Ctrl+L</strong> at any time to perform a clear action.</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_qfbg" id="commands"><code>/commands</code><a href="#commands" class="hash-link" aria-label="Direct link to commands" title="Direct link to commands" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Description:</strong> Manage custom slash commands loaded from <code>.toml</code> files.</li>
+<li class=""><strong>Sub-commands:</strong>
+<ul>
+<li class=""><strong><code>list</code></strong>:<!-- -->
+<ul>
+<li class=""><strong>Description:</strong> List available custom command <code>.toml</code> files from all
+sources (user-level <code>~/.gemini/commands/</code>, project-level
+<code>&lt;project&gt;/.gemini/commands/</code>, and active extensions).</li>
+<li class=""><strong>Usage:</strong> <code>/commands list</code></li>
+</ul>
+</li>
+<li class=""><strong><code>reload</code></strong>:<!-- -->
+<ul>
+<li class=""><strong>Description:</strong> Reload custom command definitions from all sources
+(user-level <code>~/.gemini/commands/</code>, project-level
+<code>&lt;project&gt;/.gemini/commands/</code>, MCP prompts, and extensions). Use this to
+pick up new or modified <code>.toml</code> files without restarting the CLI.</li>
+<li class=""><strong>Usage:</strong> <code>/commands reload</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_qfbg" id="compress"><code>/compress</code><a href="#compress" class="hash-link" aria-label="Direct link to compress" title="Direct link to compress" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Description:</strong> Replace the entire chat context with a summary. This saves on
+tokens used for future tasks while retaining a high level summary of what has
+happened.</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_qfbg" id="copy"><code>/copy</code><a href="#copy" class="hash-link" aria-label="Direct link to copy" title="Direct link to copy" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Description:</strong> Copies the last output produced by Gemini CLI to your
+clipboard, for easy sharing or reuse.</li>
+<li class=""><strong>Behavior:</strong>
+<ul>
+<li class="">Local sessions use system clipboard tools (pbcopy/xclip/clip).</li>
+<li class="">Remote sessions (SSH/WSL) use OSC 52 and require terminal support.</li>
+</ul>
+</li>
+<li class=""><strong>Note:</strong> This command requires platform-specific clipboard tools to be
+installed.<!-- -->
+<ul>
+<li class="">On Linux, it requires <code>xclip</code> or <code>xsel</code>. You can typically install them
+using your system&#x27;s package manager.</li>
+<li class="">On macOS, it requires <code>pbcopy</code>, and on Windows, it requires <code>clip</code>. These
+tools are typically pre-installed on their respective systems.</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_qfbg" id="directory-or-dir"><code>/directory</code> (or <code>/dir</code>)<a href="#directory-or-dir" class="hash-link" aria-label="Direct link to directory-or-dir" title="Direct link to directory-or-dir" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Description:</strong> Manage workspace directories for multi-directory support.</li>
+<li class=""><strong>Sub-commands:</strong>
+<ul>
+<li class=""><strong><code>add</code></strong>:<!-- -->
+<ul>
+<li class=""><strong>Description:</strong> Add a directory to the workspace. The path can be
+absolute or relative to the current working directory. Moreover, the
+reference from home directory is supported as well.</li>
+<li class=""><strong>Usage:</strong> <code>/directory add &lt;path1&gt;,&lt;path2&gt;</code></li>
+<li class=""><strong>Note:</strong> Disabled in restrictive sandbox profiles. If you&#x27;re using that,
+use <code>--include-directories</code> when starting the session instead.</li>
+</ul>
+</li>
+<li class=""><strong><code>show</code></strong>:<!-- -->
+<ul>
+<li class=""><strong>Description:</strong> Display all directories added by <code>/directory add</code> and
+<code>--include-directories</code>.</li>
+<li class=""><strong>Usage:</strong> <code>/directory show</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_qfbg" id="docs"><code>/docs</code><a href="#docs" class="hash-link" aria-label="Direct link to docs" title="Direct link to docs" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Description:</strong> Open Gemini CLI documentation in your browser.</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_qfbg" id="editor"><code>/editor</code><a href="#editor" class="hash-link" aria-label="Direct link to editor" title="Direct link to editor" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Description:</strong> Open a dialog for selecting supported editors.</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_qfbg" id="extensions"><code>/extensions</code><a href="#extensions" class="hash-link" aria-label="Direct link to extensions" title="Direct link to extensions" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Description:</strong> Manage extensions. See
+<a class="" href="/docs/extensions/">Gemini CLI Extensions</a>.</li>
+<li class=""><strong>Sub-commands:</strong>
+<ul>
+<li class=""><strong><code>config</code></strong>:<!-- -->
+<ul>
+<li class=""><strong>Description:</strong> Configure extension settings.</li>
+</ul>
+</li>
+<li class=""><strong><code>disable</code></strong>:<!-- -->
+<ul>
+<li class=""><strong>Description:</strong> Disable an extension.</li>
+</ul>
+</li>
+<li class=""><strong><code>enable</code></strong>:<!-- -->
+<ul>
+<li class=""><strong>Description:</strong> Enable an extension.</li>
+</ul>
+</li>
+<li class=""><strong><code>explore</code></strong>:<!-- -->
+<ul>
+<li class=""><strong>Description:</strong> Open extensions page in your browser.</li>
+</ul>
+</li>
+<li class=""><strong><code>install</code></strong>:<!-- -->
+<ul>
+<li class=""><strong>Description:</strong> Install an extension from a git repo or local path.</li>
+</ul>
+</li>
+<li class=""><strong><code>link</code></strong>:<!-- -->
+<ul>
+<li class=""><strong>Description:</strong> Link an extension from a local path.</li>
+</ul>
+</li>
+<li class=""><strong><code>list</code></strong>:<!-- -->
+<ul>
+<li class=""><strong>Description:</strong> List active extensions.</li>
+</ul>
+</li>
+<li class=""><strong><code>restart</code></strong>:<!-- -->
+<ul>
+<li class=""><strong>Description:</strong> Restart all extensions.</li>
+</ul>
+</li>
+<li class=""><strong><code>uninstall</code></strong>:<!-- -->
+<ul>
+<li class=""><strong>Description:</strong> Uninstall an extension.</li>
+</ul>
+</li>
+<li class=""><strong><code>update</code></strong>:<!-- -->
+<ul>
+<li class=""><strong>Description:</strong> Update extensions. Usage: update &lt;extension-names&gt;|--all</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_qfbg" id="help-or-"><code>/help</code> (or <code>/?</code>)<a href="#help-or-" class="hash-link" aria-label="Direct link to help-or-" title="Direct link to help-or-" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Description:</strong> Display help information about Gemini CLI, including
+available commands and their usage.</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_qfbg" id="hooks"><code>/hooks</code><a href="#hooks" class="hash-link" aria-label="Direct link to hooks" title="Direct link to hooks" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Description:</strong> Manage hooks, which allow you to intercept and customize
+Gemini CLI behavior at specific lifecycle events.</li>
+<li class=""><strong>Sub-commands:</strong>
+<ul>
+<li class=""><strong><code>disable-all</code></strong>:<!-- -->
+<ul>
+<li class=""><strong>Description:</strong> Disable all enabled hooks.</li>
+</ul>
+</li>
+<li class=""><strong><code>disable &lt;hook-name&gt;</code></strong>:<!-- -->
+<ul>
+<li class=""><strong>Description:</strong> Disable a hook by name.</li>
+</ul>
+</li>
+<li class=""><strong><code>enable-all</code></strong>:<!-- -->
+<ul>
+<li class=""><strong>Description:</strong> Enable all disabled hooks.</li>
+</ul>
+</li>
+<li class=""><strong><code>enable &lt;hook-name&gt;</code></strong>:<!-- -->
+<ul>
+<li class=""><strong>Description:</strong> Enable a hook by name.</li>
+</ul>
+</li>
+<li class=""><strong><code>list</code></strong> (or <code>show</code>, <code>panel</code>):<!-- -->
+<ul>
+<li class=""><strong>Description:</strong> Display all registered hooks with their status.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_qfbg" id="ide"><code>/ide</code><a href="#ide" class="hash-link" aria-label="Direct link to ide" title="Direct link to ide" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Description:</strong> Manage IDE integration.</li>
+<li class=""><strong>Sub-commands:</strong>
+<ul>
+<li class=""><strong><code>disable</code></strong>:<!-- -->
+<ul>
+<li class=""><strong>Description:</strong> Disable IDE integration.</li>
+</ul>
+</li>
+<li class=""><strong><code>enable</code></strong>:<!-- -->
+<ul>
+<li class=""><strong>Description:</strong> Enable IDE integration.</li>
+</ul>
+</li>
+<li class=""><strong><code>install</code></strong>:<!-- -->
+<ul>
+<li class=""><strong>Description:</strong> Install required IDE companion.</li>
+</ul>
+</li>
+<li class=""><strong><code>status</code></strong>:<!-- -->
+<ul>
+<li class=""><strong>Description:</strong> Check status of IDE integration.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_qfbg" id="init"><code>/init</code><a href="#init" class="hash-link" aria-label="Direct link to init" title="Direct link to init" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Description:</strong> To help users easily create a <code>GEMINI.md</code> file, this command
+analyzes the current directory and generates a tailored context file, making
+it simpler for them to provide project-specific instructions to the Gemini
+agent.</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_qfbg" id="mcp"><code>/mcp</code><a href="#mcp" class="hash-link" aria-label="Direct link to mcp" title="Direct link to mcp" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Description:</strong> Manage configured Model Context Protocol (MCP) servers.</li>
+<li class=""><strong>Sub-commands:</strong>
+<ul>
+<li class=""><strong><code>auth</code></strong>:<!-- -->
+<ul>
+<li class=""><strong>Description:</strong> Authenticate with an OAuth-enabled MCP server.</li>
+<li class=""><strong>Usage:</strong> <code>/mcp auth &lt;server-name&gt;</code></li>
+<li class=""><strong>Details:</strong> If <code>&lt;server-name&gt;</code> is provided, it initiates the OAuth flow
+for that server. If no server name is provided, it lists all configured
+servers that support OAuth authentication.</li>
+</ul>
+</li>
+<li class=""><strong><code>desc</code></strong>
+<ul>
+<li class=""><strong>Description:</strong> List configured MCP servers and tools with descriptions.</li>
+</ul>
+</li>
+<li class=""><strong><code>disable</code></strong>
+<ul>
+<li class=""><strong>Description:</strong> Disable an MCP server.</li>
+</ul>
+</li>
+<li class=""><strong><code>enable</code></strong>
+<ul>
+<li class=""><strong>Description:</strong> Enable a disabled MCP server.</li>
+</ul>
+</li>
+<li class=""><strong><code>list</code></strong> or <strong><code>ls</code></strong>:<!-- -->
+<ul>
+<li class=""><strong>Description:</strong> List configured MCP servers and tools. This is the
+default action if no subcommand is specified.</li>
+</ul>
+</li>
+<li class=""><strong><code>reload</code></strong>:<!-- -->
+<ul>
+<li class=""><strong>Description:</strong> Reloads all MCP servers and re-discovers their available
+tools.</li>
+</ul>
+</li>
+<li class=""><strong><code>schema</code></strong>:<!-- -->
+<ul>
+<li class=""><strong>Description:</strong> List configured MCP servers and tools with descriptions
+and schemas.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_qfbg" id="memory"><code>/memory</code><a href="#memory" class="hash-link" aria-label="Direct link to memory" title="Direct link to memory" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Description:</strong> Manage the AI&#x27;s instructional context (hierarchical memory
+loaded from <code>GEMINI.md</code> files).</li>
+<li class=""><strong>Sub-commands:</strong>
+<ul>
+<li class=""><strong><code>list</code></strong>:<!-- -->
+<ul>
+<li class=""><strong>Description:</strong> Lists the paths of the GEMINI.md files in use for
+hierarchical memory.</li>
+</ul>
+</li>
+<li class=""><strong><code>refresh</code></strong>:<!-- -->
+<ul>
+<li class=""><strong>Description:</strong> Reload the hierarchical instructional memory from all
+<code>GEMINI.md</code> files found in the configured locations (global,
+project/ancestors, and sub-directories). This command updates the model
+with the latest <code>GEMINI.md</code> content.</li>
+</ul>
+</li>
+<li class=""><strong><code>show</code></strong>:<!-- -->
+<ul>
+<li class=""><strong>Description:</strong> Display the full, concatenated content of the current
+hierarchical memory that has been loaded from all <code>GEMINI.md</code> files. This
+lets you inspect the instructional context being provided to the Gemini
+model.</li>
+</ul>
+</li>
+<li class=""><strong>Note:</strong> For more details on how <code>GEMINI.md</code> files contribute to
+hierarchical memory, see the
+<a class="" href="/docs/reference/configuration">CLI Configuration documentation</a>.</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_qfbg" id="model"><code>/model</code><a href="#model" class="hash-link" aria-label="Direct link to model" title="Direct link to model" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Description:</strong> Manage model configuration.</li>
+<li class=""><strong>Sub-commands:</strong>
+<ul>
+<li class=""><strong><code>manage</code></strong>:<!-- -->
+<ul>
+<li class=""><strong>Description:</strong> Opens a dialog to configure the model.</li>
+</ul>
+</li>
+<li class=""><strong><code>set</code></strong>:<!-- -->
+<ul>
+<li class=""><strong>Description:</strong> Set the model to use.</li>
+<li class=""><strong>Usage:</strong> <code>/model set &lt;model-name&gt; [--persist]</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_qfbg" id="permissions"><code>/permissions</code><a href="#permissions" class="hash-link" aria-label="Direct link to permissions" title="Direct link to permissions" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Description:</strong> Manage folder trust settings and other permissions.</li>
+<li class=""><strong>Sub-commands:</strong>
+<ul>
+<li class=""><strong><code>trust</code></strong>:<!-- -->
+<ul>
+<li class=""><strong>Description:</strong> Manage folder trust settings.</li>
+<li class=""><strong>Usage:</strong> <code>/permissions trust [&lt;directory-path&gt;]</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_qfbg" id="plan"><code>/plan</code><a href="#plan" class="hash-link" aria-label="Direct link to plan" title="Direct link to plan" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Description:</strong> Switch to Plan Mode (read-only) and view the current plan if
+one has been generated.<!-- -->
+<ul>
+<li class=""><strong>Note:</strong> This feature is enabled by default. It can be disabled via the
+<code>general.plan.enabled</code> setting in your configuration.</li>
+</ul>
+</li>
+<li class=""><strong>Sub-commands:</strong>
+<ul>
+<li class=""><strong><code>copy</code></strong>:<!-- -->
+<ul>
+<li class=""><strong>Description:</strong> Copy the currently approved plan to your clipboard.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_qfbg" id="policies"><code>/policies</code><a href="#policies" class="hash-link" aria-label="Direct link to policies" title="Direct link to policies" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Description:</strong> Manage policies.</li>
+<li class=""><strong>Sub-commands:</strong>
+<ul>
+<li class=""><strong><code>list</code></strong>:<!-- -->
+<ul>
+<li class=""><strong>Description:</strong> List all active policies grouped by mode.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_qfbg" id="privacy"><code>/privacy</code><a href="#privacy" class="hash-link" aria-label="Direct link to privacy" title="Direct link to privacy" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Description:</strong> Display the Privacy Notice and allow users to select whether
+they consent to the collection of their data for service improvement purposes.</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_qfbg" id="quit-or-exit"><code>/quit</code> (or <code>/exit</code>)<a href="#quit-or-exit" class="hash-link" aria-label="Direct link to quit-or-exit" title="Direct link to quit-or-exit" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Description:</strong> Exit Gemini CLI.</li>
+<li class=""><strong>Flags:</strong>
+<ul>
+<li class=""><strong><code>--delete</code></strong> <em>(optional)</em>: Exit and permanently delete the current
+session&#x27;s history and temporary files (chat recording, tool outputs). Useful
+for privacy or one-off tasks where you don&#x27;t want to leave any traces.</li>
+<li class=""><strong>Usage:</strong> <code>/quit --delete</code> or <code>/exit --delete</code></li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_qfbg" id="restore"><code>/restore</code><a href="#restore" class="hash-link" aria-label="Direct link to restore" title="Direct link to restore" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Description:</strong> Restores the project files to the state they were in just
+before a tool was executed. This is particularly useful for undoing file edits
+made by a tool. If run without a tool call ID, it will list available
+checkpoints to restore from.</li>
+<li class=""><strong>Usage:</strong> <code>/restore [tool_call_id]</code></li>
+<li class=""><strong>Note:</strong> Only available if checkpointing is configured via
+<a class="" href="/docs/reference/configuration">settings</a>. See
+<a class="" href="/docs/cli/checkpointing">Checkpointing documentation</a> for more details.</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_qfbg" id="rewind"><code>/rewind</code><a href="#rewind" class="hash-link" aria-label="Direct link to rewind" title="Direct link to rewind" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Description:</strong> Navigates backward through the conversation history, letting
+you review past interactions and potentially revert both chat state and file
+changes.</li>
+<li class=""><strong>Usage:</strong> Press <strong>Esc</strong> twice as a shortcut.</li>
+<li class=""><strong>Features:</strong>
+<ul>
+<li class=""><strong>Select Interaction:</strong> Preview user prompts and file changes.</li>
+<li class=""><strong>Action Selection:</strong> Choose to rewind history only, revert code changes
+only, or both.</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_qfbg" id="resume"><code>/resume</code><a href="#resume" class="hash-link" aria-label="Direct link to resume" title="Direct link to resume" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Description:</strong> Browse and resume previous conversation sessions, and manage
+manual chat checkpoints.</li>
+<li class=""><strong>Features:</strong>
+<ul>
+<li class=""><strong>Auto sessions:</strong> Run <code>/resume</code> to open the interactive session browser for
+automatically saved conversations.</li>
+<li class=""><strong>Chat checkpoints:</strong> Use checkpoint subcommands directly (<code>/resume save</code>,
+<code>/resume resume</code>, etc.).</li>
+<li class=""><strong>Management:</strong> Delete unwanted sessions directly from the browser</li>
+<li class=""><strong>Resume:</strong> Select any session to resume and continue the conversation</li>
+<li class=""><strong>Search:</strong> Use <code>/</code> to search through conversation content across all
+sessions</li>
+<li class=""><strong>Session Browser:</strong> Interactive interface showing all saved sessions with
+timestamps, message counts, and first user message for context</li>
+<li class=""><strong>Sorting:</strong> Sort sessions by date or message count</li>
+</ul>
+</li>
+<li class=""><strong>Note:</strong> All conversations are automatically saved as you chat - no manual
+saving required. See <a class="" href="/docs/cli/session-management">Session Management</a> for
+complete details.</li>
+<li class=""><strong>Alias:</strong> <code>/chat</code> provides the same behavior and subcommands.</li>
+<li class=""><strong>Sub-commands:</strong>
+<ul>
+<li class=""><strong><code>list</code></strong>
+<ul>
+<li class=""><strong>Description:</strong> Lists available tags for manual chat checkpoints.</li>
+</ul>
+</li>
+<li class=""><strong><code>save &lt;tag&gt;</code></strong>
+<ul>
+<li class=""><strong>Description:</strong> Saves the current conversation as a tagged checkpoint.</li>
+</ul>
+</li>
+<li class=""><strong><code>resume &lt;tag&gt;</code></strong> (alias: <code>load</code>)<!-- -->
+<ul>
+<li class=""><strong>Description:</strong> Loads a previously saved tagged checkpoint.</li>
+</ul>
+</li>
+<li class=""><strong><code>delete &lt;tag&gt;</code></strong>
+<ul>
+<li class=""><strong>Description:</strong> Deletes a tagged checkpoint.</li>
+</ul>
+</li>
+<li class=""><strong><code>share [filename]</code></strong>
+<ul>
+<li class=""><strong>Description:</strong> Exports the current conversation to Markdown or JSON.</li>
+</ul>
+</li>
+<li class=""><strong><code>debug</code></strong>
+<ul>
+<li class=""><strong>Description:</strong> Export the most recent API request as JSON payload
+(nightly builds).</li>
+</ul>
+</li>
+<li class=""><strong>Compatibility alias:</strong> <code>/resume checkpoints ...</code> is still accepted for the
+same checkpoint commands.</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_qfbg" id="settings"><code>/settings</code><a href="#settings" class="hash-link" aria-label="Direct link to settings" title="Direct link to settings" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Description:</strong> Open the settings editor to view and modify Gemini CLI
+settings.</li>
+<li class=""><strong>Details:</strong> This command provides a user-friendly interface for changing
+settings that control the behavior and appearance of Gemini CLI. It is
+equivalent to manually editing the <code>.gemini/settings.json</code> file, but with
+validation and guidance to prevent errors. See the
+<a class="" href="/docs/cli/settings">settings documentation</a> for a full list of available
+settings.</li>
+<li class=""><strong>Usage:</strong> Simply run <code>/settings</code> and the editor will open. You can then
+browse or search for specific settings, view their current values, and modify
+them as desired. Changes to some settings are applied immediately, while
+others require a restart.</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_qfbg" id="shells-or-bashes"><code>/shells</code> (or <code>/bashes</code>)<a href="#shells-or-bashes" class="hash-link" aria-label="Direct link to shells-or-bashes" title="Direct link to shells-or-bashes" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Description:</strong> Toggle the background shells view. This lets you view and
+manage long-running processes that you&#x27;ve sent to the background.</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_qfbg" id="setup-github"><code>/setup-github</code><a href="#setup-github" class="hash-link" aria-label="Direct link to setup-github" title="Direct link to setup-github" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Description:</strong> Set up GitHub Actions to triage issues and review PRs with
+Gemini.</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_qfbg" id="skills"><code>/skills</code><a href="#skills" class="hash-link" aria-label="Direct link to skills" title="Direct link to skills" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Description:</strong> Manage Agent Skills, which provide on-demand expertise and
+specialized workflows.</li>
+<li class=""><strong>Sub-commands:</strong>
+<ul>
+<li class=""><strong><code>disable &lt;name&gt;</code></strong>:<!-- -->
+<ul>
+<li class=""><strong>Description:</strong> Disable a specific skill by name.</li>
+<li class=""><strong>Usage:</strong> <code>/skills disable &lt;name&gt;</code></li>
+</ul>
+</li>
+<li class=""><strong><code>enable &lt;name&gt;</code></strong>:<!-- -->
+<ul>
+<li class=""><strong>Description:</strong> Enable a specific skill by name.</li>
+<li class=""><strong>Usage:</strong> <code>/skills enable &lt;name&gt;</code></li>
+</ul>
+</li>
+<li class=""><strong><code>list</code></strong>:<!-- -->
+<ul>
+<li class=""><strong>Description:</strong> List all discovered skills and their current status
+(enabled/disabled).</li>
+</ul>
+</li>
+<li class=""><strong><code>reload</code></strong>:<!-- -->
+<ul>
+<li class=""><strong>Description:</strong> Refresh the list of discovered skills from all tiers
+(workspace, user, and extensions).</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_qfbg" id="stats"><code>/stats</code><a href="#stats" class="hash-link" aria-label="Direct link to stats" title="Direct link to stats" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Description:</strong> Display detailed statistics for the current Gemini CLI
+session.</li>
+<li class=""><strong>Sub-commands:</strong>
+<ul>
+<li class=""><strong><code>session</code></strong>:<!-- -->
+<ul>
+<li class=""><strong>Description:</strong> Show session-specific usage statistics, including
+duration, tool calls, and performance metrics. This is the default view.</li>
+</ul>
+</li>
+<li class=""><strong><code>model</code></strong>:<!-- -->
+<ul>
+<li class=""><strong>Description:</strong> Show model-specific usage statistics, including token
+counts and quota information.</li>
+</ul>
+</li>
+<li class=""><strong><code>tools</code></strong>:<!-- -->
+<ul>
+<li class=""><strong>Description:</strong> Show tool-specific usage statistics.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_qfbg" id="terminal-setup"><code>/terminal-setup</code><a href="#terminal-setup" class="hash-link" aria-label="Direct link to terminal-setup" title="Direct link to terminal-setup" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Description:</strong> Configure terminal keybindings for multiline input (VS Code,
+Cursor, Windsurf).</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_qfbg" id="theme"><code>/theme</code><a href="#theme" class="hash-link" aria-label="Direct link to theme" title="Direct link to theme" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Description:</strong> Open a dialog that lets you change the visual theme of Gemini
+CLI.</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_qfbg" id="tools"><code>/tools</code><a href="#tools" class="hash-link" aria-label="Direct link to tools" title="Direct link to tools" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Description:</strong> Display a list of tools that are currently available within
+Gemini CLI.</li>
+<li class=""><strong>Usage:</strong> <code>/tools [desc]</code></li>
+<li class=""><strong>Sub-commands:</strong>
+<ul>
+<li class=""><strong><code>desc</code></strong> or <strong><code>descriptions</code></strong>:<!-- -->
+<ul>
+<li class=""><strong>Description:</strong> Show detailed descriptions of each tool, including each
+tool&#x27;s name with its full description as provided to the model.</li>
+</ul>
+</li>
+<li class=""><strong><code>nodesc</code></strong> or <strong><code>nodescriptions</code></strong>:<!-- -->
+<ul>
+<li class=""><strong>Description:</strong> Hide tool descriptions, showing only the tool names.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_qfbg" id="upgrade"><code>/upgrade</code><a href="#upgrade" class="hash-link" aria-label="Direct link to upgrade" title="Direct link to upgrade" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Description:</strong> Open the Gemini Code Assist upgrade page in your browser.
+This lets you upgrade your tier for higher usage limits.</li>
+<li class=""><strong>Note:</strong> This command is only available when logged in with Google.</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_qfbg" id="vim"><code>/vim</code><a href="#vim" class="hash-link" aria-label="Direct link to vim" title="Direct link to vim" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Description:</strong> Toggle vim mode on or off. When vim mode is enabled, the
+input area supports vim-style navigation and editing commands in both NORMAL
+and INSERT modes.</li>
+<li class=""><strong>Features:</strong>
+<ul>
+<li class=""><strong>Count support:</strong> Prefix commands with numbers (for example, <code>3h</code>, <code>5w</code>,
+<code>10G</code>)</li>
+<li class=""><strong>Editing commands:</strong> Delete with <code>x</code>, change with <code>c</code>, insert with <code>i</code>,
+<code>a</code>, <code>o</code>, <code>O</code>; complex operations like <code>dd</code>, <code>cc</code>, <code>dw</code>, <code>cw</code></li>
+<li class=""><strong>INSERT mode:</strong> Standard text input with escape to return to NORMAL mode</li>
+<li class=""><strong>NORMAL mode:</strong> Navigate with <code>h</code>, <code>j</code>, <code>k</code>, <code>l</code>; jump by words with <code>w</code>,
+<code>b</code>, <code>e</code>; go to line start/end with <code>0</code>, <code>$</code>, <code>^</code>; go to specific lines with
+<code>G</code> (or <code>gg</code> for first line)</li>
+<li class=""><strong>Persistent setting:</strong> Vim mode preference is saved to
+<code>~/.gemini/settings.json</code> and restored between sessions</li>
+<li class=""><strong>Repeat last command:</strong> Use <code>.</code> to repeat the last editing operation</li>
+<li class=""><strong>Status indicator:</strong> When enabled, shows <code>[NORMAL]</code> or <code>[INSERT]</code> in the
+footer</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_qfbg" id="custom-commands">Custom commands<a href="#custom-commands" class="hash-link" aria-label="Direct link to Custom commands" title="Direct link to Custom commands" translate="no">​</a></h3>
+<p>Custom commands allow you to create personalized shortcuts for your most-used
+prompts. For detailed instructions on how to create, manage, and use them, see
+the dedicated <a class="" href="/docs/cli/custom-commands">Custom Commands documentation</a>.</p>
+<h2 class="anchor anchorTargetStickyNavbar_qfbg" id="input-prompt-shortcuts">Input prompt shortcuts<a href="#input-prompt-shortcuts" class="hash-link" aria-label="Direct link to Input prompt shortcuts" title="Direct link to Input prompt shortcuts" translate="no">​</a></h2>
+<p>These shortcuts apply directly to the input prompt for text manipulation.</p>
+<ul>
+<li class="">
+<p><strong>Undo:</strong></p>
+<ul>
+<li class=""><strong>Keyboard shortcut:</strong> Press <strong>Ctrl+z</strong> (Windows), <strong>Cmd+z</strong> (macOS), or
+<strong>Alt+z</strong> (Linux/WSL) to undo the last action in the input prompt.</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Redo:</strong></p>
+<ul>
+<li class=""><strong>Keyboard shortcut:</strong> Press <strong>Shift+Cmd+Z</strong> (macOS), or <strong>Shift+Alt+Z</strong>
+(Linux/WSL) to redo the last undone action in the input prompt.</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_qfbg" id="at-commands-">At commands (<code>@</code>)<a href="#at-commands-" class="hash-link" aria-label="Direct link to at-commands-" title="Direct link to at-commands-" translate="no">​</a></h2>
+<p>At commands are used to include the content of files or directories as part of
+your prompt to Gemini. These commands include git-aware filtering.</p>
+<ul>
+<li class="">
+<p><strong><code>@&lt;path_to_file_or_directory&gt;</code></strong></p>
+<ul>
+<li class=""><strong>Description:</strong> Inject the content of the specified file or files into your
+current prompt. This is useful for asking questions about specific code,
+text, or collections of files.</li>
+<li class=""><strong>Examples:</strong>
+<ul>
+<li class=""><code>@path/to/your/file.txt Explain this text.</code></li>
+<li class=""><code>@src/my_project/ Summarize the code in this directory.</code></li>
+<li class=""><code>What is this file about? @README.md</code></li>
+</ul>
+</li>
+<li class=""><strong>Details:</strong>
+<ul>
+<li class="">If a path to a single file is provided, the content of that file is read.</li>
+<li class="">If a path to a directory is provided, the command attempts to read the
+content of files within that directory and any subdirectories.</li>
+<li class="">Spaces in paths should be escaped with a backslash (for example,
+<code>@My\ Documents/file.txt</code>).</li>
+<li class="">The command uses the <code>read_many_files</code> tool internally. The content is
+fetched and then inserted into your query before being sent to the Gemini
+model.</li>
+<li class=""><strong>Git-aware filtering:</strong> By default, git-ignored files (like
+<code>node_modules/</code>, <code>dist/</code>, <code>.env</code>, <code>.git/</code>) are excluded. This behavior can
+be changed via the <code>context.fileFiltering</code> settings.</li>
+<li class=""><strong>File types:</strong> The command is intended for text-based files. While it
+might attempt to read any file, binary files or very large files might be
+skipped or truncated by the underlying <code>read_many_files</code> tool to ensure
+performance and relevance. The tool indicates if files were skipped.</li>
+</ul>
+</li>
+<li class=""><strong>Output:</strong> The CLI will show a tool call message indicating that
+<code>read_many_files</code> was used, along with a message detailing the status and
+the path(s) that were processed.</li>
+</ul>
+</li>
+<li class="">
+<p><strong><code>@</code> (Lone at symbol)</strong></p>
+<ul>
+<li class=""><strong>Description:</strong> If you type a lone <code>@</code> symbol without a path, the query is
+passed as-is to the Gemini model. This might be useful if you are
+specifically talking <em>about</em> the <code>@</code> symbol in your prompt.</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_qfbg" id="error-handling-for--commands">Error handling for <code>@</code> commands<a href="#error-handling-for--commands" class="hash-link" aria-label="Direct link to error-handling-for--commands" title="Direct link to error-handling-for--commands" translate="no">​</a></h3>
+<ul>
+<li class="">If the path specified after <code>@</code> is not found or is invalid, an error message
+will be displayed, and the query might not be sent to the Gemini model, or it
+will be sent without the file content.</li>
+<li class="">If the <code>read_many_files</code> tool encounters an error (for example, permission
+issues), this will also be reported.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_qfbg" id="shell-mode-and-passthrough-commands-">Shell mode and passthrough commands (<code>!</code>)<a href="#shell-mode-and-passthrough-commands-" class="hash-link" aria-label="Direct link to shell-mode-and-passthrough-commands-" title="Direct link to shell-mode-and-passthrough-commands-" translate="no">​</a></h2>
+<p>The <code>!</code> prefix lets you interact with your system&#x27;s shell directly from within
+Gemini CLI.</p>
+<ul>
+<li class="">
+<p><strong><code>!&lt;shell_command&gt;</code></strong></p>
+<ul>
+<li class=""><strong>Description:</strong> Execute the given <code>&lt;shell_command&gt;</code> using <code>bash</code> on
+Linux/macOS or <code>powershell.exe -NoProfile -Command</code> on Windows (unless you
+override <code>ComSpec</code>). Any output or errors from the command are displayed in
+the terminal.</li>
+<li class=""><strong>Examples:</strong>
+<ul>
+<li class=""><code>!ls -la</code> (executes <code>ls -la</code> and returns to Gemini CLI)</li>
+<li class=""><code>!git status</code> (executes <code>git status</code> and returns to Gemini CLI)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="">
+<p><strong><code>!</code> (Toggle shell mode)</strong></p>
+<ul>
+<li class=""><strong>Description:</strong> Typing <code>!</code> on its own toggles shell mode.<!-- -->
+<ul>
+<li class=""><strong>Entering shell mode:</strong>
+<ul>
+<li class="">When active, shell mode uses a different coloring and a &quot;Shell Mode
+Indicator&quot;.</li>
+<li class="">While in shell mode, text you type is interpreted directly as a shell
+command.</li>
+</ul>
+</li>
+<li class=""><strong>Exiting shell mode:</strong>
+<ul>
+<li class="">When exited, the UI reverts to its standard appearance and normal Gemini
+CLI behavior resumes.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Caution for all <code>!</code> usage:</strong> Commands you execute in shell mode have the
+same permissions and impact as if you ran them directly in your terminal.</p>
+</li>
+<li class="">
+<p><strong>Environment variable:</strong> When a command is executed via <code>!</code> or in shell mode,
+the <code>GEMINI_CLI=1</code> environment variable is set in the subprocess&#x27;s
+environment. This allows scripts or tools to detect if they are being run from
+within Gemini CLI.</p>
+</li>
+</ul></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/npm"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">NPM package structure</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/reference/configuration"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Configuration reference</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_eoeD thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#slash-commands-" class="table-of-contents__link toc-highlight">Slash commands (<code>/</code>)</a><ul><li><a href="#built-in-commands" class="table-of-contents__link toc-highlight">Built-in Commands</a></li><li><a href="#about" class="table-of-contents__link toc-highlight"><code>/about</code></a></li><li><a href="#agents" class="table-of-contents__link toc-highlight"><code>/agents</code></a></li><li><a href="#auth" class="table-of-contents__link toc-highlight"><code>/auth</code></a></li><li><a href="#bug" class="table-of-contents__link toc-highlight"><code>/bug</code></a></li><li><a href="#chat" class="table-of-contents__link toc-highlight"><code>/chat</code></a></li><li><a href="#clear" class="table-of-contents__link toc-highlight"><code>/clear</code></a></li><li><a href="#commands" class="table-of-contents__link toc-highlight"><code>/commands</code></a></li><li><a href="#compress" class="table-of-contents__link toc-highlight"><code>/compress</code></a></li><li><a href="#copy" class="table-of-contents__link toc-highlight"><code>/copy</code></a></li><li><a href="#directory-or-dir" class="table-of-contents__link toc-highlight"><code>/directory</code> (or <code>/dir</code>)</a></li><li><a href="#docs" class="table-of-contents__link toc-highlight"><code>/docs</code></a></li><li><a href="#editor" class="table-of-contents__link toc-highlight"><code>/editor</code></a></li><li><a href="#extensions" class="table-of-contents__link toc-highlight"><code>/extensions</code></a></li><li><a href="#help-or-" class="table-of-contents__link toc-highlight"><code>/help</code> (or <code>/?</code>)</a></li><li><a href="#hooks" class="table-of-contents__link toc-highlight"><code>/hooks</code></a></li><li><a href="#ide" class="table-of-contents__link toc-highlight"><code>/ide</code></a></li><li><a href="#init" class="table-of-contents__link toc-highlight"><code>/init</code></a></li><li><a href="#mcp" class="table-of-contents__link toc-highlight"><code>/mcp</code></a></li><li><a href="#memory" class="table-of-contents__link toc-highlight"><code>/memory</code></a></li><li><a href="#model" class="table-of-contents__link toc-highlight"><code>/model</code></a></li><li><a href="#permissions" class="table-of-contents__link toc-highlight"><code>/permissions</code></a></li><li><a href="#plan" class="table-of-contents__link toc-highlight"><code>/plan</code></a></li><li><a href="#policies" class="table-of-contents__link toc-highlight"><code>/policies</code></a></li><li><a href="#privacy" class="table-of-contents__link toc-highlight"><code>/privacy</code></a></li><li><a href="#quit-or-exit" class="table-of-contents__link toc-highlight"><code>/quit</code> (or <code>/exit</code>)</a></li><li><a href="#restore" class="table-of-contents__link toc-highlight"><code>/restore</code></a></li><li><a href="#rewind" class="table-of-contents__link toc-highlight"><code>/rewind</code></a></li><li><a href="#resume" class="table-of-contents__link toc-highlight"><code>/resume</code></a></li><li><a href="#settings" class="table-of-contents__link toc-highlight"><code>/settings</code></a></li><li><a href="#shells-or-bashes" class="table-of-contents__link toc-highlight"><code>/shells</code> (or <code>/bashes</code>)</a></li><li><a href="#setup-github" class="table-of-contents__link toc-highlight"><code>/setup-github</code></a></li><li><a href="#skills" class="table-of-contents__link toc-highlight"><code>/skills</code></a></li><li><a href="#stats" class="table-of-contents__link toc-highlight"><code>/stats</code></a></li><li><a href="#terminal-setup" class="table-of-contents__link toc-highlight"><code>/terminal-setup</code></a></li><li><a href="#theme" class="table-of-contents__link toc-highlight"><code>/theme</code></a></li><li><a href="#tools" class="table-of-contents__link toc-highlight"><code>/tools</code></a></li><li><a href="#upgrade" class="table-of-contents__link toc-highlight"><code>/upgrade</code></a></li><li><a href="#vim" class="table-of-contents__link toc-highlight"><code>/vim</code></a></li><li><a href="#custom-commands" class="table-of-contents__link toc-highlight">Custom commands</a></li></ul></li><li><a href="#input-prompt-shortcuts" class="table-of-contents__link toc-highlight">Input prompt shortcuts</a></li><li><a href="#at-commands-" class="table-of-contents__link toc-highlight">At commands (<code>@</code>)</a><ul><li><a href="#error-handling-for--commands" class="table-of-contents__link toc-highlight">Error handling for <code>@</code> commands</a></li></ul></li><li><a href="#shell-mode-and-passthrough-commands-" class="table-of-contents__link toc-highlight">Shell mode and passthrough commands (<code>!</code>)</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Gemini CLI. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-cli/session-management" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.10.1">
+<title data-rh="true">Session management | Gemini CLI</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://gemini-cli.example.com/docs/cli/session-management"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Session management | Gemini CLI"><meta data-rh="true" name="description" content="Session management saves your conversation history so you can resume your work"><meta data-rh="true" property="og:description" content="Session management saves your conversation history so you can resume your work"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://gemini-cli.example.com/docs/cli/session-management"><link data-rh="true" rel="alternate" href="https://gemini-cli.example.com/docs/cli/session-management" hreflang="en"><link data-rh="true" rel="alternate" href="https://gemini-cli.example.com/docs/cli/session-management" hreflang="x-default"><link rel="stylesheet" href="/assets/css/styles.001c7fc8.css">
+<script src="/assets/js/runtime~main.3bcf4e27.js" defer="defer"></script>
+<script src="/assets/js/main.95884027.js" defer="defer"></script>
+</head>
+<body>
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Skip to main content"><a class="skipToContent_aM_4" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><b class="navbar__title text--truncate">Gemini CLI</b></a><a class="navbar__item navbar__link" href="/docs/">Docs</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href="https://github.com/google/gemini-cli" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_ZiGE"><use href="#theme-svg-external-link"></use></svg></a><div class="toggle_DDoQ colorModeToggle_bDqT"><button class="clean-btn toggleButton_dJob toggleButtonDisabled_qdNO" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_VwgV lightToggleIcon_hJPv"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_VwgV darkToggleIcon_H5Lk"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_VwgV systemToggleIcon_iMbw"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_qkiT"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_mVk5"><div class="docsWrapper_S0Bd"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_Fj1y" type="button"></button><div class="docRoot_Npys"><main class="docMainContainer_qMe0 docMainContainerEnhanced_Jjz_"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_Cv5c"><div class="docItemContainer_DBeY"><article><div class="tocCollapsible__jma theme-doc-toc-mobile tocMobile_f6av"><button type="button" class="clean-btn tocCollapsibleButton_rOIt">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Session management</h1></header>
+<p>Session management saves your conversation history so you can resume your work
+where you left off. Use these features to review past interactions, manage
+history across different projects, and configure how long data is retained.</p>
+<h2 class="anchor anchorTargetStickyNavbar_qfbg" id="automatic-saving">Automatic saving<a href="#automatic-saving" class="hash-link" aria-label="Direct link to Automatic saving" title="Direct link to Automatic saving" translate="no">​</a></h2>
+<p>Your session history is recorded automatically as you interact with the model.
+This background process ensures your work is preserved even if you interrupt a
+session.</p>
+<ul>
+<li class=""><strong>What is saved:</strong> The complete conversation history, including:<!-- -->
+<ul>
+<li class="">Your prompts and the model&#x27;s responses.</li>
+<li class="">All tool executions (inputs and outputs).</li>
+<li class="">Token usage statistics (input, output, cached, etc.).</li>
+<li class="">Assistant thoughts and reasoning summaries (when available).</li>
+</ul>
+</li>
+<li class=""><strong>Location:</strong> Sessions are stored in <code>~/.gemini/tmp/&lt;project_hash&gt;/chats/</code>,
+where <code>&lt;project_hash&gt;</code> is a unique identifier based on your project&#x27;s root
+directory.</li>
+<li class=""><strong>Scope:</strong> Sessions are project-specific. Switching directories to a different
+project switches to that project&#x27;s session history.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_qfbg" id="resuming-sessions">Resuming sessions<a href="#resuming-sessions" class="hash-link" aria-label="Direct link to Resuming sessions" title="Direct link to Resuming sessions" translate="no">​</a></h2>
+<p>You can resume a previous session to continue the conversation with all prior
+context restored. Resuming is supported both through command-line flags and an
+interactive browser.</p>
+<h3 class="anchor anchorTargetStickyNavbar_qfbg" id="from-the-command-line">From the command line<a href="#from-the-command-line" class="hash-link" aria-label="Direct link to From the command line" title="Direct link to From the command line" translate="no">​</a></h3>
+<p>When starting Gemini CLI, use the <code>--resume</code> (or <code>-r</code>) flag to load existing
+sessions.</p>
+<ul>
+<li class="">
+<p><strong>Resume latest:</strong></p>
+<div class="language-bash codeBlockContainer_EX8O theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_ww9U"><pre tabindex="0" class="prism-code language-bash codeBlock__txR thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_CCag"><div class="token-line" style="color:#393A34"><span class="token plain">gemini --resume</span><br></div></code></pre></div></div>
+<p>This immediately loads the most recent session.</p>
+</li>
+<li class="">
+<p><strong>Resume by index:</strong> List available sessions first (see
+<a href="#listing-sessions" class="">Listing sessions</a>), then use the index number:</p>
+<div class="language-bash codeBlockContainer_EX8O theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_ww9U"><pre tabindex="0" class="prism-code language-bash codeBlock__txR thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_CCag"><div class="token-line" style="color:#393A34"><span class="token plain">gemini --resume 1</span><br></div></code></pre></div></div>
+</li>
+<li class="">
+<p><strong>Resume by ID:</strong> You can also provide the full session UUID:</p>
+<div class="language-bash codeBlockContainer_EX8O theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_ww9U"><pre tabindex="0" class="prism-code language-bash codeBlock__txR thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_CCag"><div class="token-line" style="color:#393A34"><span class="token plain">gemini --resume a1b2c3d4-e5f6-7890-abcd-ef1234567890</span><br></div></code></pre></div></div>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_qfbg" id="from-the-interactive-interface">From the interactive interface<a href="#from-the-interactive-interface" class="hash-link" aria-label="Direct link to From the interactive interface" title="Direct link to From the interactive interface" translate="no">​</a></h3>
+<p>While the CLI is running, use the <code>/resume</code> slash command to open the <strong>Session
+Browser</strong>:</p>
+<div class="language-text codeBlockContainer_EX8O theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_ww9U"><pre tabindex="0" class="prism-code language-text codeBlock__txR thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_CCag"><div class="token-line" style="color:#393A34"><span class="token plain">/resume</span><br></div></code></pre></div></div>
+<p>When typing <code>/resume</code> (or <code>/chat</code>) in slash completion, commands are grouped
+under titled separators:</p>
+<ul>
+<li class=""><code>-- auto --</code> (session browser)<!-- -->
+<ul>
+<li class=""><code>list</code> is selectable and opens the session browser</li>
+</ul>
+</li>
+<li class=""><code>-- checkpoints --</code> (manual tagged checkpoint commands)</li>
+</ul>
+<p>Unique prefixes such as <code>/resum</code> and <code>/cha</code> resolve to the same grouped menu.</p>
+<p>The Session Browser provides an interactive interface where you can perform the
+following actions:</p>
+<ul>
+<li class=""><strong>Browse:</strong> Scroll through a list of your past sessions.</li>
+<li class=""><strong>Preview:</strong> See details like the session date, message count, and the first
+user prompt.</li>
+<li class=""><strong>Search:</strong> Press <code>/</code> to enter search mode, then type to filter sessions by ID
+or content.</li>
+<li class=""><strong>Select:</strong> Press <strong>Enter</strong> to resume the selected session.</li>
+<li class=""><strong>Esc:</strong> Press <strong>Esc</strong> to exit the Session Browser.</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_qfbg" id="manual-chat-checkpoints">Manual chat checkpoints<a href="#manual-chat-checkpoints" class="hash-link" aria-label="Direct link to Manual chat checkpoints" title="Direct link to Manual chat checkpoints" translate="no">​</a></h3>
+<p>For named branch points inside a session, use chat checkpoints:</p>
+<div class="language-text codeBlockContainer_EX8O theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_ww9U"><pre tabindex="0" class="prism-code language-text codeBlock__txR thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_CCag"><div class="token-line" style="color:#393A34"><span class="token plain">/resume save decision-point</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">/resume list</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">/resume resume decision-point</span><br></div></code></pre></div></div>
+<p>Compatibility aliases:</p>
+<ul>
+<li class=""><code>/chat ...</code> works for the same commands.</li>
+<li class=""><code>/resume checkpoints ...</code> also remains supported during migration.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_qfbg" id="parallel-sessions-with-git-worktrees">Parallel sessions with Git worktrees<a href="#parallel-sessions-with-git-worktrees" class="hash-link" aria-label="Direct link to Parallel sessions with Git worktrees" title="Direct link to Parallel sessions with Git worktrees" translate="no">​</a></h2>
+<p>When working on multiple tasks at once, you can use
+<a class="" href="/docs/cli/git-worktrees">Git worktrees</a> to give each Gemini session its own copy of
+the codebase. This prevents changes in one session from colliding with another.</p>
+<h2 class="anchor anchorTargetStickyNavbar_qfbg" id="managing-sessions">Managing sessions<a href="#managing-sessions" class="hash-link" aria-label="Direct link to Managing sessions" title="Direct link to Managing sessions" translate="no">​</a></h2>
+<p>You can list and delete sessions to keep your history organized and manage disk
+space.</p>
+<h3 class="anchor anchorTargetStickyNavbar_qfbg" id="listing-sessions">Listing sessions<a href="#listing-sessions" class="hash-link" aria-label="Direct link to Listing sessions" title="Direct link to Listing sessions" translate="no">​</a></h3>
+<p>To see a list of all available sessions for the current project from the command
+line, use the <code>--list-sessions</code> flag:</p>
+<div class="language-bash codeBlockContainer_EX8O theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_ww9U"><pre tabindex="0" class="prism-code language-bash codeBlock__txR thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_CCag"><div class="token-line" style="color:#393A34"><span class="token plain">gemini --list-sessions</span><br></div></code></pre></div></div>
+<p>Output example:</p>
+<div class="language-text codeBlockContainer_EX8O theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_ww9U"><pre tabindex="0" class="prism-code language-text codeBlock__txR thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_CCag"><div class="token-line" style="color:#393A34"><span class="token plain">Available sessions for this project (3):</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  1. Fix bug in auth (2 days ago) [a1b2c3d4]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  2. Refactor database schema (5 hours ago) [e5f67890]</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  3. Update documentation (Just now) [abcd1234]</span><br></div></code></pre></div></div>
+<h3 class="anchor anchorTargetStickyNavbar_qfbg" id="deleting-sessions">Deleting sessions<a href="#deleting-sessions" class="hash-link" aria-label="Direct link to Deleting sessions" title="Direct link to Deleting sessions" translate="no">​</a></h3>
+<p>You can remove old or unwanted sessions to free up space or declutter your
+history.</p>
+<p><strong>From the command line:</strong> Use the <code>--delete-session</code> flag with an index or ID:</p>
+<div class="language-bash codeBlockContainer_EX8O theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_ww9U"><pre tabindex="0" class="prism-code language-bash codeBlock__txR thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_CCag"><div class="token-line" style="color:#393A34"><span class="token plain">gemini --delete-session 2</span><br></div></code></pre></div></div>
+<p><strong>From the Session Browser:</strong></p>
+<ol>
+<li class="">Open the browser with <code>/resume</code>.</li>
+<li class="">Navigate to the session you want to remove.</li>
+<li class="">Press <strong>x</strong>.</li>
+</ol>
+<h2 class="anchor anchorTargetStickyNavbar_qfbg" id="configuration">Configuration<a href="#configuration" class="hash-link" aria-label="Direct link to Configuration" title="Direct link to Configuration" translate="no">​</a></h2>
+<p>You can configure how Gemini CLI manages your session history in your
+<code>settings.json</code> file. These settings let you control retention policies and
+session lengths.</p>
+<h3 class="anchor anchorTargetStickyNavbar_qfbg" id="session-retention">Session retention<a href="#session-retention" class="hash-link" aria-label="Direct link to Session retention" title="Direct link to Session retention" translate="no">​</a></h3>
+<p>By default, Gemini CLI automatically cleans up old session data to prevent your
+history from growing indefinitely. When a session is deleted, Gemini CLI also
+removes all associated data, including implementation plans, task trackers, tool
+outputs, and activity logs.</p>
+<p>The default policy is to <strong>retain sessions for 30 days</strong>.</p>
+<h4 class="anchor anchorTargetStickyNavbar_qfbg" id="configuration-1">Configuration<a href="#configuration-1" class="hash-link" aria-label="Direct link to Configuration" title="Direct link to Configuration" translate="no">​</a></h4>
+<p>You can customize these policies using the <code>/settings</code> command or by manually
+editing your <code>settings.json</code> file:</p>
+<div class="language-json codeBlockContainer_EX8O theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_ww9U"><pre tabindex="0" class="prism-code language-json codeBlock__txR thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_CCag"><div class="token-line" style="color:#393A34"><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token property" style="color:#36acaa">&quot;general&quot;</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token property" style="color:#36acaa">&quot;sessionRetention&quot;</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">      </span><span class="token property" style="color:#36acaa">&quot;enabled&quot;</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token boolean" style="color:#36acaa">true</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">      </span><span class="token property" style="color:#36acaa">&quot;maxAge&quot;</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">&quot;30d&quot;</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">      </span><span class="token property" style="color:#36acaa">&quot;maxCount&quot;</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token number" style="color:#36acaa">50</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token punctuation" style="color:#393A34">}</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token punctuation" style="color:#393A34">}</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token punctuation" style="color:#393A34">}</span><br></div></code></pre></div></div>
+<ul>
+<li class=""><strong><code>enabled</code></strong>: (boolean) Master switch for session cleanup. Defaults to
+<code>true</code>.</li>
+<li class=""><strong><code>maxAge</code></strong>: (string) Duration to keep sessions (for example, &quot;24h&quot;, &quot;7d&quot;,
+&quot;4w&quot;). Sessions older than this are deleted. Defaults to <code>&quot;30d&quot;</code>.</li>
+<li class=""><strong><code>maxCount</code></strong>: (number) Maximum number of sessions to retain. The oldest
+sessions exceeding this count are deleted. Defaults to undefined (unlimited).</li>
+<li class=""><strong><code>minRetention</code></strong>: (string) Minimum retention period (safety limit). Defaults
+to <code>&quot;1d&quot;</code>. Sessions newer than this period are never deleted by automatic
+cleanup.</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_qfbg" id="session-limits">Session limits<a href="#session-limits" class="hash-link" aria-label="Direct link to Session limits" title="Direct link to Session limits" translate="no">​</a></h3>
+<p>You can limit the length of individual sessions to prevent context windows from
+becoming too large and expensive.</p>
+<div class="language-json codeBlockContainer_EX8O theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_ww9U"><pre tabindex="0" class="prism-code language-json codeBlock__txR thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_CCag"><div class="token-line" style="color:#393A34"><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token property" style="color:#36acaa">&quot;model&quot;</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token property" style="color:#36acaa">&quot;maxSessionTurns&quot;</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token number" style="color:#36acaa">100</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token punctuation" style="color:#393A34">}</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token punctuation" style="color:#393A34">}</span><br></div></code></pre></div></div>
+<ul>
+<li class="">
+<p><strong><code>maxSessionTurns</code></strong>: (number) The maximum number of turns (user and model
+exchanges) allowed in a single session. Set to <code>-1</code> for unlimited (default).</p>
+<p><strong>Behavior when limit is reached:</strong></p>
+<ul>
+<li class=""><strong>Interactive mode:</strong> The CLI shows an informational message and stops
+sending requests to the model. You must manually start a new session.</li>
+<li class=""><strong>Non-interactive mode:</strong> The CLI exits with an error.</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_qfbg" id="next-steps">Next steps<a href="#next-steps" class="hash-link" aria-label="Direct link to Next steps" title="Direct link to Next steps" translate="no">​</a></h2>
+<ul>
+<li class="">Explore the <a class="" href="/docs/tools/memory">Memory tool</a> to save persistent information
+across sessions.</li>
+<li class="">Learn how to <a class="" href="/docs/cli/checkpointing">Checkpoint</a> your session state.</li>
+<li class="">Check out the <a class="" href="/docs/cli/cli-reference">CLI reference</a> for all command-line flags.</li>
+</ul></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"></nav></div></div><div class="col col--3"><div class="tableOfContents_eoeD thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#automatic-saving" class="table-of-contents__link toc-highlight">Automatic saving</a></li><li><a href="#resuming-sessions" class="table-of-contents__link toc-highlight">Resuming sessions</a><ul><li><a href="#from-the-command-line" class="table-of-contents__link toc-highlight">From the command line</a></li><li><a href="#from-the-interactive-interface" class="table-of-contents__link toc-highlight">From the interactive interface</a></li><li><a href="#manual-chat-checkpoints" class="table-of-contents__link toc-highlight">Manual chat checkpoints</a></li></ul></li><li><a href="#parallel-sessions-with-git-worktrees" class="table-of-contents__link toc-highlight">Parallel sessions with Git worktrees</a></li><li><a href="#managing-sessions" class="table-of-contents__link toc-highlight">Managing sessions</a><ul><li><a href="#listing-sessions" class="table-of-contents__link toc-highlight">Listing sessions</a></li><li><a href="#deleting-sessions" class="table-of-contents__link toc-highlight">Deleting sessions</a></li></ul></li><li><a href="#configuration" class="table-of-contents__link toc-highlight">Configuration</a><ul><li><a href="#session-retention" class="table-of-contents__link toc-highlight">Session retention</a></li><li><a href="#session-limits" class="table-of-contents__link toc-highlight">Session limits</a></li></ul></li><li><a href="#next-steps" class="table-of-contents__link toc-highlight">Next steps</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Gemini CLI. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>

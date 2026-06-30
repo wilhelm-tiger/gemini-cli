@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-ide-integration/ide-companion-spec" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.10.1">
+<title data-rh="true">Gemini CLI companion plugin: Interface specification | Gemini CLI</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://gemini-cli.example.com/docs/ide-integration/ide-companion-spec"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Gemini CLI companion plugin: Interface specification | Gemini CLI"><meta data-rh="true" name="description" content="Last Updated: September 15, 2025"><meta data-rh="true" property="og:description" content="Last Updated: September 15, 2025"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://gemini-cli.example.com/docs/ide-integration/ide-companion-spec"><link data-rh="true" rel="alternate" href="https://gemini-cli.example.com/docs/ide-integration/ide-companion-spec" hreflang="en"><link data-rh="true" rel="alternate" href="https://gemini-cli.example.com/docs/ide-integration/ide-companion-spec" hreflang="x-default"><link rel="stylesheet" href="/assets/css/styles.001c7fc8.css">
+<script src="/assets/js/runtime~main.3bcf4e27.js" defer="defer"></script>
+<script src="/assets/js/main.95884027.js" defer="defer"></script>
+</head>
+<body>
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Skip to main content"><a class="skipToContent_aM_4" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><b class="navbar__title text--truncate">Gemini CLI</b></a><a class="navbar__item navbar__link" href="/docs/">Docs</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href="https://github.com/google/gemini-cli" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_ZiGE"><use href="#theme-svg-external-link"></use></svg></a><div class="toggle_DDoQ colorModeToggle_bDqT"><button class="clean-btn toggleButton_dJob toggleButtonDisabled_qdNO" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_VwgV lightToggleIcon_hJPv"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_VwgV darkToggleIcon_H5Lk"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_VwgV systemToggleIcon_iMbw"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_qkiT"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_mVk5"><div class="docsWrapper_S0Bd"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_Fj1y" type="button"></button><div class="docRoot_Npys"><main class="docMainContainer_qMe0 docMainContainerEnhanced_Jjz_"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_Cv5c"><div class="docItemContainer_DBeY"><article><div class="tocCollapsible__jma theme-doc-toc-mobile tocMobile_f6av"><button type="button" class="clean-btn tocCollapsibleButton_rOIt">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Gemini CLI companion plugin: Interface specification</h1></header>
+<blockquote>
+<p>Last Updated: September 15, 2025</p>
+</blockquote>
+<p>This document defines the contract for building a companion plugin to enable
+Gemini CLI&#x27;s IDE mode. For VS Code, these features (native diffing, context
+awareness) are provided by the official extension
+(<a href="https://marketplace.visualstudio.com/items?itemName=Google.gemini-cli-vscode-ide-companion" target="_blank" rel="noopener noreferrer" class="">marketplace</a>).
+This specification is for contributors who wish to bring similar functionality
+to other editors like JetBrains IDEs, Sublime Text, etc.</p>
+<h2 class="anchor anchorTargetStickyNavbar_qfbg" id="i-the-communication-interface">I. The communication interface<a href="#i-the-communication-interface" class="hash-link" aria-label="Direct link to I. The communication interface" title="Direct link to I. The communication interface" translate="no">​</a></h2>
+<p>Gemini CLI and the IDE plugin communicate through a local communication channel.</p>
+<h3 class="anchor anchorTargetStickyNavbar_qfbg" id="1-transport-layer-mcp-over-http">1. Transport layer: MCP over HTTP<a href="#1-transport-layer-mcp-over-http" class="hash-link" aria-label="Direct link to 1. Transport layer: MCP over HTTP" title="Direct link to 1. Transport layer: MCP over HTTP" translate="no">​</a></h3>
+<p>The plugin <strong>MUST</strong> run a local HTTP server that implements the <strong>Model Context
+Protocol (MCP)</strong>.</p>
+<ul>
+<li class=""><strong>Protocol:</strong> The server must be a valid MCP server. We recommend using an
+existing MCP SDK for your language of choice if available.</li>
+<li class=""><strong>Endpoint:</strong> The server should expose a single endpoint (for example, <code>/mcp</code>)
+for all MCP communication.</li>
+<li class=""><strong>Port:</strong> The server <strong>MUST</strong> listen on a dynamically assigned port (that is,
+listen on port <code>0</code>).</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_qfbg" id="2-discovery-mechanism-the-port-file">2. Discovery mechanism: The port file<a href="#2-discovery-mechanism-the-port-file" class="hash-link" aria-label="Direct link to 2. Discovery mechanism: The port file" title="Direct link to 2. Discovery mechanism: The port file" translate="no">​</a></h3>
+<p>For Gemini CLI to connect, it needs to discover which IDE instance it&#x27;s running
+in and what port your server is using. The plugin <strong>MUST</strong> facilitate this by
+creating a &quot;discovery file.&quot;</p>
+<ul>
+<li class="">
+<p><strong>How the CLI finds the file:</strong> The CLI determines the Process ID (PID) of the
+IDE it&#x27;s running in by traversing the process tree. It then looks for a
+discovery file that contains this PID in its name.</p>
+</li>
+<li class="">
+<p><strong>File location:</strong> The file must be created in a specific directory:
+<code>os.tmpdir()/gemini/ide/</code>. Your plugin must create this directory if it
+doesn&#x27;t exist.</p>
+</li>
+<li class="">
+<p><strong>File naming convention:</strong> The filename is critical and <strong>MUST</strong> follow the
+pattern: <code>gemini-ide-server-${PID}-${PORT}.json</code></p>
+<ul>
+<li class=""><code>${PID}</code>: The process ID of the parent IDE process. Your plugin must
+determine this PID and include it in the filename.</li>
+<li class=""><code>${PORT}</code>: The port your MCP server is listening on.</li>
+</ul>
+</li>
+<li class="">
+<p><strong>File content and workspace validation:</strong> The file <strong>MUST</strong> contain a JSON
+object with the following structure:</p>
+<div class="language-json codeBlockContainer_EX8O theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_ww9U"><pre tabindex="0" class="prism-code language-json codeBlock__txR thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_CCag"><div class="token-line" style="color:#393A34"><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token property" style="color:#36acaa">&quot;port&quot;</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token number" style="color:#36acaa">12345</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token property" style="color:#36acaa">&quot;workspacePath&quot;</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">&quot;/path/to/project1:/path/to/project2&quot;</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token property" style="color:#36acaa">&quot;authToken&quot;</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">&quot;a-very-secret-token&quot;</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token property" style="color:#36acaa">&quot;ideInfo&quot;</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token property" style="color:#36acaa">&quot;name&quot;</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">&quot;vscode&quot;</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token property" style="color:#36acaa">&quot;displayName&quot;</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">&quot;VS Code&quot;</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token punctuation" style="color:#393A34">}</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token punctuation" style="color:#393A34">}</span><br></div></code></pre></div></div>
+<ul>
+<li class=""><code>port</code> (number, required): The port of the MCP server.</li>
+<li class=""><code>workspacePath</code> (string, required): A list of all open workspace root paths,
+delimited by the OS-specific path separator (<code>:</code> for Linux/macOS, <code>;</code> for
+Windows). The CLI uses this path to ensure it&#x27;s running in the same project
+folder that&#x27;s open in the IDE. If the CLI&#x27;s current working directory is not
+a sub-directory of <code>workspacePath</code>, the connection will be rejected. Your
+plugin <strong>MUST</strong> provide the correct, absolute path(s) to the root of the
+open workspace(s).</li>
+<li class=""><code>authToken</code> (string, required): A secret token for securing the connection.
+The CLI will include this token in an <code>Authorization: Bearer &lt;token&gt;</code> header
+on all requests.</li>
+<li class=""><code>ideInfo</code> (object, required): Information about the IDE.<!-- -->
+<ul>
+<li class=""><code>name</code> (string, required): A short, lowercase identifier for the IDE (for
+example, <code>vscode</code>, <code>jetbrains</code>).</li>
+<li class=""><code>displayName</code> (string, required): A user-friendly name for the IDE (for
+example, <code>VS Code</code>, <code>JetBrains IDE</code>).</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Authentication:</strong> To secure the connection, the plugin <strong>MUST</strong> generate a
+unique, secret token and include it in the discovery file. The CLI will then
+include this token in the <code>Authorization</code> header for all requests to the MCP
+server (for example, <code>Authorization: Bearer a-very-secret-token</code>). Your server
+<strong>MUST</strong> validate this token on every request and reject any that are
+unauthorized.</p>
+</li>
+<li class="">
+<p><strong>Tie-breaking with environment variables (recommended):</strong> For the most
+reliable experience, your plugin <strong>SHOULD</strong> both create the discovery file and
+set the <code>GEMINI_CLI_IDE_SERVER_PORT</code> environment variable in the integrated
+terminal. The file serves as the primary discovery mechanism, but the
+environment variable is crucial for tie-breaking. If a user has multiple IDE
+windows open for the same workspace, the CLI uses the
+<code>GEMINI_CLI_IDE_SERVER_PORT</code> variable to identify and connect to the correct
+window&#x27;s server.</p>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_qfbg" id="ii-the-context-interface">II. The context interface<a href="#ii-the-context-interface" class="hash-link" aria-label="Direct link to II. The context interface" title="Direct link to II. The context interface" translate="no">​</a></h2>
+<p>To enable context awareness, the plugin <strong>MAY</strong> provide the CLI with real-time
+information about the user&#x27;s activity in the IDE.</p>
+<h3 class="anchor anchorTargetStickyNavbar_qfbg" id="idecontextupdate-notification"><code>ide/contextUpdate</code> notification<a href="#idecontextupdate-notification" class="hash-link" aria-label="Direct link to idecontextupdate-notification" title="Direct link to idecontextupdate-notification" translate="no">​</a></h3>
+<p>The plugin <strong>MAY</strong> send an <code>ide/contextUpdate</code>
+<a href="https://modelcontextprotocol.io/specification/2025-06-18/basic/index#notifications" target="_blank" rel="noopener noreferrer" class="">notification</a>
+to the CLI whenever the user&#x27;s context changes.</p>
+<ul>
+<li class="">
+<p><strong>Triggering events:</strong> This notification should be sent (with a recommended
+debounce of 50ms) when:</p>
+<ul>
+<li class="">A file is opened, closed, or focused.</li>
+<li class="">The user&#x27;s cursor position or text selection changes in the active file.</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Payload (<code>IdeContext</code>):</strong> The notification parameters <strong>MUST</strong> be an
+<code>IdeContext</code> object:</p>
+<div class="language-typescript codeBlockContainer_EX8O theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_ww9U"><pre tabindex="0" class="prism-code language-typescript codeBlock__txR thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_CCag"><div class="token-line" style="color:#393A34"><span class="token keyword" style="color:#00009f">interface</span><span class="token plain"> </span><span class="token class-name">IdeContext</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  workspaceState</span><span class="token operator" style="color:#393A34">?</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    openFiles</span><span class="token operator" style="color:#393A34">?</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> File</span><span class="token punctuation" style="color:#393A34">[</span><span class="token punctuation" style="color:#393A34">]</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    isTrusted</span><span class="token operator" style="color:#393A34">?</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token builtin">boolean</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token punctuation" style="color:#393A34">}</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token punctuation" style="color:#393A34">}</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token keyword" style="color:#00009f">interface</span><span class="token plain"> </span><span class="token class-name">File</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token comment" style="color:#999988;font-style:italic">// Absolute path to the file</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  path</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token builtin">string</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token comment" style="color:#999988;font-style:italic">// Last focused Unix timestamp (for ordering)</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  timestamp</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token builtin">number</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token comment" style="color:#999988;font-style:italic">// True if this is the currently focused file</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  isActive</span><span class="token operator" style="color:#393A34">?</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token builtin">boolean</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  cursor</span><span class="token operator" style="color:#393A34">?</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token comment" style="color:#999988;font-style:italic">// 1-based line number</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    line</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token builtin">number</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token comment" style="color:#999988;font-style:italic">// 1-based character number</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    character</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token builtin">number</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token punctuation" style="color:#393A34">}</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token comment" style="color:#999988;font-style:italic">// The text currently selected by the user</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  selectedText</span><span class="token operator" style="color:#393A34">?</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token builtin">string</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token punctuation" style="color:#393A34">}</span><br></div></code></pre></div></div>
+</li>
+</ul>
+<blockquote>
+<p>[!NOTE]
+The <code>openFiles</code> list should only include files that exist on disk.
+Virtual files (for example, unsaved files without a path, editor settings pages)
+<strong>MUST</strong> be excluded.</p>
+</blockquote>
+<h3 class="anchor anchorTargetStickyNavbar_qfbg" id="how-the-cli-uses-this-context">How the CLI uses this context<a href="#how-the-cli-uses-this-context" class="hash-link" aria-label="Direct link to How the CLI uses this context" title="Direct link to How the CLI uses this context" translate="no">​</a></h3>
+<p>After receiving the <code>IdeContext</code> object, the CLI performs several normalization
+and truncation steps before sending the information to the model.</p>
+<ul>
+<li class=""><strong>File ordering:</strong> The CLI uses the <code>timestamp</code> field to determine the most
+recently used files. It sorts the <code>openFiles</code> list based on this value.
+Therefore, your plugin <strong>MUST</strong> provide an accurate Unix timestamp for when a
+file was last focused.</li>
+<li class=""><strong>Active file:</strong> The CLI considers only the most recent file (after sorting)
+to be the &quot;active&quot; file. It will ignore the <code>isActive</code> flag on all other files
+and clear their <code>cursor</code> and <code>selectedText</code> fields. Your plugin should focus
+on setting <code>isActive: true</code> and providing cursor/selection details only for
+the currently focused file.</li>
+<li class=""><strong>Truncation:</strong> To manage token limits, the CLI truncates both the file list
+(to 10 files) and the <code>selectedText</code> (to 16KB).</li>
+</ul>
+<p>While the CLI handles the final truncation, it is highly recommended that your
+plugin also limits the amount of context it sends.</p>
+<h2 class="anchor anchorTargetStickyNavbar_qfbg" id="iii-the-diffing-interface">III. The diffing interface<a href="#iii-the-diffing-interface" class="hash-link" aria-label="Direct link to III. The diffing interface" title="Direct link to III. The diffing interface" translate="no">​</a></h2>
+<p>To enable interactive code modifications, the plugin <strong>MAY</strong> expose a diffing
+interface. This allows the CLI to request that the IDE open a diff view, showing
+proposed changes to a file. The user can then review, edit, and ultimately
+accept or reject these changes directly within the IDE.</p>
+<h3 class="anchor anchorTargetStickyNavbar_qfbg" id="opendiff-tool"><code>openDiff</code> tool<a href="#opendiff-tool" class="hash-link" aria-label="Direct link to opendiff-tool" title="Direct link to opendiff-tool" translate="no">​</a></h3>
+<p>The plugin <strong>MUST</strong> register an <code>openDiff</code> tool on its MCP server.</p>
+<ul>
+<li class="">
+<p><strong>Description:</strong> This tool instructs the IDE to open a modifiable diff view
+for a specific file.</p>
+</li>
+<li class="">
+<p><strong>Request (<code>OpenDiffRequest</code>):</strong> The tool is invoked via a <code>tools/call</code>
+request. The <code>arguments</code> field within the request&#x27;s <code>params</code> <strong>MUST</strong> be an
+<code>OpenDiffRequest</code> object.</p>
+<div class="language-typescript codeBlockContainer_EX8O theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_ww9U"><pre tabindex="0" class="prism-code language-typescript codeBlock__txR thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_CCag"><div class="token-line" style="color:#393A34"><span class="token keyword" style="color:#00009f">interface</span><span class="token plain"> </span><span class="token class-name">OpenDiffRequest</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token comment" style="color:#999988;font-style:italic">// The absolute path to the file to be diffed.</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  filePath</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token builtin">string</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token comment" style="color:#999988;font-style:italic">// The proposed new content for the file.</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  newContent</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token builtin">string</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token punctuation" style="color:#393A34">}</span><br></div></code></pre></div></div>
+</li>
+<li class="">
+<p><strong>Response (<code>CallToolResult</code>):</strong> The tool <strong>MUST</strong> immediately return a
+<code>CallToolResult</code> to acknowledge the request and report whether the diff view
+was successfully opened.</p>
+<ul>
+<li class="">On Success: If the diff view was opened successfully, the response <strong>MUST</strong>
+contain empty content (that is, <code>content: []</code>).</li>
+<li class="">On Failure: If an error prevented the diff view from opening, the response
+<strong>MUST</strong> have <code>isError: true</code> and include a <code>TextContent</code> block in the
+<code>content</code> array describing the error.</li>
+</ul>
+<p>The actual outcome of the diff (acceptance or rejection) is communicated
+asynchronously via notifications.</p>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_qfbg" id="closediff-tool"><code>closeDiff</code> tool<a href="#closediff-tool" class="hash-link" aria-label="Direct link to closediff-tool" title="Direct link to closediff-tool" translate="no">​</a></h3>
+<p>The plugin <strong>MUST</strong> register a <code>closeDiff</code> tool on its MCP server.</p>
+<ul>
+<li class="">
+<p><strong>Description:</strong> This tool instructs the IDE to close an open diff view for a
+specific file.</p>
+</li>
+<li class="">
+<p><strong>Request (<code>CloseDiffRequest</code>):</strong> The tool is invoked via a <code>tools/call</code>
+request. The <code>arguments</code> field within the request&#x27;s <code>params</code> <strong>MUST</strong> be an
+<code>CloseDiffRequest</code> object.</p>
+<div class="language-typescript codeBlockContainer_EX8O theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_ww9U"><pre tabindex="0" class="prism-code language-typescript codeBlock__txR thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_CCag"><div class="token-line" style="color:#393A34"><span class="token keyword" style="color:#00009f">interface</span><span class="token plain"> </span><span class="token class-name">CloseDiffRequest</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token comment" style="color:#999988;font-style:italic">// The absolute path to the file whose diff view should be closed.</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  filePath</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token builtin">string</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token punctuation" style="color:#393A34">}</span><br></div></code></pre></div></div>
+</li>
+<li class="">
+<p><strong>Response (<code>CallToolResult</code>):</strong> The tool <strong>MUST</strong> return a <code>CallToolResult</code>.</p>
+<ul>
+<li class="">On Success: If the diff view was closed successfully, the response <strong>MUST</strong>
+include a single <strong>TextContent</strong> block in the content array containing the
+file&#x27;s final content before closing.</li>
+<li class="">On Failure: If an error prevented the diff view from closing, the response
+<strong>MUST</strong> have <code>isError: true</code> and include a <code>TextContent</code> block in the
+<code>content</code> array describing the error.</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_qfbg" id="idediffaccepted-notification"><code>ide/diffAccepted</code> notification<a href="#idediffaccepted-notification" class="hash-link" aria-label="Direct link to idediffaccepted-notification" title="Direct link to idediffaccepted-notification" translate="no">​</a></h3>
+<p>When the user accepts the changes in a diff view (for example, by clicking an
+&quot;Apply&quot; or &quot;Save&quot; button), the plugin <strong>MUST</strong> send an <code>ide/diffAccepted</code>
+notification to the CLI.</p>
+<ul>
+<li class="">
+<p><strong>Payload:</strong> The notification parameters <strong>MUST</strong> include the file path and
+the final content of the file. The content may differ from the original
+<code>newContent</code> if the user made manual edits in the diff view.</p>
+<div class="language-typescript codeBlockContainer_EX8O theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_ww9U"><pre tabindex="0" class="prism-code language-typescript codeBlock__txR thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_CCag"><div class="token-line" style="color:#393A34"><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token comment" style="color:#999988;font-style:italic">// The absolute path to the file that was diffed.</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  filePath</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token builtin">string</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token comment" style="color:#999988;font-style:italic">// The full content of the file after acceptance.</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  content</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token builtin">string</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token punctuation" style="color:#393A34">}</span><br></div></code></pre></div></div>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_qfbg" id="idediffrejected-notification"><code>ide/diffRejected</code> notification<a href="#idediffrejected-notification" class="hash-link" aria-label="Direct link to idediffrejected-notification" title="Direct link to idediffrejected-notification" translate="no">​</a></h3>
+<p>When the user rejects the changes (for example, by closing the diff view without
+accepting), the plugin <strong>MUST</strong> send an <code>ide/diffRejected</code> notification to the
+CLI.</p>
+<ul>
+<li class="">
+<p><strong>Payload:</strong> The notification parameters <strong>MUST</strong> include the file path of the
+rejected diff.</p>
+<div class="language-typescript codeBlockContainer_EX8O theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_ww9U"><pre tabindex="0" class="prism-code language-typescript codeBlock__txR thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_CCag"><div class="token-line" style="color:#393A34"><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token comment" style="color:#999988;font-style:italic">// The absolute path to the file that was diffed.</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  filePath</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token builtin">string</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token punctuation" style="color:#393A34">}</span><br></div></code></pre></div></div>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_qfbg" id="iv-the-lifecycle-interface">IV. The lifecycle interface<a href="#iv-the-lifecycle-interface" class="hash-link" aria-label="Direct link to IV. The lifecycle interface" title="Direct link to IV. The lifecycle interface" translate="no">​</a></h2>
+<p>The plugin <strong>MUST</strong> manage its resources and the discovery file correctly based
+on the IDE&#x27;s lifecycle.</p>
+<ul>
+<li class=""><strong>On activation (IDE startup/plugin enabled):</strong>
+<ol>
+<li class="">Start the MCP server.</li>
+<li class="">Create the discovery file.</li>
+</ol>
+</li>
+<li class=""><strong>On deactivation (IDE shutdown/plugin disabled):</strong>
+<ol>
+<li class="">Stop the MCP server.</li>
+<li class="">Delete the discovery file.</li>
+</ol>
+</li>
+</ul></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"></nav></div></div><div class="col col--3"><div class="tableOfContents_eoeD thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#i-the-communication-interface" class="table-of-contents__link toc-highlight">I. The communication interface</a><ul><li><a href="#1-transport-layer-mcp-over-http" class="table-of-contents__link toc-highlight">1. Transport layer: MCP over HTTP</a></li><li><a href="#2-discovery-mechanism-the-port-file" class="table-of-contents__link toc-highlight">2. Discovery mechanism: The port file</a></li></ul></li><li><a href="#ii-the-context-interface" class="table-of-contents__link toc-highlight">II. The context interface</a><ul><li><a href="#idecontextupdate-notification" class="table-of-contents__link toc-highlight"><code>ide/contextUpdate</code> notification</a></li><li><a href="#how-the-cli-uses-this-context" class="table-of-contents__link toc-highlight">How the CLI uses this context</a></li></ul></li><li><a href="#iii-the-diffing-interface" class="table-of-contents__link toc-highlight">III. The diffing interface</a><ul><li><a href="#opendiff-tool" class="table-of-contents__link toc-highlight"><code>openDiff</code> tool</a></li><li><a href="#closediff-tool" class="table-of-contents__link toc-highlight"><code>closeDiff</code> tool</a></li><li><a href="#idediffaccepted-notification" class="table-of-contents__link toc-highlight"><code>ide/diffAccepted</code> notification</a></li><li><a href="#idediffrejected-notification" class="table-of-contents__link toc-highlight"><code>ide/diffRejected</code> notification</a></li></ul></li><li><a href="#iv-the-lifecycle-interface" class="table-of-contents__link toc-highlight">IV. The lifecycle interface</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Gemini CLI. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>

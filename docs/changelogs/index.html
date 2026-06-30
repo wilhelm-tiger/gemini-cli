@@ -1,0 +1,1215 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-changelogs/index" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.10.1">
+<title data-rh="true">Gemini CLI release notes | Gemini CLI</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://gemini-cli.example.com/docs/changelogs/"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Gemini CLI release notes | Gemini CLI"><meta data-rh="true" name="description" content="Gemini CLI has three major release channels: nightly, preview, and stable. For"><meta data-rh="true" property="og:description" content="Gemini CLI has three major release channels: nightly, preview, and stable. For"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://gemini-cli.example.com/docs/changelogs/"><link data-rh="true" rel="alternate" href="https://gemini-cli.example.com/docs/changelogs/" hreflang="en"><link data-rh="true" rel="alternate" href="https://gemini-cli.example.com/docs/changelogs/" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Release notes","item":"https://gemini-cli.example.com/docs/changelogs/"}]}</script><link rel="stylesheet" href="/assets/css/styles.001c7fc8.css">
+<script src="/assets/js/runtime~main.3bcf4e27.js" defer="defer"></script>
+<script src="/assets/js/main.95884027.js" defer="defer"></script>
+</head>
+<body>
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Skip to main content"><a class="skipToContent_aM_4" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><b class="navbar__title text--truncate">Gemini CLI</b></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/docs/">Docs</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href="https://github.com/google/gemini-cli" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_ZiGE"><use href="#theme-svg-external-link"></use></svg></a><div class="toggle_DDoQ colorModeToggle_bDqT"><button class="clean-btn toggleButton_dJob toggleButtonDisabled_qdNO" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_VwgV lightToggleIcon_hJPv"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_VwgV darkToggleIcon_H5Lk"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_VwgV systemToggleIcon_iMbw"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_qkiT"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_mVk5"><div class="docsWrapper_S0Bd"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_Fj1y" type="button"></button><div class="docRoot_Npys"><aside class="theme-doc-sidebar-container docSidebarContainer_V19I"><div class="sidebarViewport_qQvC"><div class="sidebar_ywz6"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_F6Xr"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_TKuJ menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="true" href="/docs/"><span title="Get started" class="categoryLinkLabel_OZUK">Get started</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/"><span title="Overview" class="linkLabel_SneK">Overview</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/get-started/"><span title="Quickstart" class="linkLabel_SneK">Quickstart</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/get-started/installation"><span title="Installation" class="linkLabel_SneK">Installation</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/get-started/authentication"><span title="Authentication" class="linkLabel_SneK">Authentication</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/cli/cli-reference"><span title="CLI cheatsheet" class="linkLabel_SneK">CLI cheatsheet</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/get-started/gemini-3"><span title="Gemini 3 on Gemini CLI" class="linkLabel_SneK">Gemini 3 on Gemini CLI</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_TKuJ menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="true" href="/docs/cli/tutorials/file-management"><span title="Use Gemini CLI" class="categoryLinkLabel_OZUK">Use Gemini CLI</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/cli/tutorials/file-management"><span title="File management" class="linkLabel_SneK">File management</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/cli/tutorials/skills-getting-started"><span title="Get started with Agent Skills" class="linkLabel_SneK">Get started with Agent Skills</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/cli/tutorials/memory-management"><span title="Manage context and memory" class="linkLabel_SneK">Manage context and memory</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/cli/tutorials/shell-commands"><span title="Execute shell commands" class="linkLabel_SneK">Execute shell commands</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/cli/tutorials/session-management"><span title="Manage sessions and history" class="linkLabel_SneK">Manage sessions and history</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/cli/tutorials/task-planning"><span title="Plan tasks with todos" class="linkLabel_SneK">Plan tasks with todos</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/cli/tutorials/plan-mode-steering"><span title="Use Plan Mode with model steering" class="linkLabel_SneK">Use Plan Mode with model steering</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/cli/tutorials/web-tools"><span title="Web search and fetch" class="linkLabel_SneK">Web search and fetch</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/cli/tutorials/mcp-setup"><span title="Set up an MCP server" class="linkLabel_SneK">Set up an MCP server</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/cli/tutorials/automation"><span title="Automate tasks" class="linkLabel_SneK">Automate tasks</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_TKuJ menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="true" href="/docs/extensions/"><span title="Features" class="categoryLinkLabel_OZUK">Features</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_TKuJ menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/extensions/"><span title="Extensions" class="categoryLinkLabel_OZUK">Extensions</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_TKuJ menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/cli/skills"><span title="Agent Skills" class="categoryLinkLabel_OZUK">Agent Skills</span></a></div></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/cli/auto-memory"><span title="Auto Memory" class="linkLabel_SneK">Auto Memory</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/cli/checkpointing"><span title="Checkpointing" class="linkLabel_SneK">Checkpointing</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/cli/headless"><span title="Headless mode" class="linkLabel_SneK">Headless mode</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/cli/git-worktrees"><span title="Git worktrees" class="linkLabel_SneK">Git worktrees</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_TKuJ menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/hooks/"><span title="Hooks" class="categoryLinkLabel_OZUK">Hooks</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_TKuJ menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/ide-integration/"><span title="IDE integration" class="categoryLinkLabel_OZUK">IDE integration</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_TKuJ menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/tools/mcp-server"><span title="MCP servers" class="categoryLinkLabel_OZUK">MCP servers</span></a></div></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/cli/model-routing"><span title="Model routing" class="linkLabel_SneK">Model routing</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/cli/model"><span title="Model selection" class="linkLabel_SneK">Model selection</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/cli/model-steering"><span title="Model steering" class="linkLabel_SneK">Model steering</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/cli/notifications"><span title="Notifications" class="linkLabel_SneK">Notifications</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/cli/plan-mode"><span title="Plan mode" class="linkLabel_SneK">Plan mode</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/core/subagents"><span title="Subagents" class="linkLabel_SneK">Subagents</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/core/remote-agents"><span title="Remote subagents" class="linkLabel_SneK">Remote subagents</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/cli/rewind"><span title="Rewind" class="linkLabel_SneK">Rewind</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/cli/sandbox"><span title="Sandboxing" class="linkLabel_SneK">Sandboxing</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/cli/settings"><span title="Settings" class="linkLabel_SneK">Settings</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/cli/telemetry"><span title="Telemetry" class="linkLabel_SneK">Telemetry</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/cli/token-caching"><span title="Token caching" class="linkLabel_SneK">Token caching</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_TKuJ menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="true" href="/docs/cli/custom-commands"><span title="Configuration" class="categoryLinkLabel_OZUK">Configuration</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/cli/custom-commands"><span title="Custom commands" class="linkLabel_SneK">Custom commands</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/cli/enterprise"><span title="Enterprise configuration" class="linkLabel_SneK">Enterprise configuration</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/cli/gemini-ignore"><span title="Ignore files (.geminiignore)" class="linkLabel_SneK">Ignore files (.geminiignore)</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/cli/generation-settings"><span title="Model configuration" class="linkLabel_SneK">Model configuration</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/cli/gemini-md"><span title="Project context (GEMINI.md)" class="linkLabel_SneK">Project context (GEMINI.md)</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/cli/settings"><span title="Settings" class="linkLabel_SneK">Settings</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/cli/system-prompt"><span title="System prompt override" class="linkLabel_SneK">System prompt override</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/cli/themes"><span title="Themes" class="linkLabel_SneK">Themes</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/cli/trusted-folders"><span title="Trusted folders" class="linkLabel_SneK">Trusted folders</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a href="https://github.com/google/gemini-cli/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer" class="categoryLink_TKuJ menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="true"><span title="Development" class="categoryLinkLabel_OZUK">Development</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a href="https://github.com/google/gemini-cli/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer" class="menu__link menuExternalLink_B8zI" tabindex="0"><span title="Contribution guide" class="linkLabel_SneK">Contribution guide</span><svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_ZiGE"><use href="#theme-svg-external-link"></use></svg></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/integration-tests"><span title="Integration testing" class="linkLabel_SneK">Integration testing</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/issue-and-pr-automation"><span title="Issue and PR automation" class="linkLabel_SneK">Issue and PR automation</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/local-development"><span title="Local development" class="linkLabel_SneK">Local development</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/npm"><span title="NPM package structure" class="linkLabel_SneK">NPM package structure</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_TKuJ menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="true" href="/docs/reference/commands"><span title="Reference" class="categoryLinkLabel_OZUK">Reference</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/reference/commands"><span title="Command reference" class="linkLabel_SneK">Command reference</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/reference/configuration"><span title="Configuration reference" class="linkLabel_SneK">Configuration reference</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/reference/keyboard-shortcuts"><span title="Keyboard shortcuts" class="linkLabel_SneK">Keyboard shortcuts</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/reference/memport"><span title="Memory import processor" class="linkLabel_SneK">Memory import processor</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/reference/policy-engine"><span title="Policy engine" class="linkLabel_SneK">Policy engine</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/reference/tools"><span title="Tools reference" class="linkLabel_SneK">Tools reference</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_TKuJ menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="true" href="/docs/resources/faq"><span title="Resources" class="categoryLinkLabel_OZUK">Resources</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/resources/faq"><span title="FAQ" class="linkLabel_SneK">FAQ</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/resources/quota-and-pricing"><span title="Quota and pricing" class="linkLabel_SneK">Quota and pricing</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/resources/tos-privacy"><span title="Terms and privacy" class="linkLabel_SneK">Terms and privacy</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/resources/troubleshooting"><span title="Troubleshooting" class="linkLabel_SneK">Troubleshooting</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/resources/uninstall"><span title="Uninstall" class="linkLabel_SneK">Uninstall</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_TKuJ menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/docs/changelogs/"><span title="Releases" class="categoryLinkLabel_OZUK">Releases</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/docs/changelogs/"><span title="Release notes" class="linkLabel_SneK">Release notes</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/changelogs/latest"><span title="Stable release" class="linkLabel_SneK">Stable release</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/changelogs/preview"><span title="Preview release" class="linkLabel_SneK">Preview release</span></a></li></ul></li></ul></nav></div></div></aside><main class="docMainContainer_qMe0"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_Cv5c"><div class="docItemContainer_DBeY"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_ZUA6" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_Rb5Y"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">Releases</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">Release notes</span></li></ul></nav><div class="tocCollapsible__jma theme-doc-toc-mobile tocMobile_f6av"><button type="button" class="clean-btn tocCollapsibleButton_rOIt">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Gemini CLI release notes</h1></header>
+<p>Gemini CLI has three major release channels: nightly, preview, and stable. For
+most users, we recommend the stable release.</p>
+<p>On this page, you can find information regarding the current releases and
+announcements from each release.</p>
+<p>For the full changelog, refer to
+<a href="https://github.com/google-gemini/gemini-cli/releases" target="_blank" rel="noopener noreferrer" class="">Releases - google-gemini/gemini-cli</a>
+on GitHub.</p>
+<h2 class="anchor anchorTargetStickyNavbar_qfbg" id="current-releases">Current releases<a href="#current-releases" class="hash-link" aria-label="Direct link to Current releases" title="Direct link to Current releases" translate="no">​</a></h2>
+<table><thead><tr><th style="text-align:left">Release channel</th><th style="text-align:left">Notes</th></tr></thead><tbody><tr><td style="text-align:left">Nightly</td><td style="text-align:left">Nightly release with the most recent changes.</td></tr><tr><td style="text-align:left"><a class="" href="/docs/changelogs/preview">Preview</a></td><td style="text-align:left">Experimental features ready for early feedback.</td></tr><tr><td style="text-align:left"><a class="" href="/docs/changelogs/latest">Stable</a></td><td style="text-align:left">Stable, recommended for general use.</td></tr></tbody></table>
+<h2 class="anchor anchorTargetStickyNavbar_qfbg" id="announcements-v0450---2026-06-03">Announcements: v0.45.0 - 2026-06-03<a href="#announcements-v0450---2026-06-03" class="hash-link" aria-label="Direct link to Announcements: v0.45.0 - 2026-06-03" title="Direct link to Announcements: v0.45.0 - 2026-06-03" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Context Simplification:</strong> Completed major architectural work to simplify the
+<code>ContextManager</code>, improving system robustness and performance
+(<a href="https://github.com/google-gemini/gemini-cli/pull/27345" target="_blank" rel="noopener noreferrer" class="">#27345</a> by
+@joshualitt).</li>
+<li class=""><strong>A2A Usage Metadata:</strong> Exposed critical usage metadata in the Agent-to-Agent
+(A2A) protocol for better resource tracking
+(<a href="https://github.com/google-gemini/gemini-cli/pull/27288" target="_blank" rel="noopener noreferrer" class="">#27288</a> by
+@jvargassanchez-dot).</li>
+<li class=""><strong>Reliability Fixes:</strong> Addressed Termux relaunch loops, PTY resize errors, and
+forced sequential execution for topic updates
+(<a href="https://github.com/google-gemini/gemini-cli/pull/27110" target="_blank" rel="noopener noreferrer" class="">#27110</a> by @saymanq,
+<a href="https://github.com/google-gemini/gemini-cli/pull/27357" target="_blank" rel="noopener noreferrer" class="">#27357</a> by
+@jvargassanchez-dot,
+<a href="https://github.com/google-gemini/gemini-cli/pull/27461" target="_blank" rel="noopener noreferrer" class="">#27461</a> by
+@scidomino).</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_qfbg" id="announcements-v0440---2026-05-27">Announcements: v0.44.0 - 2026-05-27<a href="#announcements-v0440---2026-05-27" class="hash-link" aria-label="Direct link to Announcements: v0.44.0 - 2026-05-27" title="Direct link to Announcements: v0.44.0 - 2026-05-27" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Unified Auto Mode:</strong> Streamlined the automation experience by merging
+specialized Auto modes into a single, unified mode
+(<a href="https://github.com/google-gemini/gemini-cli/pull/26714" target="_blank" rel="noopener noreferrer" class="">#26714</a> by
+@DavidAPierce).</li>
+<li class=""><strong>New Editor Integrations:</strong> Added native support for Sublime Text and Emacs
+Client (<a href="https://github.com/google-gemini/gemini-cli/pull/21090" target="_blank" rel="noopener noreferrer" class="">#21090</a> by
+@alberti42).</li>
+<li class=""><strong>Enhanced TUI Testing:</strong> Introduced <code>agent-tui</code> and <code>tui-tester</code> skills for
+programmatic testing and automation of terminal UI applications
+(<a href="https://github.com/google-gemini/gemini-cli/pull/27121" target="_blank" rel="noopener noreferrer" class="">#27121</a> by
+@adamfweidman).</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_qfbg" id="announcements-v0430---2026-05-22">Announcements: v0.43.0 - 2026-05-22<a href="#announcements-v0430---2026-05-22" class="hash-link" aria-label="Direct link to Announcements: v0.43.0 - 2026-05-22" title="Direct link to Announcements: v0.43.0 - 2026-05-22" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Surgical Code Edits:</strong> Steered Gemini models to prefer the <code>edit</code> tool for
+surgical modifications, improving speed and precision
+(<a href="https://github.com/google-gemini/gemini-cli/pull/26480" target="_blank" rel="noopener noreferrer" class="">#26480</a> by
+@aishaneeshah).</li>
+<li class=""><strong>Session Export and Import:</strong> Added the ability to export sessions to files
+and import them via a new flag, facilitating session portability
+(<a href="https://github.com/google-gemini/gemini-cli/pull/26514" target="_blank" rel="noopener noreferrer" class="">#26514</a> by
+@cocosheng-g).</li>
+<li class=""><strong>Adaptive Token Estimation:</strong> Introduced an adaptive token calculator for
+more accurate content size estimation, enhancing context management efficiency
+(<a href="https://github.com/google-gemini/gemini-cli/pull/26888" target="_blank" rel="noopener noreferrer" class="">#26888</a> by
+@joshualitt).</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_qfbg" id="announcements-v0420---2026-05-12">Announcements: v0.42.0 - 2026-05-12<a href="#announcements-v0420---2026-05-12" class="hash-link" aria-label="Direct link to Announcements: v0.42.0 - 2026-05-12" title="Direct link to Announcements: v0.42.0 - 2026-05-12" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Auto Memory Inbox:</strong> Introduced a new inbox flow for Auto Memory with a
+canonical-patch contract for seamless skill management
+(<a href="https://github.com/google-gemini/gemini-cli/pull/26338" target="_blank" rel="noopener noreferrer" class="">#26338</a> by
+@SandyTao520).</li>
+<li class=""><strong>Gemma 4 by Default:</strong> Enabled Gemma 4 models by default via the Gemini API
+for all users
+(<a href="https://github.com/google-gemini/gemini-cli/pull/26307" target="_blank" rel="noopener noreferrer" class="">#26307</a> by
+@Abhijit-2592).</li>
+<li class=""><strong>Voice Mode Enhancements:</strong> Added wave animations and privacy/compliance UX
+warnings for the Gemini Live backend
+(<a href="https://github.com/google-gemini/gemini-cli/pull/26284" target="_blank" rel="noopener noreferrer" class="">#26284</a> by
+@devr0306, <a href="https://github.com/google-gemini/gemini-cli/pull/26454" target="_blank" rel="noopener noreferrer" class="">#26454</a> by
+@cocosheng-g).</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_qfbg" id="announcements-v0410---2026-05-05">Announcements: v0.41.0 - 2026-05-05<a href="#announcements-v0410---2026-05-05" class="hash-link" aria-label="Direct link to Announcements: v0.41.0 - 2026-05-05" title="Direct link to Announcements: v0.41.0 - 2026-05-05" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Real-time Voice Mode:</strong> Implemented real-time voice mode with cloud and
+local backends
+(<a href="https://github.com/google-gemini/gemini-cli/pull/24174" target="_blank" rel="noopener noreferrer" class="">#24174</a> by
+@Abhijit-2592).</li>
+<li class=""><strong>Secure Environment Loading:</strong> Enforced workspace trust and secured .env
+loading in headless mode
+(<a href="https://github.com/google-gemini/gemini-cli/pull/25814" target="_blank" rel="noopener noreferrer" class="">#25814</a> by
+@ehedlund).</li>
+<li class=""><strong>Advanced Shell Validation:</strong> Enhanced shell command validation and added
+core tools allowlist for improved security
+(<a href="https://github.com/google-gemini/gemini-cli/pull/25720" target="_blank" rel="noopener noreferrer" class="">#25720</a> by @galz10).</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_qfbg" id="announcements-v0400---2026-04-28">Announcements: v0.40.0 - 2026-04-28<a href="#announcements-v0400---2026-04-28" class="hash-link" aria-label="Direct link to Announcements: v0.40.0 - 2026-04-28" title="Direct link to Announcements: v0.40.0 - 2026-04-28" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Offline Search and Themes:</strong> Bundled ripgrep for offline search support and
+added GitHub-style colorblind themes
+(<a href="https://github.com/google-gemini/gemini-cli/pull/25342" target="_blank" rel="noopener noreferrer" class="">#25342</a> by
+@scidomino, <a href="https://github.com/google-gemini/gemini-cli/pull/15504" target="_blank" rel="noopener noreferrer" class="">#15504</a>
+by @Z1xus).</li>
+<li class=""><strong>Advanced Resource and Memory Management:</strong> Introduced MCP resource tools and
+transitioned to a prompt-driven, four-tier memory management system
+(<a href="https://github.com/google-gemini/gemini-cli/pull/25395" target="_blank" rel="noopener noreferrer" class="">#25395</a> by
+@ruomengz, <a href="https://github.com/google-gemini/gemini-cli/pull/25716" target="_blank" rel="noopener noreferrer" class="">#25716</a> by
+@SandyTao520).</li>
+<li class=""><strong>UX and Local Models:</strong> Enabled topic update narrations by default and
+streamlined Gemma local model setup with <code>gemini gemma</code>
+(<a href="https://github.com/google-gemini/gemini-cli/pull/25586" target="_blank" rel="noopener noreferrer" class="">#25586</a> by
+@gundermanc, <a href="https://github.com/google-gemini/gemini-cli/pull/25498" target="_blank" rel="noopener noreferrer" class="">#25498</a>
+by @Samee24).</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_qfbg" id="announcements-v0390---2026-04-23">Announcements: v0.39.0 - 2026-04-23<a href="#announcements-v0390---2026-04-23" class="hash-link" aria-label="Direct link to Announcements: v0.39.0 - 2026-04-23" title="Direct link to Announcements: v0.39.0 - 2026-04-23" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Skill Management:</strong> Added a new <code>/memory</code> inbox command for reviewing and
+patching skills extracted during sessions
+(<a href="https://github.com/google-gemini/gemini-cli/pull/24544" target="_blank" rel="noopener noreferrer" class="">#24544</a> by
+@SandyTao520, <a href="https://github.com/google-gemini/gemini-cli/pull/25148" target="_blank" rel="noopener noreferrer" class="">#25148</a>
+by @SandyTao520).</li>
+<li class=""><strong>Improved Transparency:</strong> Plan Mode now requires confirmation for skill
+activation and allows plan inspection
+(<a href="https://github.com/google-gemini/gemini-cli/pull/24946" target="_blank" rel="noopener noreferrer" class="">#24946</a>,
+<a href="https://github.com/google-gemini/gemini-cli/pull/25058" target="_blank" rel="noopener noreferrer" class="">#25058</a> by
+@ruomengz).</li>
+<li class=""><strong>Architecture &amp; Reliability:</strong> Introduced a decoupled <code>ContextManager</code>
+architecture and resolved several critical memory leaks and PTY exhaustion
+issues (<a href="https://github.com/google-gemini/gemini-cli/pull/24752" target="_blank" rel="noopener noreferrer" class="">#24752</a> by
+@joshualitt, <a href="https://github.com/google-gemini/gemini-cli/pull/25079" target="_blank" rel="noopener noreferrer" class="">#25079</a>
+by @spencer426).</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_qfbg" id="announcements-v0380---2026-04-14">Announcements: v0.38.0 - 2026-04-14<a href="#announcements-v0380---2026-04-14" class="hash-link" aria-label="Direct link to Announcements: v0.38.0 - 2026-04-14" title="Direct link to Announcements: v0.38.0 - 2026-04-14" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Chapters Narrative Flow:</strong> Group agent interactions into &quot;Chapters&quot; based on
+intent and tool usage for better session structure
+(<a href="https://github.com/google-gemini/gemini-cli/pull/23150" target="_blank" rel="noopener noreferrer" class="">#23150</a> by
+@Abhijit-2592,
+<a href="https://github.com/google-gemini/gemini-cli/pull/24079" target="_blank" rel="noopener noreferrer" class="">#24079</a> by
+@gundermanc).</li>
+<li class=""><strong>Context Compression Service:</strong> Advanced context management to efficiently
+distill conversation history
+(<a href="https://github.com/google-gemini/gemini-cli/pull/24483" target="_blank" rel="noopener noreferrer" class="">#24483</a> by
+@joshualitt).</li>
+<li class=""><strong>UI Flicker &amp; UX Enhancements:</strong> Solved rendering flicker with &quot;Terminal
+Buffer&quot; mode and introduced selective topic expansion
+(<a href="https://github.com/google-gemini/gemini-cli/pull/24512" target="_blank" rel="noopener noreferrer" class="">#24512</a> by
+@jacob314, <a href="https://github.com/google-gemini/gemini-cli/pull/24793" target="_blank" rel="noopener noreferrer" class="">#24793</a> by
+@Abhijit-2592).</li>
+<li class=""><strong>Persistent Policy Approvals:</strong> Implemented context-aware persistent
+approvals for tool execution
+(<a href="https://github.com/google-gemini/gemini-cli/pull/23257" target="_blank" rel="noopener noreferrer" class="">#23257</a> by @jerop).</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_qfbg" id="announcements-v0370---2026-04-08">Announcements: v0.37.0 - 2026-04-08<a href="#announcements-v0370---2026-04-08" class="hash-link" aria-label="Direct link to Announcements: v0.37.0 - 2026-04-08" title="Direct link to Announcements: v0.37.0 - 2026-04-08" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Dynamic Sandbox Expansion:</strong> Implemented dynamic sandbox expansion and
+worktree support for Linux and Windows, improving developer workflows in
+isolated environments
+(<a href="https://github.com/google-gemini/gemini-cli/pull/23692" target="_blank" rel="noopener noreferrer" class="">#23692</a> by @galz10,
+<a href="https://github.com/google-gemini/gemini-cli/pull/23691" target="_blank" rel="noopener noreferrer" class="">#23691</a> by
+@scidomino).</li>
+<li class=""><strong>Chapters Narrative Flow:</strong> Introduced tool-based topic grouping (&quot;Chapters&quot;)
+to provide better session structure and narrative continuity
+(<a href="https://github.com/google-gemini/gemini-cli/pull/23150" target="_blank" rel="noopener noreferrer" class="">#23150</a> by
+@Abhijit-2592,
+<a href="https://github.com/google-gemini/gemini-cli/pull/24079" target="_blank" rel="noopener noreferrer" class="">#24079</a> by
+@gundermanc).</li>
+<li class=""><strong>Advanced Browser Capabilities:</strong> Enhanced the browser agent with persistent
+sessions and dynamic tool discovery
+(<a href="https://github.com/google-gemini/gemini-cli/pull/21306" target="_blank" rel="noopener noreferrer" class="">#21306</a> by
+@kunal-10-cloud,
+<a href="https://github.com/google-gemini/gemini-cli/pull/23805" target="_blank" rel="noopener noreferrer" class="">#23805</a> by
+@cynthialong0-0).</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_qfbg" id="announcements-v0360---2026-04-01">Announcements: v0.36.0 - 2026-04-01<a href="#announcements-v0360---2026-04-01" class="hash-link" aria-label="Direct link to Announcements: v0.36.0 - 2026-04-01" title="Direct link to Announcements: v0.36.0 - 2026-04-01" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Multi-Registry Architecture and Sandboxing:</strong> Introduced a multi-registry
+architecture and implemented native macOS Seatbelt and Windows sandboxing for
+enhanced subagent security
+(<a href="https://github.com/google-gemini/gemini-cli/pull/22712" target="_blank" rel="noopener noreferrer" class="">#22712</a>,
+<a href="https://github.com/google-gemini/gemini-cli/pull/22718" target="_blank" rel="noopener noreferrer" class="">#22718</a> by @akh64bit,
+<a href="https://github.com/google-gemini/gemini-cli/pull/22832" target="_blank" rel="noopener noreferrer" class="">#22832</a> by @ehedlund,
+<a href="https://github.com/google-gemini/gemini-cli/pull/21807" target="_blank" rel="noopener noreferrer" class="">#21807</a> by
+@mattKorwel).</li>
+<li class=""><strong>Refreshed Composer UX:</strong> Implemented a refreshed user experience for the
+Composer layout and improved terminal interaction robustness
+(<a href="https://github.com/google-gemini/gemini-cli/pull/21212" target="_blank" rel="noopener noreferrer" class="">#21212</a>,
+<a href="https://github.com/google-gemini/gemini-cli/pull/23286" target="_blank" rel="noopener noreferrer" class="">#23286</a> by
+@jwhelangoog).</li>
+<li class=""><strong>Git Worktree Support:</strong> Added native support for Git worktrees, allowing for
+isolated parallel sessions
+(<a href="https://github.com/google-gemini/gemini-cli/pull/22973" target="_blank" rel="noopener noreferrer" class="">#22973</a>,
+<a href="https://github.com/google-gemini/gemini-cli/pull/23265" target="_blank" rel="noopener noreferrer" class="">#23265</a> by @jerop).</li>
+<li class=""><strong>Subagent Context and Feedback:</strong> Enhanced subagents with JIT context
+injection and resilient tool rejection with contextual feedback
+(<a href="https://github.com/google-gemini/gemini-cli/pull/23032" target="_blank" rel="noopener noreferrer" class="">#23032</a>,
+<a href="https://github.com/google-gemini/gemini-cli/pull/22951" target="_blank" rel="noopener noreferrer" class="">#22951</a> by
+@abhipatel12).</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_qfbg" id="announcements-v0350---2026-03-24">Announcements: v0.35.0 - 2026-03-24<a href="#announcements-v0350---2026-03-24" class="hash-link" aria-label="Direct link to Announcements: v0.35.0 - 2026-03-24" title="Direct link to Announcements: v0.35.0 - 2026-03-24" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Customizable Keyboard Shortcuts:</strong> Users can now customize their keyboard
+shortcuts, including support for literal character keybindings and the
+extended Kitty protocol
+(<a href="https://github.com/google-gemini/gemini-cli/pull/21945" target="_blank" rel="noopener noreferrer" class="">#21945</a>,
+<a href="https://github.com/google-gemini/gemini-cli/pull/21972" target="_blank" rel="noopener noreferrer" class="">#21972</a> by
+@scidomino).</li>
+<li class=""><strong>Vim Mode Improvements:</strong> Added missing motions (X, ~, r, f/F/t/T) and
+yank/paste support with the unnamed register
+(<a href="https://github.com/google-gemini/gemini-cli/pull/21932" target="_blank" rel="noopener noreferrer" class="">#21932</a>,
+<a href="https://github.com/google-gemini/gemini-cli/pull/22026" target="_blank" rel="noopener noreferrer" class="">#22026</a> by @aanari).</li>
+<li class=""><strong>Tool Isolation and Sandboxing:</strong> Introduced <code>SandboxManager</code> to isolate
+process-spawning tools and added Linux bubblewrap/seccomp sandboxing support
+(<a href="https://github.com/google-gemini/gemini-cli/pull/21774" target="_blank" rel="noopener noreferrer" class="">#21774</a>,
+<a href="https://github.com/google-gemini/gemini-cli/pull/22231" target="_blank" rel="noopener noreferrer" class="">#22231</a> by @galz10,
+<a href="https://github.com/google-gemini/gemini-cli/pull/22680" target="_blank" rel="noopener noreferrer" class="">#22680</a> by
+@DavidAPierce).</li>
+<li class=""><strong>JIT Context Discovery:</strong> Implemented Just-In-Time context discovery for file
+system tools to improve model performance and accuracy
+(<a href="https://github.com/google-gemini/gemini-cli/pull/22082" target="_blank" rel="noopener noreferrer" class="">#22082</a>,
+<a href="https://github.com/google-gemini/gemini-cli/pull/22736" target="_blank" rel="noopener noreferrer" class="">#22736</a> by
+@SandyTao520).</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_qfbg" id="announcements-v0340---2026-03-17">Announcements: v0.34.0 - 2026-03-17<a href="#announcements-v0340---2026-03-17" class="hash-link" aria-label="Direct link to Announcements: v0.34.0 - 2026-03-17" title="Direct link to Announcements: v0.34.0 - 2026-03-17" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Plan Mode Enabled by Default:</strong> Plan Mode is now enabled by default to help
+you break down complex tasks and execute them systematically
+(<a href="https://github.com/google-gemini/gemini-cli/pull/21713" target="_blank" rel="noopener noreferrer" class="">#21713</a> by @jerop).</li>
+<li class=""><strong>Sandboxing Enhancements:</strong> We&#x27;ve added native gVisor (runsc) and
+experimental LXC container sandboxing support for safer execution environments
+(<a href="https://github.com/google-gemini/gemini-cli/pull/21062" target="_blank" rel="noopener noreferrer" class="">#21062</a> by
+@Zheyuan-Lin, <a href="https://github.com/google-gemini/gemini-cli/pull/20735" target="_blank" rel="noopener noreferrer" class="">#20735</a>
+by @h30s).</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_qfbg" id="announcements-v0330---2026-03-11">Announcements: v0.33.0 - 2026-03-11<a href="#announcements-v0330---2026-03-11" class="hash-link" aria-label="Direct link to Announcements: v0.33.0 - 2026-03-11" title="Direct link to Announcements: v0.33.0 - 2026-03-11" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Agent Architecture Enhancements:</strong> Introduced HTTP authentication for A2A
+remote agents and authenticated A2A agent card discovery
+(<a href="https://github.com/google-gemini/gemini-cli/pull/20510" target="_blank" rel="noopener noreferrer" class="">#20510</a> by
+@SandyTao520, <a href="https://github.com/google-gemini/gemini-cli/pull/20622" target="_blank" rel="noopener noreferrer" class="">#20622</a>
+by @SandyTao520).</li>
+<li class=""><strong>Plan Mode Updates:</strong> Expanded Plan Mode with built-in research subagents,
+annotation support for feedback, and a new <code>copy</code> subcommand
+(<a href="https://github.com/google-gemini/gemini-cli/pull/20972" target="_blank" rel="noopener noreferrer" class="">#20972</a> by @Adib234,
+<a href="https://github.com/google-gemini/gemini-cli/pull/20988" target="_blank" rel="noopener noreferrer" class="">#20988</a> by
+@ruomengz).</li>
+<li class=""><strong>CLI UX &amp; Admin Controls:</strong> Redesigned the header to be compact with an ASCII
+icon, inverted context window display to show usage, and enabled a 30-day
+default retention for chat history
+(<a href="https://github.com/google-gemini/gemini-cli/pull/18713" target="_blank" rel="noopener noreferrer" class="">#18713</a> by
+@keithguerin, <a href="https://github.com/google-gemini/gemini-cli/pull/20853" target="_blank" rel="noopener noreferrer" class="">#20853</a>
+by @skeshive).</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_qfbg" id="announcements-v0320---2026-03-03">Announcements: v0.32.0 - 2026-03-03<a href="#announcements-v0320---2026-03-03" class="hash-link" aria-label="Direct link to Announcements: v0.32.0 - 2026-03-03" title="Direct link to Announcements: v0.32.0 - 2026-03-03" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Generalist Agent:</strong> The generalist agent is now enabled to improve task
+delegation and routing
+(<a href="https://github.com/google-gemini/gemini-cli/pull/19665" target="_blank" rel="noopener noreferrer" class="">#19665</a> by
+@joshualitt).</li>
+<li class=""><strong>Model Steering in Workspace:</strong> Added support for model steering directly in
+the workspace
+(<a href="https://github.com/google-gemini/gemini-cli/pull/20343" target="_blank" rel="noopener noreferrer" class="">#20343</a> by
+@joshualitt).</li>
+<li class=""><strong>Plan Mode Enhancements:</strong> Users can now open and modify plans in an external
+editor, and the planning workflow has been adapted to handle complex tasks
+more effectively with multi-select options
+(<a href="https://github.com/google-gemini/gemini-cli/pull/20348" target="_blank" rel="noopener noreferrer" class="">#20348</a> by @Adib234,
+<a href="https://github.com/google-gemini/gemini-cli/pull/20465" target="_blank" rel="noopener noreferrer" class="">#20465</a> by @jerop).</li>
+<li class=""><strong>Interactive Shell Autocompletion:</strong> Introduced interactive shell
+autocompletion for a more seamless experience
+(<a href="https://github.com/google-gemini/gemini-cli/pull/20082" target="_blank" rel="noopener noreferrer" class="">#20082</a> by
+@mrpmohiburrahman).</li>
+<li class=""><strong>Parallel Extension Loading:</strong> Extensions are now loaded in parallel to
+improve startup times
+(<a href="https://github.com/google-gemini/gemini-cli/pull/20229" target="_blank" rel="noopener noreferrer" class="">#20229</a> by
+@scidomino).</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_qfbg" id="announcements-v0310---2026-02-27">Announcements: v0.31.0 - 2026-02-27<a href="#announcements-v0310---2026-02-27" class="hash-link" aria-label="Direct link to Announcements: v0.31.0 - 2026-02-27" title="Direct link to Announcements: v0.31.0 - 2026-02-27" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Gemini 3.1 Pro Preview:</strong> Gemini CLI now supports the new Gemini 3.1 Pro
+Preview model
+(<a href="https://github.com/google-gemini/gemini-cli/pull/19676" target="_blank" rel="noopener noreferrer" class="">#19676</a> by
+@sehoon38).</li>
+<li class=""><strong>Experimental Browser Agent:</strong> We&#x27;ve introduced a new experimental browser
+agent to interact with web pages
+(<a href="https://github.com/google-gemini/gemini-cli/pull/19284" target="_blank" rel="noopener noreferrer" class="">#19284</a> by
+@gsquared94).</li>
+<li class=""><strong>Policy Engine Updates:</strong> The policy engine now supports project-level
+policies, MCP server wildcards, and tool annotation matching
+(<a href="https://github.com/google-gemini/gemini-cli/pull/18682" target="_blank" rel="noopener noreferrer" class="">#18682</a> by
+@Abhijit-2592,
+<a href="https://github.com/google-gemini/gemini-cli/pull/20024" target="_blank" rel="noopener noreferrer" class="">#20024</a> by @jerop).</li>
+<li class=""><strong>Web Fetch Improvements:</strong> We&#x27;ve implemented an experimental direct web fetch
+feature and added rate limiting to mitigate DDoS risks
+(<a href="https://github.com/google-gemini/gemini-cli/pull/19557" target="_blank" rel="noopener noreferrer" class="">#19557</a> by @mbleigh,
+<a href="https://github.com/google-gemini/gemini-cli/pull/19567" target="_blank" rel="noopener noreferrer" class="">#19567</a> by
+@mattKorwel).</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_qfbg" id="announcements-v0300---2026-02-25">Announcements: v0.30.0 - 2026-02-25<a href="#announcements-v0300---2026-02-25" class="hash-link" aria-label="Direct link to Announcements: v0.30.0 - 2026-02-25" title="Direct link to Announcements: v0.30.0 - 2026-02-25" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>SDK &amp; Custom Skills:</strong> Introduced the initial SDK package, enabling dynamic
+system instructions, <code>SessionContext</code> for SDK tool calls, and support for
+custom skills
+(<a href="https://github.com/google-gemini/gemini-cli/pull/18861" target="_blank" rel="noopener noreferrer" class="">#18861</a> by
+@mbleigh).</li>
+<li class=""><strong>Policy Engine Enhancements:</strong> Added a new <code>--policy</code> flag for user-defined
+policies, introduced strict seatbelt profiles, and deprecated
+<code>--allowed-tools</code> in favor of the policy engine
+(<a href="https://github.com/google-gemini/gemini-cli/pull/18500" target="_blank" rel="noopener noreferrer" class="">#18500</a> by
+@allenhutchison).</li>
+<li class=""><strong>UI &amp; Themes:</strong> Added a generic searchable list for settings and extensions,
+new Solarized themes, text wrapping for markdown tables, and a clean UI toggle
+prototype (<a href="https://github.com/google-gemini/gemini-cli/pull/19064" target="_blank" rel="noopener noreferrer" class="">#19064</a> by
+@rmedranollamas).</li>
+<li class=""><strong>Vim &amp; Terminal Interaction:</strong> Improved Vim support to feel more complete and
+added support for Ctrl-Z terminal suspension
+(<a href="https://github.com/google-gemini/gemini-cli/pull/18755" target="_blank" rel="noopener noreferrer" class="">#18755</a> by
+@ppgranger, <a href="https://github.com/google-gemini/gemini-cli/pull/18931" target="_blank" rel="noopener noreferrer" class="">#18931</a>
+by @scidomino).</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_qfbg" id="announcements-v0290---2026-02-17">Announcements: v0.29.0 - 2026-02-17<a href="#announcements-v0290---2026-02-17" class="hash-link" aria-label="Direct link to Announcements: v0.29.0 - 2026-02-17" title="Direct link to Announcements: v0.29.0 - 2026-02-17" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Plan Mode:</strong> A new comprehensive planning capability with <code>/plan</code>,
+<code>enter_plan_mode</code> tool, and dedicated documentation
+(<a href="https://github.com/google-gemini/gemini-cli/pull/17698" target="_blank" rel="noopener noreferrer" class="">#17698</a> by @Adib234,
+<a href="https://github.com/google-gemini/gemini-cli/pull/18324" target="_blank" rel="noopener noreferrer" class="">#18324</a> by @jerop).</li>
+<li class=""><strong>Gemini 3 Default:</strong> We&#x27;ve removed the preview flag and enabled Gemini 3 by
+default for all users
+(<a href="https://github.com/google-gemini/gemini-cli/pull/18414" target="_blank" rel="noopener noreferrer" class="">#18414</a> by
+@sehoon38).</li>
+<li class=""><strong>Extension Exploration:</strong> New UI and settings to explore and manage
+extensions more easily
+(<a href="https://github.com/google-gemini/gemini-cli/pull/18686" target="_blank" rel="noopener noreferrer" class="">#18686</a> by
+@sripasg).</li>
+<li class=""><strong>Admin Control:</strong> Administrators can now allowlist specific MCP server
+configurations
+(<a href="https://github.com/google-gemini/gemini-cli/pull/18311" target="_blank" rel="noopener noreferrer" class="">#18311</a> by
+@skeshive).</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_qfbg" id="announcements-v0280---2026-02-10">Announcements: v0.28.0 - 2026-02-10<a href="#announcements-v0280---2026-02-10" class="hash-link" aria-label="Direct link to Announcements: v0.28.0 - 2026-02-10" title="Direct link to Announcements: v0.28.0 - 2026-02-10" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>IDE Support:</strong> Gemini CLI now supports the Positron IDE
+(<a href="https://github.com/google-gemini/gemini-cli/pull/15047" target="_blank" rel="noopener noreferrer" class="">#15047</a> by
+@kapsner).</li>
+<li class=""><strong>Customization:</strong> You can now use custom themes in extensions, and we&#x27;ve
+implemented automatic theme switching based on your terminal&#x27;s background
+(<a href="https://github.com/google-gemini/gemini-cli/pull/17327" target="_blank" rel="noopener noreferrer" class="">#17327</a> by
+@spencer426, <a href="https://github.com/google-gemini/gemini-cli/pull/17976" target="_blank" rel="noopener noreferrer" class="">#17976</a>
+by @Abhijit-2592).</li>
+<li class=""><strong>Authentication:</strong> We&#x27;ve added interactive and non-interactive consent for
+OAuth, and you can now include your auth method in bug reports
+(<a href="https://github.com/google-gemini/gemini-cli/pull/17699" target="_blank" rel="noopener noreferrer" class="">#17699</a> by
+@ehedlund, <a href="https://github.com/google-gemini/gemini-cli/pull/17569" target="_blank" rel="noopener noreferrer" class="">#17569</a> by
+@erikus).</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_qfbg" id="announcements-v0270---2026-02-03">Announcements: v0.27.0 - 2026-02-03<a href="#announcements-v0270---2026-02-03" class="hash-link" aria-label="Direct link to Announcements: v0.27.0 - 2026-02-03" title="Direct link to Announcements: v0.27.0 - 2026-02-03" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Event-Driven Architecture:</strong> The CLI now uses a new event-driven scheduler
+for tool execution, resulting in a more responsive and performant experience
+(<a href="https://github.com/google-gemini/gemini-cli/pull/17078" target="_blank" rel="noopener noreferrer" class="">#17078</a> by
+@abhipatel12).</li>
+<li class=""><strong>Enhanced User Experience:</strong> This release includes queued tool confirmations,
+and expandable large text pastes for a smoother workflow.</li>
+<li class=""><strong>New <code>/rewind</code> Command:</strong> Easily navigate your session history with the new
+<code>/rewind</code> command
+(<a href="https://github.com/google-gemini/gemini-cli/pull/15720" target="_blank" rel="noopener noreferrer" class="">#15720</a> by
+@Adib234).</li>
+<li class=""><strong>Linux Clipboard Support:</strong> You can now paste images on Linux with Wayland
+and X11 (<a href="https://github.com/google-gemini/gemini-cli/pull/17144" target="_blank" rel="noopener noreferrer" class="">#17144</a> by
+@devr0306).</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_qfbg" id="announcements-v0260---2026-01-27">Announcements: v0.26.0 - 2026-01-27<a href="#announcements-v0260---2026-01-27" class="hash-link" aria-label="Direct link to Announcements: v0.26.0 - 2026-01-27" title="Direct link to Announcements: v0.26.0 - 2026-01-27" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Agents and Skills:</strong> We&#x27;ve introduced a new <code>skill-creator</code> skill
+(<a href="https://github.com/google-gemini/gemini-cli/pull/16394" target="_blank" rel="noopener noreferrer" class="">#16394</a> by
+@NTaylorMullen), enabled agent skills by default, and added a generalist agent
+to improve task routing
+(<a href="https://github.com/google-gemini/gemini-cli/pull/16638" target="_blank" rel="noopener noreferrer" class="">#16638</a> by
+@joshualitt).</li>
+<li class=""><strong>UI/UX Improvements:</strong> You can now &quot;Rewind&quot; through your conversation history
+(<a href="https://github.com/google-gemini/gemini-cli/pull/15717" target="_blank" rel="noopener noreferrer" class="">#15717</a> by
+@Adib234).</li>
+<li class=""><strong>Core and Scheduler Refactoring:</strong> The core scheduler has been significantly
+refactored to improve performance and reliability
+(<a href="https://github.com/google-gemini/gemini-cli/pull/16895" target="_blank" rel="noopener noreferrer" class="">#16895</a> by
+@abhipatel12), and numerous performance and stability fixes have been
+included.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_qfbg" id="announcements-v0250---2026-01-20">Announcements: v0.25.0 - 2026-01-20<a href="#announcements-v0250---2026-01-20" class="hash-link" aria-label="Direct link to Announcements: v0.25.0 - 2026-01-20" title="Direct link to Announcements: v0.25.0 - 2026-01-20" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Skills and Agents Improvements:</strong> We&#x27;ve enhanced the <code>activate_skill</code> tool,
+added a new <code>pr-creator</code> skill
+(<a href="https://github.com/google-gemini/gemini-cli/pull/16232" target="_blank" rel="noopener noreferrer" class="">#16232</a> by
+<a href="https://github.com/NTaylorMullen" target="_blank" rel="noopener noreferrer" class="">@NTaylorMullen</a>), enabled skills by
+default, improved the <code>cli_help</code> agent
+(<a href="https://github.com/google-gemini/gemini-cli/pull/16100" target="_blank" rel="noopener noreferrer" class="">#16100</a> by
+<a href="https://github.com/scidomino" target="_blank" rel="noopener noreferrer" class="">@scidomino</a>), and added a new <code>/agents refresh</code>
+command (<a href="https://github.com/google-gemini/gemini-cli/pull/16204" target="_blank" rel="noopener noreferrer" class="">#16204</a> by
+<a href="https://github.com/joshualitt" target="_blank" rel="noopener noreferrer" class="">@joshualitt</a>).</li>
+<li class=""><strong>UI/UX Refinements:</strong> You&#x27;ll notice more transparent feedback for skills
+(<a href="https://github.com/google-gemini/gemini-cli/pull/15954" target="_blank" rel="noopener noreferrer" class="">#15954</a> by
+<a href="https://github.com/NTaylorMullen" target="_blank" rel="noopener noreferrer" class="">@NTaylorMullen</a>), the ability to switch
+focus between the shell and input with Tab
+(<a href="https://github.com/google-gemini/gemini-cli/pull/14332" target="_blank" rel="noopener noreferrer" class="">#14332</a> by
+<a href="https://github.com/jacob314" target="_blank" rel="noopener noreferrer" class="">@jacob314</a>), and dynamic terminal tab titles
+(<a href="https://github.com/google-gemini/gemini-cli/pull/16378" target="_blank" rel="noopener noreferrer" class="">#16378</a> by
+<a href="https://github.com/NTaylorMullen" target="_blank" rel="noopener noreferrer" class="">@NTaylorMullen</a>).</li>
+<li class=""><strong>Core Functionality &amp; Performance:</strong> This release includes support for
+built-in agent skills
+(<a href="https://github.com/google-gemini/gemini-cli/pull/16045" target="_blank" rel="noopener noreferrer" class="">#16045</a> by
+<a href="https://github.com/NTaylorMullen" target="_blank" rel="noopener noreferrer" class="">@NTaylorMullen</a>), refined Gemini 3 system
+instructions (<a href="https://github.com/google-gemini/gemini-cli/pull/16139" target="_blank" rel="noopener noreferrer" class="">#16139</a>
+by <a href="https://github.com/NTaylorMullen" target="_blank" rel="noopener noreferrer" class="">@NTaylorMullen</a>), caching for ignore
+instances to improve performance
+(<a href="https://github.com/google-gemini/gemini-cli/pull/16185" target="_blank" rel="noopener noreferrer" class="">#16185</a> by
+<a href="https://github.com/EricRahm" target="_blank" rel="noopener noreferrer" class="">@EricRahm</a>), and enhanced retry mechanisms
+(<a href="https://github.com/google-gemini/gemini-cli/pull/16489" target="_blank" rel="noopener noreferrer" class="">#16489</a> by
+<a href="https://github.com/sehoon38" target="_blank" rel="noopener noreferrer" class="">@sehoon38</a>).</li>
+<li class=""><strong>Bug Fixes and Stability:</strong> We&#x27;ve squashed numerous bugs across the CLI,
+core, and workflows, addressing issues with subagent delegation, unicode
+character crashes, and sticky header regressions.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_qfbg" id="announcements-v0240---2026-01-14">Announcements: v0.24.0 - 2026-01-14<a href="#announcements-v0240---2026-01-14" class="hash-link" aria-label="Direct link to Announcements: v0.24.0 - 2026-01-14" title="Direct link to Announcements: v0.24.0 - 2026-01-14" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Agent Skills:</strong> We&#x27;ve introduced significant advancements in Agent Skills.
+This includes initial documentation and tutorials to help you get started,
+alongside enhanced support for remote agents, allowing for more distributed
+and powerful automation within Gemini CLI.
+(<a href="https://github.com/google-gemini/gemini-cli/pull/15869" target="_blank" rel="noopener noreferrer" class="">#15869</a> by
+<a href="https://github.com/NTaylorMullen" target="_blank" rel="noopener noreferrer" class="">@NTaylorMullen</a>),
+(<a href="https://github.com/google-gemini/gemini-cli/pull/16013" target="_blank" rel="noopener noreferrer" class="">#16013</a> by
+<a href="https://github.com/adamweidman" target="_blank" rel="noopener noreferrer" class="">@adamweidman</a>)</li>
+<li class=""><strong>Improved UI/UX:</strong> The user interface has received several updates, featuring
+visual indicators for hook execution, a more refined display for settings, and
+the ability to use the Tab key to effortlessly switch focus between the shell
+and input areas.
+(<a href="https://github.com/google-gemini/gemini-cli/pull/15408" target="_blank" rel="noopener noreferrer" class="">#15408</a> by
+<a href="https://github.com/abhipatel12" target="_blank" rel="noopener noreferrer" class="">@abhipatel12</a>),
+(<a href="https://github.com/google-gemini/gemini-cli/pull/14332" target="_blank" rel="noopener noreferrer" class="">#14332</a> by
+<a href="https://github.com/galz10" target="_blank" rel="noopener noreferrer" class="">@galz10</a>)</li>
+<li class=""><strong>Enhanced Security:</strong> Security has been a major focus, with default folder
+trust now set to untrusted for increased safety. The Policy Engine has been
+improved to allow specific modes in user and administrator policies, and
+granular allowlisting for shell commands has been implemented, providing finer
+control over tool execution.
+(<a href="https://github.com/google-gemini/gemini-cli/pull/15943" target="_blank" rel="noopener noreferrer" class="">#15943</a> by
+<a href="https://github.com/galz10" target="_blank" rel="noopener noreferrer" class="">@galz10</a>),
+(<a href="https://github.com/google-gemini/gemini-cli/pull/15977" target="_blank" rel="noopener noreferrer" class="">#15977</a> by
+<a href="https://github.com/NTaylorMullen" target="_blank" rel="noopener noreferrer" class="">@NTaylorMullen</a>)</li>
+<li class=""><strong>Core Functionality:</strong> This release includes a mandatory MessageBus
+injection, marking Phase 3 of a hard migration to a more robust internal
+communication system. We&#x27;ve also added support for built-in skills with the
+CLI itself, and enhanced model routing to effectively utilize subagents.
+(<a href="https://github.com/google-gemini/gemini-cli/pull/15776" target="_blank" rel="noopener noreferrer" class="">#15776</a> by
+<a href="https://github.com/abhipatel12" target="_blank" rel="noopener noreferrer" class="">@abhipatel12</a>),
+(<a href="https://github.com/google-gemini/gemini-cli/pull/16300" target="_blank" rel="noopener noreferrer" class="">#16300</a> by
+<a href="https://github.com/NTaylorMullen" target="_blank" rel="noopener noreferrer" class="">@NTaylorMullen</a>)</li>
+<li class=""><strong>Terminal Features:</strong> Terminal interactions are more seamless with new
+features like OSC 52 paste support, along with fixes for Windows clipboard
+paste issues and general improvements to pasting in Windows terminals.
+(<a href="https://github.com/google-gemini/gemini-cli/pull/15336" target="_blank" rel="noopener noreferrer" class="">#15336</a> by
+<a href="https://github.com/scidomino" target="_blank" rel="noopener noreferrer" class="">@scidomino</a>),
+(<a href="https://github.com/google-gemini/gemini-cli/pull/15932" target="_blank" rel="noopener noreferrer" class="">#15932</a> by
+<a href="https://github.com/scidomino" target="_blank" rel="noopener noreferrer" class="">@scidomino</a>)</li>
+<li class=""><strong>New Commands:</strong> To manage the new features, we&#x27;ve added several new
+commands: <code>/agents refresh</code> to update agent configurations, <code>/skills reload</code>
+to refresh skill definitions, and <code>/skills install/uninstall</code> for easier
+management of your Agent Skills.
+(<a href="https://github.com/google-gemini/gemini-cli/pull/16204" target="_blank" rel="noopener noreferrer" class="">#16204</a> by
+<a href="https://github.com/NTaylorMullen" target="_blank" rel="noopener noreferrer" class="">@NTaylorMullen</a>),
+(<a href="https://github.com/google-gemini/gemini-cli/pull/15865" target="_blank" rel="noopener noreferrer" class="">#15865</a> by
+<a href="https://github.com/NTaylorMullen" target="_blank" rel="noopener noreferrer" class="">@NTaylorMullen</a>),
+(<a href="https://github.com/google-gemini/gemini-cli/pull/16377" target="_blank" rel="noopener noreferrer" class="">#16377</a> by
+<a href="https://github.com/NTaylorMullen" target="_blank" rel="noopener noreferrer" class="">@NTaylorMullen</a>)</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_qfbg" id="announcements-v0230---2026-01-07">Announcements: v0.23.0 - 2026-01-07<a href="#announcements-v0230---2026-01-07" class="hash-link" aria-label="Direct link to Announcements: v0.23.0 - 2026-01-07" title="Direct link to Announcements: v0.23.0 - 2026-01-07" translate="no">​</a></h2>
+<ul>
+<li class="">🎉 <strong>Experimental Agent Skills Support in Preview:</strong> Gemini CLI now supports
+<a href="https://agentskills.io/home" target="_blank" rel="noopener noreferrer" class="">Agent Skills</a> in our preview builds. This is an
+early preview where we’re looking for feedback!<!-- -->
+<ul>
+<li class="">Install Preview: <code>npm install -g @google/gemini-cli@preview</code></li>
+<li class="">Enable in <code>/settings</code></li>
+<li class="">Docs:
+<a href="https://geminicli.com/docs/cli/skills/" target="_blank" rel="noopener noreferrer" class="">https://geminicli.com/docs/cli/skills/</a></li>
+</ul>
+</li>
+<li class=""><strong>Gemini CLI wrapped:</strong> Run <code>npx gemini-wrapped</code> to visualize your usage
+stats, top models, languages, and more!</li>
+<li class=""><strong>Windows clipboard image support:</strong> Windows users can now paste images
+directly from their clipboard into the CLI using <code>Alt</code>+<code>V</code>.
+(<a href="https://github.com/google-gemini/gemini-cli/pull/13997" target="_blank" rel="noopener noreferrer" class="">pr</a> by
+<a href="https://github.com/sgeraldes" target="_blank" rel="noopener noreferrer" class="">@sgeraldes</a>)</li>
+<li class=""><strong>Terminal background color detection:</strong> Automatically optimizes your
+terminal&#x27;s background color to select compatible themes and provide
+accessibility warnings.
+(<a href="https://github.com/google-gemini/gemini-cli/pull/15132" target="_blank" rel="noopener noreferrer" class="">pr</a> by
+<a href="https://github.com/jacob314" target="_blank" rel="noopener noreferrer" class="">@jacob314</a>)</li>
+<li class=""><strong>Session logout:</strong> Use the new <code>/logout</code> command to instantly clear
+credentials and reset your authentication state for seamless account
+switching. (<a href="https://github.com/google-gemini/gemini-cli/pull/13383" target="_blank" rel="noopener noreferrer" class="">pr</a> by
+<a href="https://github.com/CN-Scars" target="_blank" rel="noopener noreferrer" class="">@CN-Scars</a>)</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_qfbg" id="announcements-v0220---2025-12-22">Announcements: v0.22.0 - 2025-12-22<a href="#announcements-v0220---2025-12-22" class="hash-link" aria-label="Direct link to Announcements: v0.22.0 - 2025-12-22" title="Direct link to Announcements: v0.22.0 - 2025-12-22" translate="no">​</a></h2>
+<ul>
+<li class="">
+<p>🎉<strong>Free Tier + Gemini 3:</strong> Free tier users now all have access to Gemini 3
+Pro &amp; Flash. Enable in <code>/settings</code> by toggling &quot;Preview Features&quot; to <code>true</code>.</p>
+</li>
+<li class="">
+<p>🎉<strong>Gemini CLI + Colab:</strong> Gemini CLI is now pre-installed. Can be used
+headlessly in notebook cells or interactively in the built-in terminal
+(<a href="https://imgur.com/a/G0Tn7vi" target="_blank" rel="noopener noreferrer" class="">pic</a>)</p>
+</li>
+<li class="">
+<p>🎉<strong>Gemini CLI Extensions:</strong></p>
+<ul>
+<li class="">
+<p><strong>Conductor:</strong> Planning++, Gemini works with you to build out a detailed
+plan, pull in extra details as needed, ultimately to give the LLM guardrails
+with artifacts. Measure twice, implement once!</p>
+<p><code>gemini extensions install https://github.com/gemini-cli-extensions/conductor</code></p>
+<p>Blog:
+<a href="https://developers.googleblog.com/conductor-introducing-context-driven-development-for-gemini-cli/" target="_blank" rel="noopener noreferrer" class="">https://developers.googleblog.com/conductor-introducing-context-driven-development-for-gemini-cli/</a></p>
+</li>
+<li class="">
+<p><strong>Endor Labs:</strong> Perform code analysis, vulnerability scanning, and
+dependency checks using natural language.</p>
+<p><code>gemini extensions install https://github.com/endorlabs/gemini-extension</code></p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_qfbg" id="announcements-v0210---2025-12-15">Announcements: v0.21.0 - 2025-12-15<a href="#announcements-v0210---2025-12-15" class="hash-link" aria-label="Direct link to Announcements: v0.21.0 - 2025-12-15" title="Direct link to Announcements: v0.21.0 - 2025-12-15" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>⚡️⚡️⚡️ Gemini 3 Flash + Gemini CLI:</strong> Better, faster and cheaper than 2.5
+Pro - and in some scenarios better than 3 Pro! For paid tiers + free tier
+users who were on the wait list enable <strong>Preview Features</strong> in <code>/settings.</code></li>
+<li class="">For more information:
+<a href="https://developers.googleblog.com/gemini-3-flash-is-now-available-in-gemini-cli/" target="_blank" rel="noopener noreferrer" class="">Gemini 3 Flash is now available in Gemini CLI</a>.</li>
+<li class="">🎉 Gemini CLI Extensions:<!-- -->
+<ul>
+<li class="">Rill: Utilize natural language to analyze Rill data, enabling the
+exploration of metrics and trends without the need for manual queries.
+<code>gemini extensions install https://github.com/rilldata/rill-gemini-extension</code></li>
+<li class="">Browserbase: Interact with web pages, take screenshots, extract information,
+and perform automated actions with atomic precision.
+<code>gemini extensions install https://github.com/browserbase/mcp-server-browserbase</code></li>
+</ul>
+</li>
+<li class="">Quota Visibility: The <code>/stats</code> command now displays quota information for all
+available models, including those not used in the current session. (@sehoon38)</li>
+<li class="">Fuzzy Setting Search: Users can now quickly find settings using fuzzy search
+within the settings dialog. (@sehoon38)</li>
+<li class="">MCP Resource Support: Users can now discover, view, and search through
+resources using the @ command. (@MrLesk)</li>
+<li class="">Auto-execute Simple Slash Commands: Simple slash commands are now executed
+immediately on enter. (@jackwotherspoon)</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_qfbg" id="announcements-v0200---2025-12-01">Announcements: v0.20.0 - 2025-12-01<a href="#announcements-v0200---2025-12-01" class="hash-link" aria-label="Direct link to Announcements: v0.20.0 - 2025-12-01" title="Direct link to Announcements: v0.20.0 - 2025-12-01" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Multi-file Drag &amp; Drop:</strong> Users can now drag and drop multiple files into
+the terminal, and the CLI will automatically prefix each valid path with <code>@</code>.
+(<a href="https://github.com/google-gemini/gemini-cli/pull/14832" target="_blank" rel="noopener noreferrer" class="">pr</a> by
+<a href="https://github.com/jackwotherspoon" target="_blank" rel="noopener noreferrer" class="">@jackwotherspoon</a>)</li>
+<li class=""><strong>Persistent &quot;Always Allow&quot; Policies:</strong> Users can now save &quot;Always Allow&quot;
+decisions for tool executions, with granular control over specific shell
+commands and multi-cloud platform tools.
+(<a href="https://github.com/google-gemini/gemini-cli/pull/14737" target="_blank" rel="noopener noreferrer" class="">pr</a> by
+<a href="https://github.com/allenhutchison" target="_blank" rel="noopener noreferrer" class="">@allenhutchison</a>)</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_qfbg" id="announcements-v0190---2025-11-24">Announcements: v0.19.0 - 2025-11-24<a href="#announcements-v0190---2025-11-24" class="hash-link" aria-label="Direct link to Announcements: v0.19.0 - 2025-11-24" title="Direct link to Announcements: v0.19.0 - 2025-11-24" translate="no">​</a></h2>
+<ul>
+<li class="">🎉 <strong>New extensions:</strong>
+<ul>
+<li class=""><strong>Eleven Labs:</strong> Create, play, manage your audio play tracks with the Eleven
+Labs Gemini CLI extension:
+<code>gemini extensions install https://github.com/elevenlabs/elevenlabs-mcp</code></li>
+</ul>
+</li>
+<li class=""><strong>Zed integration:</strong> Users can now leverage Gemini 3 within the Zed
+integration after enabling &quot;Preview Features&quot; in their CLI’s <code>/settings</code>.
+(<a href="https://github.com/google-gemini/gemini-cli/pull/13398" target="_blank" rel="noopener noreferrer" class="">pr</a> by
+<a href="https://github.com/benbrandt" target="_blank" rel="noopener noreferrer" class="">@benbrandt</a>)</li>
+<li class=""><strong>Interactive shell:</strong>
+<ul>
+<li class=""><strong>Click-to-Focus:</strong> When &quot;Use Alternate Buffer&quot; setting is enabled, users
+can click within the embedded shell output to focus it for input.
+(<a href="https://github.com/google-gemini/gemini-cli/pull/13341" target="_blank" rel="noopener noreferrer" class="">pr</a> by
+<a href="https://github.com/galz10" target="_blank" rel="noopener noreferrer" class="">@galz10</a>)</li>
+<li class=""><strong>Loading phrase:</strong> Clearly indicates when the interactive shell is awaiting
+user input. (<a href="https://imgur.com/a/kjK8bUK" target="_blank" rel="noopener noreferrer" class="">vid</a>,
+<a href="https://github.com/google-gemini/gemini-cli/pull/12535" target="_blank" rel="noopener noreferrer" class="">pr</a> by
+<a href="https://github.com/jackwotherspoon" target="_blank" rel="noopener noreferrer" class="">@jackwotherspoon</a>)</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_qfbg" id="announcements-v0180---2025-11-17">Announcements: v0.18.0 - 2025-11-17<a href="#announcements-v0180---2025-11-17" class="hash-link" aria-label="Direct link to Announcements: v0.18.0 - 2025-11-17" title="Direct link to Announcements: v0.18.0 - 2025-11-17" translate="no">​</a></h2>
+<ul>
+<li class="">🎉 <strong>New extensions:</strong>
+<ul>
+<li class=""><strong>Google Workspace</strong>: Integrate Gemini CLI with your Workspace data. Write
+docs, build slides, chat with others or even get your calc on in sheets:
+<code>gemini extensions install https://github.com/gemini-cli-extensions/workspace</code>
+<ul>
+<li class="">Blog:
+<a href="https://allen.hutchison.org/2025/11/19/bringing-the-office-to-the-terminal/" target="_blank" rel="noopener noreferrer" class="">https://allen.hutchison.org/2025/11/19/bringing-the-office-to-the-terminal/</a></li>
+</ul>
+</li>
+<li class=""><strong>Redis:</strong> Manage and search data in Redis with natural language:
+<code>gemini extensions install https://github.com/redis/mcp-redis</code></li>
+<li class=""><strong>Anomalo:</strong> Query your data warehouse table metadata and quality status
+through commands and natural language:
+<code>gemini extensions install https://github.com/datagravity-ai/anomalo-gemini-extension</code></li>
+</ul>
+</li>
+<li class=""><strong>Experimental permission improvements:</strong> We are now experimenting with a new
+policy engine in Gemini CLI. This allows users and administrators to create
+fine-grained policy for tool calls. Currently behind a flag. See
+<a class="" href="/docs/reference/policy-engine">policy engine documentation</a> for more
+information.<!-- -->
+<ul>
+<li class="">Blog:
+<a href="https://allen.hutchison.org/2025/11/26/the-guardrails-of-autonomy/" target="_blank" rel="noopener noreferrer" class="">https://allen.hutchison.org/2025/11/26/the-guardrails-of-autonomy/</a></li>
+</ul>
+</li>
+<li class=""><strong>Gemini 3 support for paid:</strong> Gemini 3 support has been rolled out to all API
+key, Google AI Pro or Google AI Ultra (for individuals, not businesses) and
+Gemini Code Assist Enterprise users. Enable it via <code>/settings</code> and toggling on
+<strong>Preview Features</strong>.</li>
+<li class=""><strong>Updated UI rollback:</strong> We’ve temporarily rolled back our updated UI to give
+it more time to bake. This means for a time you won’t have embedded scrolling
+or mouse support. You can re-enable with <code>/settings</code> -&gt; <strong>Use Alternate Screen
+Buffer</strong> -&gt; <code>true</code>.</li>
+<li class=""><strong>Model in history:</strong> Users can now toggle in <code>/settings</code> to display model in
+their chat history. (<a href="https://imgur.com/a/uEmNKnQ" target="_blank" rel="noopener noreferrer" class="">gif</a>,
+<a href="https://github.com/google-gemini/gemini-cli/pull/13034" target="_blank" rel="noopener noreferrer" class="">pr</a> by
+<a href="https://github.com/scidomino" target="_blank" rel="noopener noreferrer" class="">@scidomino</a>)</li>
+<li class=""><strong>Multi-uninstall:</strong> Users can now uninstall multiple extensions with a single
+command. (<a href="https://imgur.com/a/9Dtq8u2" target="_blank" rel="noopener noreferrer" class="">pic</a>,
+<a href="https://github.com/google-gemini/gemini-cli/pull/13016" target="_blank" rel="noopener noreferrer" class="">pr</a> by
+<a href="https://github.com/JayadityaGit" target="_blank" rel="noopener noreferrer" class="">@JayadityaGit</a>)</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_qfbg" id="announcements-v0160---2025-11-10">Announcements: v0.16.0 - 2025-11-10<a href="#announcements-v0160---2025-11-10" class="hash-link" aria-label="Direct link to Announcements: v0.16.0 - 2025-11-10" title="Direct link to Announcements: v0.16.0 - 2025-11-10" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Gemini 3 + Gemini CLI:</strong> launch 🚀🚀🚀</li>
+<li class=""><strong>Data Commons Gemini CLI Extension</strong> - A new Data Commons Gemini CLI
+extension that lets you query open-source statistical data from
+datacommons.org. <strong>To get started, you&#x27;ll need a Data Commons API key and uv
+installed</strong>. These and other details to get you started with the extension can
+be found at
+<a href="https://github.com/gemini-cli-extensions/datacommons" target="_blank" rel="noopener noreferrer" class="">https://github.com/gemini-cli-extensions/datacommons</a>.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_qfbg" id="announcements-v0150---2025-11-03">Announcements: v0.15.0 - 2025-11-03<a href="#announcements-v0150---2025-11-03" class="hash-link" aria-label="Direct link to Announcements: v0.15.0 - 2025-11-03" title="Direct link to Announcements: v0.15.0 - 2025-11-03" translate="no">​</a></h2>
+<ul>
+<li class="">
+<p><strong>🎉 Seamless scrollable UI and mouse support:</strong> We’ve given Gemini CLI a
+major facelift to make your terminal experience smoother and much more
+polished. You now get a flicker-free display with sticky headers that keep
+important context visible and a stable input prompt that doesn&#x27;t jump around.
+We even added mouse support so you can click right where you need to type!
+(<a href="https://imgur.com/a/O6qc7bx" target="_blank" rel="noopener noreferrer" class="">gif</a>,
+<a href="https://github.com/jacob314" target="_blank" rel="noopener noreferrer" class="">@jacob314</a>).</p>
+<ul>
+<li class=""><strong>Announcement:</strong>
+<a href="https://developers.googleblog.com/en/making-the-terminal-beautiful-one-pixel-at-a-time/" target="_blank" rel="noopener noreferrer" class="">https://developers.googleblog.com/en/making-the-terminal-beautiful-one-pixel-at-a-time/</a></li>
+</ul>
+</li>
+<li class="">
+<p><strong>🎉 New partner extensions:</strong></p>
+<ul>
+<li class="">
+<p><strong>Arize:</strong> Seamlessly instrument AI applications with Arize AX and grant
+direct access to Arize support:</p>
+<p><code>gemini extensions install https://github.com/Arize-ai/arize-tracing-assistant</code></p>
+</li>
+<li class="">
+<p><strong>Chronosphere:</strong> Retrieve logs, metrics, traces, events, and specific
+entities:</p>
+<p><code>gemini extensions install https://github.com/chronosphereio/chronosphere-mcp</code></p>
+</li>
+<li class="">
+<p><strong>Transmit:</strong> Comprehensive context, validation, and automated fixes for
+creating production-ready authentication and identity workflows:</p>
+<p><code>gemini extensions install https://github.com/TransmitSecurity/transmit-security-journey-builder</code></p>
+</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Todo planning:</strong> Complex questions now get broken down into todo lists that
+the model can manage and check off. (<a href="https://imgur.com/a/EGDfNlZ" target="_blank" rel="noopener noreferrer" class="">gif</a>,
+<a href="https://github.com/google-gemini/gemini-cli/pull/12905" target="_blank" rel="noopener noreferrer" class="">pr</a> by
+<a href="https://github.com/anj-s" target="_blank" rel="noopener noreferrer" class="">@anj-s</a>)</p>
+</li>
+<li class="">
+<p><strong>Disable GitHub extensions:</strong> Users can now prevent the installation and
+loading of extensions from GitHub.
+(<a href="https://github.com/google-gemini/gemini-cli/pull/12838" target="_blank" rel="noopener noreferrer" class="">pr</a> by
+<a href="https://github.com/kevinjwang1" target="_blank" rel="noopener noreferrer" class="">@kevinjwang1</a>).</p>
+</li>
+<li class="">
+<p><strong>Extensions restart:</strong> Users can now explicitly restart extensions using the
+<code>/extensions restart</code> command.
+(<a href="https://github.com/google-gemini/gemini-cli/pull/12739" target="_blank" rel="noopener noreferrer" class="">pr</a> by
+<a href="https://github.com/jakemac53" target="_blank" rel="noopener noreferrer" class="">@jakemac53</a>).</p>
+</li>
+<li class="">
+<p><strong>Better Angular support:</strong> Angular workflows should now be more seamless
+(<a href="https://github.com/google-gemini/gemini-cli/pull/10252" target="_blank" rel="noopener noreferrer" class="">pr</a> by
+<a href="https://github.com/MarkTechson" target="_blank" rel="noopener noreferrer" class="">@MarkTechson</a>).</p>
+</li>
+<li class="">
+<p><strong>Validate command:</strong> Users can now check that local extensions are formatted
+correctly. (<a href="https://github.com/google-gemini/gemini-cli/pull/12186" target="_blank" rel="noopener noreferrer" class="">pr</a> by
+<a href="https://github.com/kevinjwang1" target="_blank" rel="noopener noreferrer" class="">@kevinjwang1</a>).</p>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_qfbg" id="announcements-v0120---2025-10-27">Announcements: v0.12.0 - 2025-10-27<a href="#announcements-v0120---2025-10-27" class="hash-link" aria-label="Direct link to Announcements: v0.12.0 - 2025-10-27" title="Direct link to Announcements: v0.12.0 - 2025-10-27" translate="no">​</a></h2>
+<p><img decoding="async" loading="lazy" src="https://i.imgur.com/4J1njsx.png" alt="Codebase investigator subagent in Gemini CLI." class="img_cgCH"></p>
+<ul>
+<li class="">
+<p><strong>🎉 New partner extensions:</strong></p>
+<ul>
+<li class="">
+<p><strong>🤗 Hugging Face extension:</strong> Access the Hugging Face hub.
+(<a href="https://drive.google.com/file/d/1LEzIuSH6_igFXq96_tWev11svBNyPJEB/view?usp=sharing&amp;resourcekey=0-LtPTzR1woh-rxGtfPzjjfg" target="_blank" rel="noopener noreferrer" class="">gif</a>)</p>
+<p><code>gemini extensions install https://github.com/huggingface/hf-mcp-server</code></p>
+</li>
+<li class="">
+<p><strong>Monday.com extension</strong>: Analyze your sprints, update your task boards,
+etc.
+(<a href="https://drive.google.com/file/d/1cO0g6kY1odiBIrZTaqu5ZakaGZaZgpQv/view?usp=sharing&amp;resourcekey=0-xEr67SIjXmAXRe1PKy7Jlw" target="_blank" rel="noopener noreferrer" class="">gif</a>)</p>
+<p><code>gemini extensions install https://github.com/mondaycom/mcp</code></p>
+</li>
+<li class="">
+<p><strong>Data Commons extension:</strong> Query public datasets or ground responses on
+data from Data Commons
+(<a href="https://drive.google.com/file/d/1cuj-B-vmUkeJnoBXrO_Y1CuqphYc6p-O/view?usp=sharing&amp;resourcekey=0-0adXCXDQEd91ZZW63HbW-Q" target="_blank" rel="noopener noreferrer" class="">gif</a>).</p>
+<p><code>gemini extensions install https://github.com/gemini-cli-extensions/datacommons</code></p>
+</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Model selection:</strong> Choose the Gemini model for your session with <code>/model</code>.
+(<a href="https://imgur.com/a/ABFcWWw" target="_blank" rel="noopener noreferrer" class="">pic</a>,
+<a href="https://github.com/google-gemini/gemini-cli/pull/8940" target="_blank" rel="noopener noreferrer" class="">pr</a> by
+<a href="https://github.com/abhipatel12" target="_blank" rel="noopener noreferrer" class="">@abhipatel12</a>).</p>
+</li>
+<li class="">
+<p><strong>Model routing:</strong> Gemini CLI will now intelligently pick the best model for
+the task. Simple queries will be sent to Flash while complex analytical or
+creative tasks will still use the power of Pro. This ensures your quota will
+last for a longer period of time. You can always opt-out of this via <code>/model</code>.
+(<a href="https://github.com/google-gemini/gemini-cli/pull/9262" target="_blank" rel="noopener noreferrer" class="">pr</a> by
+<a href="https://github.com/abhipatel12" target="_blank" rel="noopener noreferrer" class="">@abhipatel12</a>).</p>
+<ul>
+<li class="">Discussion:
+<a href="https://github.com/google-gemini/gemini-cli/discussions/12375" target="_blank" rel="noopener noreferrer" class="">https://github.com/google-gemini/gemini-cli/discussions/12375</a></li>
+</ul>
+</li>
+<li class="">
+<p><strong>Codebase investigator subagent:</strong> We now have a new built-in subagent that
+will explore your workspace and resolve relevant information to improve
+overall performance.
+(<a href="https://github.com/google-gemini/gemini-cli/pull/9988" target="_blank" rel="noopener noreferrer" class="">pr</a> by
+<a href="https://github.com/abhipatel12" target="_blank" rel="noopener noreferrer" class="">@abhipatel12</a>,
+<a href="https://github.com/google-gemini/gemini-cli/pull/10282" target="_blank" rel="noopener noreferrer" class="">pr</a> by
+<a href="https://github.com/silviojr" target="_blank" rel="noopener noreferrer" class="">@silviojr</a>).</p>
+<ul>
+<li class="">Enable, disable, or limit turns in <code>/settings</code>, plus advanced configs in
+<code>settings.json</code> (<a href="https://imgur.com/a/yJiggNO" target="_blank" rel="noopener noreferrer" class="">pic</a>,
+<a href="https://github.com/google-gemini/gemini-cli/pull/10844" target="_blank" rel="noopener noreferrer" class="">pr</a> by
+<a href="https://github.com/silviojr" target="_blank" rel="noopener noreferrer" class="">@silviojr</a>).</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Explore extensions with <code>/extension</code>:</strong> Users can now open the extensions
+page in their default browser directly from the CLI using the <code>/extension</code>
+explore command. (<a href="https://github.com/google-gemini/gemini-cli/pull/11846" target="_blank" rel="noopener noreferrer" class="">pr</a>
+by <a href="https://github.com/JayadityaGit" target="_blank" rel="noopener noreferrer" class="">@JayadityaGit</a>).</p>
+</li>
+<li class="">
+<p><strong>Configurable compression:</strong> Users can modify the context compression
+threshold in <code>/settings</code> (decimal with percentage display). The default has
+been made more proactive
+(<a href="https://github.com/google-gemini/gemini-cli/pull/12317" target="_blank" rel="noopener noreferrer" class="">pr</a> by
+<a href="https://github.com/scidomino" target="_blank" rel="noopener noreferrer" class="">@scidomino</a>).</p>
+</li>
+<li class="">
+<p><strong>API key authentication:</strong> Users can now securely enter and store their
+Gemini API key via a new dialog, eliminating the need for environment
+variables and repeated entry.
+(<a href="https://github.com/google-gemini/gemini-cli/pull/11760" target="_blank" rel="noopener noreferrer" class="">pr</a> by
+<a href="https://github.com/galz10" target="_blank" rel="noopener noreferrer" class="">@galz10</a>).</p>
+</li>
+<li class="">
+<p><strong>Sequential approval:</strong> Users can now approve multiple tool calls
+sequentially during execution.
+(<a href="https://github.com/google-gemini/gemini-cli/pull/11593" target="_blank" rel="noopener noreferrer" class="">pr</a> by
+<a href="https://github.com/joshualitt" target="_blank" rel="noopener noreferrer" class="">@joshualitt</a>).</p>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_qfbg" id="announcements-v0110---2025-10-20">Announcements: v0.11.0 - 2025-10-20<a href="#announcements-v0110---2025-10-20" class="hash-link" aria-label="Direct link to Announcements: v0.11.0 - 2025-10-20" title="Direct link to Announcements: v0.11.0 - 2025-10-20" translate="no">​</a></h2>
+<p><img decoding="async" loading="lazy" src="https://storage.googleapis.com/gweb-developer-goog-blog-assets/images/Jules_Extension_-_Blog_Header_O346JNt.original.png" alt="Gemini CLI and Jules" class="img_cgCH"></p>
+<ul>
+<li class="">🎉 <strong>Gemini CLI Jules Extension:</strong> Use Gemini CLI to orchestrate Jules. Spawn
+remote workers, delegate tedious tasks, or check in on running jobs!<!-- -->
+<ul>
+<li class="">Install:
+<code>gemini extensions install https://github.com/gemini-cli-extensions/jules</code></li>
+<li class="">Announcement:
+<a href="https://developers.googleblog.com/en/introducing-the-jules-extension-for-gemini-cli/" target="_blank" rel="noopener noreferrer" class="">https://developers.googleblog.com/en/introducing-the-jules-extension-for-gemini-cli/</a></li>
+</ul>
+</li>
+<li class=""><strong>Stream JSON output:</strong> Stream real-time JSONL events with
+<code>--output-format stream-json</code> to monitor AI agent progress when run
+headlessly. (<a href="https://imgur.com/a/0UCE81X" target="_blank" rel="noopener noreferrer" class="">gif</a>,
+<a href="https://github.com/google-gemini/gemini-cli/pull/10883" target="_blank" rel="noopener noreferrer" class="">pr</a> by
+<a href="https://github.com/anj-s" target="_blank" rel="noopener noreferrer" class="">@anj-s</a>)</li>
+<li class=""><strong>Markdown toggle:</strong> Users can now switch between rendered and raw markdown
+display using <code>alt+m </code>or<code> ctrl+m</code>. (<a href="https://imgur.com/a/lDNdLqr" target="_blank" rel="noopener noreferrer" class="">gif</a>,
+<a href="https://github.com/google-gemini/gemini-cli/pull/10383" target="_blank" rel="noopener noreferrer" class="">pr</a> by
+<a href="https://github.com/srivatsj" target="_blank" rel="noopener noreferrer" class="">@srivatsj</a>)</li>
+<li class=""><strong>Queued message editing:</strong> Users can now quickly edit queued messages by
+pressing the up arrow key when the input is empty.
+(<a href="https://imgur.com/a/ioRslLd" target="_blank" rel="noopener noreferrer" class="">gif</a>,
+<a href="https://github.com/google-gemini/gemini-cli/pull/10392" target="_blank" rel="noopener noreferrer" class="">pr</a> by
+<a href="https://github.com/akhil29" target="_blank" rel="noopener noreferrer" class="">@akhil29</a>)</li>
+<li class=""><strong>JSON web fetch</strong>: Non-HTML content like JSON APIs or raw source code are now
+properly shown to the model (previously only supported HTML)
+(<a href="https://imgur.com/a/Q58U4qJ" target="_blank" rel="noopener noreferrer" class="">gif</a>,
+<a href="https://github.com/google-gemini/gemini-cli/pull/11284" target="_blank" rel="noopener noreferrer" class="">pr</a> by
+<a href="https://github.com/abhipatel12" target="_blank" rel="noopener noreferrer" class="">@abhipatel12</a>)</li>
+<li class=""><strong>Non-interactive MCP commands:</strong> Users can now run MCP slash commands in
+non-interactive mode <code>gemini &quot;/some-mcp-prompt&quot;</code>.
+(<a href="https://github.com/google-gemini/gemini-cli/pull/10194" target="_blank" rel="noopener noreferrer" class="">pr</a> by
+<a href="https://github.com/capachino" target="_blank" rel="noopener noreferrer" class="">@capachino</a>)</li>
+<li class=""><strong>Removal of deprecated flags:</strong> We’ve finally removed a number of deprecated
+flags to cleanup Gemini CLI’s invocation profile:<!-- -->
+<ul>
+<li class=""><code>--all-files</code> / <code>-a</code> in favor of <code>@</code> from within Gemini CLI.
+(<a href="https://github.com/google-gemini/gemini-cli/pull/11228" target="_blank" rel="noopener noreferrer" class="">pr</a> by
+<a href="https://github.com/allenhutchison" target="_blank" rel="noopener noreferrer" class="">@allenhutchison</a>)</li>
+<li class=""><code>--telemetry-*</code> flags in favor of
+<a href="https://github.com/google-gemini/gemini-cli/pull/11318" target="_blank" rel="noopener noreferrer" class="">environment variables</a>
+(<a href="https://github.com/google-gemini/gemini-cli/pull/11318" target="_blank" rel="noopener noreferrer" class="">pr</a> by
+<a href="https://github.com/allenhutchison" target="_blank" rel="noopener noreferrer" class="">@allenhutchison</a>)</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_qfbg" id="announcements-v0100---2025-10-13">Announcements: v0.10.0 - 2025-10-13<a href="#announcements-v0100---2025-10-13" class="hash-link" aria-label="Direct link to Announcements: v0.10.0 - 2025-10-13" title="Direct link to Announcements: v0.10.0 - 2025-10-13" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Polish:</strong> The team has been heads down bug fixing and investing heavily into
+polishing existing flows, tools, and interactions.</li>
+<li class=""><strong>Interactive Shell Tool calling:</strong> Gemini CLI can now also execute
+interactive tools if needed
+(<a href="https://github.com/google-gemini/gemini-cli/pull/11225" target="_blank" rel="noopener noreferrer" class="">pr</a> by
+<a href="https://github.com/galz10" target="_blank" rel="noopener noreferrer" class="">@galz10</a>).</li>
+<li class=""><strong>Alt+Key support:</strong> Enables broader support for Alt+Key keyboard shortcuts
+across different terminals.
+(<a href="https://github.com/google-gemini/gemini-cli/pull/10767" target="_blank" rel="noopener noreferrer" class="">pr</a> by
+<a href="https://github.com/srivatsj" target="_blank" rel="noopener noreferrer" class="">@srivatsj</a>).</li>
+<li class=""><strong>Telemetry Diff stats:</strong> Track line changes made by the model and user during
+file operations via OTEL.
+(<a href="https://github.com/google-gemini/gemini-cli/pull/10819" target="_blank" rel="noopener noreferrer" class="">pr</a> by
+<a href="https://github.com/jerop" target="_blank" rel="noopener noreferrer" class="">@jerop</a>).</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_qfbg" id="announcements-v090---2025-10-06">Announcements: v0.9.0 - 2025-10-06<a href="#announcements-v090---2025-10-06" class="hash-link" aria-label="Direct link to Announcements: v0.9.0 - 2025-10-06" title="Direct link to Announcements: v0.9.0 - 2025-10-06" translate="no">​</a></h2>
+<ul>
+<li class="">🎉 <strong>Interactive Shell:</strong> Run interactive commands like <code>vim</code>, <code>rebase -i</code>, or
+even <code>gemini</code> 😎 directly in Gemini CLI:<!-- -->
+<ul>
+<li class="">Blog:
+<a href="https://developers.googleblog.com/en/say-hello-to-a-new-level-of-interactivity-in-gemini-cli/" target="_blank" rel="noopener noreferrer" class="">https://developers.googleblog.com/en/say-hello-to-a-new-level-of-interactivity-in-gemini-cli/</a></li>
+</ul>
+</li>
+<li class=""><strong>Install pre-release extensions:</strong> Install the latest <code>--pre-release</code>
+versions of extensions. Used for when an extension’s release hasn’t been
+marked as &quot;latest&quot;.
+(<a href="https://github.com/google-gemini/gemini-cli/pull/10752" target="_blank" rel="noopener noreferrer" class="">pr</a> by
+<a href="https://github.com/jakemac53" target="_blank" rel="noopener noreferrer" class="">@jakemac53</a>)</li>
+<li class=""><strong>Simplified extension creation:</strong> Create a new, empty extension. Templates
+are no longer required.
+(<a href="https://github.com/google-gemini/gemini-cli/pull/10629" target="_blank" rel="noopener noreferrer" class="">pr</a> by
+<a href="https://github.com/chrstnb" target="_blank" rel="noopener noreferrer" class="">@chrstnb</a>)</li>
+<li class=""><strong>OpenTelemetry GenAI metrics:</strong> Aligns telemetry with industry-standard
+semantic conventions for improved interoperability.
+(<a href="https://opentelemetry.io/docs/concepts/semantic-conventions/" target="_blank" rel="noopener noreferrer" class="">spec</a>,
+<a href="https://github.com/google-gemini/gemini-cli/pull/10343" target="_blank" rel="noopener noreferrer" class="">pr</a> by
+<a href="https://github.com/jerop" target="_blank" rel="noopener noreferrer" class="">@jerop</a>)</li>
+<li class=""><strong>List memory files:</strong> Quickly find the location of your long-term memory
+files with <code>/memory list</code>.
+(<a href="https://github.com/google-gemini/gemini-cli/pull/10108" target="_blank" rel="noopener noreferrer" class="">pr</a> by
+<a href="https://github.com/sgnagnarella" target="_blank" rel="noopener noreferrer" class="">@sgnagnarella</a>)</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_qfbg" id="announcements-v080---2025-09-29">Announcements: v0.8.0 - 2025-09-29<a href="#announcements-v080---2025-09-29" class="hash-link" aria-label="Direct link to Announcements: v0.8.0 - 2025-09-29" title="Direct link to Announcements: v0.8.0 - 2025-09-29" translate="no">​</a></h2>
+<ul>
+<li class="">🎉 <strong>Announcing Gemini CLI Extensions</strong> 🎉<!-- -->
+<ul>
+<li class="">Completely customize your Gemini CLI experience to fit your workflow.</li>
+<li class="">Build and share your own Gemini CLI extensions with the world.</li>
+<li class="">Launching with a growing catalog of community, partner, and Google-built
+extensions.<!-- -->
+<ul>
+<li class="">Check extensions from
+<a href="https://github.com/google-gemini/gemini-cli/discussions/10718" target="_blank" rel="noopener noreferrer" class="">key launch partners</a>.</li>
+</ul>
+</li>
+<li class="">Easy install:<!-- -->
+<ul>
+<li class=""><code>gemini extensions install &lt;github url|folder path&gt;</code></li>
+</ul>
+</li>
+<li class="">Easy management:<!-- -->
+<ul>
+<li class=""><code>gemini extensions install|uninstall|link</code></li>
+<li class=""><code>gemini extensions enable|disable</code></li>
+<li class=""><code>gemini extensions list|update|new</code></li>
+</ul>
+</li>
+<li class="">Or use commands while running with <code>/extensions list|update</code>.</li>
+<li class="">Everything you need to know:
+<a href="https://blog.google/technology/developers/gemini-cli-extensions/" target="_blank" rel="noopener noreferrer" class="">Now open for building: Introducing Gemini CLI extensions</a>.</li>
+</ul>
+</li>
+<li class="">🎉 <strong>Our New Home Page &amp; Better Documentation</strong> 🎉<!-- -->
+<ul>
+<li class="">Check out our new home page for better getting started material, reference
+documentation, extensions and more!</li>
+<li class=""><em>Homepage:</em> <a href="https://geminicli.com" target="_blank" rel="noopener noreferrer" class="">https://geminicli.com</a></li>
+<li class="">‼️<em>NEW documentation:</em>
+<a href="https://geminicli.com/docs" target="_blank" rel="noopener noreferrer" class="">https://geminicli.com/docs</a> (Have any
+<a href="https://github.com/google-gemini/gemini-cli/discussions/8722" target="_blank" rel="noopener noreferrer" class="">suggestions</a>?)</li>
+<li class=""><em>Extensions:</em>
+<a href="https://geminicli.com/extensions" target="_blank" rel="noopener noreferrer" class="">https://geminicli.com/extensions</a></li>
+</ul>
+</li>
+<li class=""><strong>Non-Interactive Allowed Tools:</strong> <code>--allowed-tools</code> will now also work in
+non-interactive mode.
+(<a href="https://github.com/google-gemini/gemini-cli/pull/9114" target="_blank" rel="noopener noreferrer" class="">pr</a> by
+<a href="https://github.com/mistergarrison" target="_blank" rel="noopener noreferrer" class="">@mistergarrison</a>)</li>
+<li class=""><strong>Terminal Title Status:</strong> See the CLI&#x27;s real-time status and thoughts
+directly in the terminal window&#x27;s title by setting <code>showStatusInTitle: true</code>.
+(<a href="https://github.com/google-gemini/gemini-cli/pull/4386" target="_blank" rel="noopener noreferrer" class="">pr</a> by
+<a href="https://github.com/Fridayxiao" target="_blank" rel="noopener noreferrer" class="">@Fridayxiao</a>)</li>
+<li class=""><strong>Small features, polish, reliability &amp; bug fixes:</strong> A large amount of
+changes, smaller features, UI updates, reliability and bug fixes + general
+polish made it in this week!</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_qfbg" id="announcements-v070---2025-09-22">Announcements: v0.7.0 - 2025-09-22<a href="#announcements-v070---2025-09-22" class="hash-link" aria-label="Direct link to Announcements: v0.7.0 - 2025-09-22" title="Direct link to Announcements: v0.7.0 - 2025-09-22" translate="no">​</a></h2>
+<ul>
+<li class="">🎉<strong>Build your own Gemini CLI IDE plugin:</strong> We&#x27;ve published a spec for
+creating IDE plugins to enable rich context-aware experiences and native
+in-editor diffing in your IDE of choice.
+(<a href="https://github.com/google-gemini/gemini-cli/pull/8479" target="_blank" rel="noopener noreferrer" class="">pr</a> by
+<a href="https://github.com/skeshive" target="_blank" rel="noopener noreferrer" class="">@skeshive</a>)</li>
+<li class="">🎉 <strong>Gemini CLI extensions</strong>
+<ul>
+<li class=""><strong>Flutter:</strong> An early version to help you create, build, test, and run
+Flutter apps with Gemini CLI
+(<a href="https://github.com/gemini-cli-extensions/flutter" target="_blank" rel="noopener noreferrer" class="">extension</a>)</li>
+<li class=""><strong>nanobanana:</strong> Integrate nanobanana into Gemini CLI
+(<a href="https://github.com/gemini-cli-extensions/nanobanana" target="_blank" rel="noopener noreferrer" class="">extension</a>)</li>
+</ul>
+</li>
+<li class=""><strong>Telemetry config via environment:</strong> Manage telemetry settings using
+environment variables for a more flexible setup.
+(<a href="https://github.com/google-gemini/gemini-cli/blob/main/docs/cli/telemetry.md#configuration" target="_blank" rel="noopener noreferrer" class="">docs</a>,
+<a href="https://github.com/google-gemini/gemini-cli/pull/9113" target="_blank" rel="noopener noreferrer" class="">pr</a> by
+<a href="https://github.com/jerop" target="_blank" rel="noopener noreferrer" class="">@jerop</a>)</li>
+<li class=""><strong>​​Experimental todos:</strong> Track and display progress on complex tasks with a
+managed checklist. Off by default but can be enabled via
+<code>&quot;useWriteTodos&quot;: true</code>
+(<a href="https://github.com/google-gemini/gemini-cli/pull/8761" target="_blank" rel="noopener noreferrer" class="">pr</a> by
+<a href="https://github.com/anj-s" target="_blank" rel="noopener noreferrer" class="">@anj-s</a>)</li>
+<li class=""><strong>Share chat support for tools:</strong> Using <code>/chat share</code> will now also render
+function calls and responses in the final markdown file.
+(<a href="https://github.com/google-gemini/gemini-cli/pull/8693" target="_blank" rel="noopener noreferrer" class="">pr</a> by
+<a href="https://github.com/rramkumar1" target="_blank" rel="noopener noreferrer" class="">@rramkumar1</a>)</li>
+<li class=""><strong>Citations:</strong> Now enabled for all users
+(<a href="https://github.com/google-gemini/gemini-cli/pull/8570" target="_blank" rel="noopener noreferrer" class="">pr</a> by
+<a href="https://github.com/scidomino" target="_blank" rel="noopener noreferrer" class="">@scidomino</a>)</li>
+<li class=""><strong>Custom commands in Headless Mode:</strong> Run custom slash commands directly from
+the command line in non-interactive mode: <code>gemini &quot;/joke Chuck Norris&quot;</code>
+(<a href="https://github.com/google-gemini/gemini-cli/pull/8305" target="_blank" rel="noopener noreferrer" class="">pr</a> by
+<a href="https://github.com/capachino" target="_blank" rel="noopener noreferrer" class="">@capachino</a>)</li>
+<li class=""><strong>Small features, polish, reliability &amp; bug fixes:</strong> A large amount of
+changes, smaller features, UI updates, reliability and bug fixes + general
+polish made it in this week!</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_qfbg" id="announcements-v060---2025-09-15">Announcements: v0.6.0 - 2025-09-15<a href="#announcements-v060---2025-09-15" class="hash-link" aria-label="Direct link to Announcements: v0.6.0 - 2025-09-15" title="Direct link to Announcements: v0.6.0 - 2025-09-15" translate="no">​</a></h2>
+<ul>
+<li class="">🎉 <strong>Higher limits for Google AI Pro and Ultra subscribers:</strong> We’re psyched to
+finally announce that Google AI Pro and AI Ultra subscribers now get access to
+significantly higher 2.5 quota limits for Gemini CLI!<!-- -->
+<ul>
+<li class=""><strong>Announcement:</strong>
+<a href="https://blog.google/technology/developers/gemini-cli-code-assist-higher-limits/" target="_blank" rel="noopener noreferrer" class="">https://blog.google/technology/developers/gemini-cli-code-assist-higher-limits/</a></li>
+</ul>
+</li>
+<li class="">🎉<strong>Gemini CLI Databases and BigQuery Extensions:</strong> Connect Gemini CLI to all
+of your cloud data with Gemini CLI.<!-- -->
+<ul>
+<li class="">Announcement and how to get started with each of the below extensions:
+<a href="https://cloud.google.com/blog/products/databases/gemini-cli-extensions-for-google-data-cloud?e=48754805" target="_blank" rel="noopener noreferrer" class="">https://cloud.google.com/blog/products/databases/gemini-cli-extensions-for-google-data-cloud?e=48754805</a></li>
+<li class=""><strong>AlloyDB:</strong> Interact, manage and observe AlloyDB for PostgreSQL databases
+(<a href="https://github.com/gemini-cli-extensions/alloydb#configuration" target="_blank" rel="noopener noreferrer" class="">manage</a>,
+<a href="https://github.com/gemini-cli-extensions/alloydb-observability#configuration" target="_blank" rel="noopener noreferrer" class="">observe</a>)</li>
+<li class=""><strong>BigQuery:</strong> Connect and query your BigQuery datasets or utilize a
+sub-agent for contextual insights
+(<a href="https://github.com/gemini-cli-extensions/bigquery-data-analytics#configuration" target="_blank" rel="noopener noreferrer" class="">query</a>,
+<a href="https://github.com/gemini-cli-extensions/bigquery-conversational-analytics" target="_blank" rel="noopener noreferrer" class="">sub-agent</a>)</li>
+<li class=""><strong>Cloud SQL:</strong> Interact, manage and observe Cloud SQL for PostgreSQL
+(<a href="https://github.com/gemini-cli-extensions/cloud-sql-postgresql#configuration" target="_blank" rel="noopener noreferrer" class="">manage</a>,<a href="https://github.com/gemini-cli-extensions/cloud-sql-postgresql-observability#configuration" target="_blank" rel="noopener noreferrer" class=""> observe</a>),
+Cloud SQL for MySQL
+(<a href="https://github.com/gemini-cli-extensions/cloud-sql-mysql#configuration" target="_blank" rel="noopener noreferrer" class="">manage</a>,<a href="https://github.com/gemini-cli-extensions/cloud-sql-mysql-observability#configuration" target="_blank" rel="noopener noreferrer" class=""> observe</a>)
+and Cloud SQL for SQL Server
+(<a href="https://github.com/gemini-cli-extensions/cloud-sql-sqlserver#configuration" target="_blank" rel="noopener noreferrer" class="">manage</a>,<a href="https://github.com/gemini-cli-extensions/cloud-sql-sqlserver-observability#configuration" target="_blank" rel="noopener noreferrer" class=""> observe</a>)
+databases.</li>
+<li class=""><strong>Dataplex:</strong> Discover, manage, and govern data and AI artifacts
+(<a href="https://github.com/gemini-cli-extensions/dataplex#configuration" target="_blank" rel="noopener noreferrer" class="">extension</a>)</li>
+<li class=""><strong>Firestore:</strong> Interact with Firestore databases, collections and documents
+(<a href="https://github.com/gemini-cli-extensions/firestore-native#configuration" target="_blank" rel="noopener noreferrer" class="">extension</a>)</li>
+<li class=""><strong>Looker:</strong> Query data, run Looks and create dashboards
+(<a href="https://github.com/gemini-cli-extensions/looker#configuration" target="_blank" rel="noopener noreferrer" class="">extension</a>)</li>
+<li class=""><strong>MySQL:</strong> Interact with MySQL databases
+(<a href="https://github.com/gemini-cli-extensions/mysql#configuration" target="_blank" rel="noopener noreferrer" class="">extension</a>)</li>
+<li class=""><strong>Postgres:</strong> Interact with PostgreSQL databases
+(<a href="https://github.com/gemini-cli-extensions/postgres#configuration" target="_blank" rel="noopener noreferrer" class="">extension</a>)</li>
+<li class=""><strong>Spanner:</strong> Interact with Spanner databases
+(<a href="https://github.com/gemini-cli-extensions/spanner#configuration" target="_blank" rel="noopener noreferrer" class="">extension</a>)</li>
+<li class=""><strong>SQL Server:</strong> Interact with SQL Server databases
+(<a href="https://github.com/gemini-cli-extensions/sql-server#configuration" target="_blank" rel="noopener noreferrer" class="">extension</a>)</li>
+<li class=""><strong>MCP Toolbox:</strong> Configure and load custom tools for more than 30+ data
+sources
+(<a href="https://github.com/gemini-cli-extensions/mcp-toolbox#configuration" target="_blank" rel="noopener noreferrer" class="">extension</a>)</li>
+</ul>
+</li>
+<li class=""><strong>JSON output mode:</strong> Have Gemini CLI output JSON with <code>--output-format json</code>
+when invoked headlessly for easy parsing and post-processing. Includes
+response, stats and errors.
+(<a href="https://github.com/google-gemini/gemini-cli/pull/8119" target="_blank" rel="noopener noreferrer" class="">pr</a> by
+<a href="https://github.com/jerop" target="_blank" rel="noopener noreferrer" class="">@jerop</a>)</li>
+<li class=""><strong>Keybinding triggered approvals:</strong> When you use shortcuts (<code>shift+y</code> or
+<code>shift+tab</code>) to activate YOLO/auto-edit modes any pending confirmation dialogs
+will now approve. (<a href="https://github.com/google-gemini/gemini-cli/pull/6665" target="_blank" rel="noopener noreferrer" class="">pr</a>
+by <a href="https://github.com/bulkypanda" target="_blank" rel="noopener noreferrer" class="">@bulkypanda</a>)</li>
+<li class=""><strong>Chat sharing:</strong> Convert the current conversation to a Markdown or JSON file
+with <em>/chat share &lt;file.md|file.json&gt;</em>
+(<a href="https://github.com/google-gemini/gemini-cli/pull/8139" target="_blank" rel="noopener noreferrer" class="">pr</a> by
+<a href="https://github.com/rramkumar1" target="_blank" rel="noopener noreferrer" class="">@rramkumar1</a>)</li>
+<li class=""><strong>Prompt search:</strong> Search your prompt history using <code>ctrl+r</code>.
+(<a href="https://github.com/google-gemini/gemini-cli/pull/5539" target="_blank" rel="noopener noreferrer" class="">pr</a> by
+<a href="https://github.com/Aisha630" target="_blank" rel="noopener noreferrer" class="">@Aisha630</a>)</li>
+<li class=""><strong>Input undo/redo:</strong> Recover accidentally deleted text in the input prompt
+using <code>ctrl+z</code> (undo) and <code>ctrl+shift+z</code> (redo).
+(<a href="https://github.com/google-gemini/gemini-cli/pull/4625" target="_blank" rel="noopener noreferrer" class="">pr</a> by
+<a href="https://github.com/masiafrest" target="_blank" rel="noopener noreferrer" class="">@masiafrest</a>)</li>
+<li class=""><strong>Loop detection confirmation:</strong> When loops are detected you are now presented
+with a dialog to disable detection for the current session.
+(<a href="https://github.com/google-gemini/gemini-cli/pull/8231" target="_blank" rel="noopener noreferrer" class="">pr</a> by
+<a href="https://github.com/SandyTao520" target="_blank" rel="noopener noreferrer" class="">@SandyTao520</a>)</li>
+<li class=""><strong>Direct to Google Cloud Telemetry:</strong> Directly send telemetry to Google Cloud
+for a simpler and more streamlined setup.
+(<a href="https://github.com/google-gemini/gemini-cli/pull/8541" target="_blank" rel="noopener noreferrer" class="">pr</a> by
+<a href="https://github.com/jerop" target="_blank" rel="noopener noreferrer" class="">@jerop</a>)</li>
+<li class=""><strong>Visual Mode Indicator Revamp:</strong> ‘shell’, &#x27;accept edits&#x27; and &#x27;yolo&#x27; modes now
+have colors to match their impact / usage. Input box now also updates.
+(<a href="https://imgur.com/a/DovpVF1" target="_blank" rel="noopener noreferrer" class="">shell</a>,
+<a href="https://imgur.com/a/33KDz3J" target="_blank" rel="noopener noreferrer" class="">accept-edits</a>,
+<a href="https://imgur.com/a/tbFwIWp" target="_blank" rel="noopener noreferrer" class="">yolo</a>,
+<a href="https://github.com/google-gemini/gemini-cli/pull/8200" target="_blank" rel="noopener noreferrer" class="">pr</a> by
+<a href="https://github.com/miguelsolorio" target="_blank" rel="noopener noreferrer" class="">@miguelsolorio</a>)</li>
+<li class=""><strong>Small features, polish, reliability &amp; bug fixes:</strong> A large amount of
+changes, smaller features, UI updates, reliability and bug fixes + general
+polish made it in this week!</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_qfbg" id="announcements-v050---2025-09-08">Announcements: v0.5.0 - 2025-09-08<a href="#announcements-v050---2025-09-08" class="hash-link" aria-label="Direct link to Announcements: v0.5.0 - 2025-09-08" title="Direct link to Announcements: v0.5.0 - 2025-09-08" translate="no">​</a></h2>
+<ul>
+<li class="">🎉<strong>FastMCP + Gemini CLI</strong>🎉: Quickly install and manage your Gemini CLI MCP
+servers with FastMCP (<a href="https://imgur.com/a/m8QdCPh" target="_blank" rel="noopener noreferrer" class="">video</a>,
+<a href="https://github.com/jlowin/fastmcp/pull/1709" target="_blank" rel="noopener noreferrer" class="">pr</a> by
+<a href="https://github.com/jackwotherspoon" target="_blank" rel="noopener noreferrer" class="">@jackwotherspoon</a><strong>)</strong>
+<ul>
+<li class="">Getting started:
+<a href="https://gofastmcp.com/integrations/gemini-cli" target="_blank" rel="noopener noreferrer" class="">https://gofastmcp.com/integrations/gemini-cli</a></li>
+</ul>
+</li>
+<li class=""><strong>Positional Prompt for Non-Interactive:</strong> Seamlessly invoke Gemini CLI
+headlessly via <code>gemini &quot;Hello&quot;</code>. Synonymous with passing <code>-p</code>.
+(<a href="https://imgur.com/a/hcBznpB" target="_blank" rel="noopener noreferrer" class="">gif</a>,
+<a href="https://github.com/google-gemini/gemini-cli/pull/7668" target="_blank" rel="noopener noreferrer" class="">pr</a> by
+<a href="https://github.com/allenhutchison" target="_blank" rel="noopener noreferrer" class="">@allenhutchison</a>)</li>
+<li class=""><strong>Experimental Tool output truncation:</strong> Enable truncating shell tool outputs
+and saving full output to a file by setting
+<code>&quot;enableToolOutputTruncation&quot;: true </code>(<a href="https://github.com/google-gemini/gemini-cli/pull/8039" target="_blank" rel="noopener noreferrer" class="">pr</a>
+by <a href="https://github.com/SandyTao520" target="_blank" rel="noopener noreferrer" class="">@SandyTao520</a>)</li>
+<li class=""><strong>Edit Tool improvements:</strong> Gemini CLI’s ability to edit files should now be
+far more capable. (<a href="https://github.com/google-gemini/gemini-cli/pull/7679" target="_blank" rel="noopener noreferrer" class="">pr</a>
+by <a href="https://github.com/silviojr" target="_blank" rel="noopener noreferrer" class="">@silviojr</a>)</li>
+<li class=""><strong>Custom witty messages:</strong> The feature you’ve all been waiting for…
+Personalized witty loading messages via
+<code>&quot;ui&quot;: { &quot;customWittyPhrases&quot;: [&quot;YOLO&quot;]}</code> in <code>settings.json</code>.
+(<a href="https://github.com/google-gemini/gemini-cli/pull/7641" target="_blank" rel="noopener noreferrer" class="">pr</a> by
+<a href="https://github.com/JayadityaGit" target="_blank" rel="noopener noreferrer" class="">@JayadityaGit</a>)</li>
+<li class=""><strong>Nested .gitignore File Handling:</strong> Nested <code>.gitignore</code> files are now
+respected. (<a href="https://github.com/google-gemini/gemini-cli/pull/7645" target="_blank" rel="noopener noreferrer" class="">pr</a> by
+<a href="https://github.com/gsquared94" target="_blank" rel="noopener noreferrer" class="">@gsquared94</a>)</li>
+<li class=""><strong>Enforced authentication:</strong> System administrators can now mandate a specific
+authentication method via
+<code>&quot;enforcedAuthType&quot;: &quot;oauth-personal|gemini-api-key|…&quot;</code>in <code>settings.json</code>.
+(<a href="https://github.com/google-gemini/gemini-cli/pull/6564" target="_blank" rel="noopener noreferrer" class="">pr</a> by
+<a href="https://github.com/chrstnb" target="_blank" rel="noopener noreferrer" class="">@chrstnb</a>)</li>
+<li class=""><strong>A2A development-tool extension:</strong> An RFC for an Agent2Agent
+(<a href="https://a2a-protocol.org/latest/" target="_blank" rel="noopener noreferrer" class="">A2A</a>) powered extension for developer tool
+use cases.
+(<a href="https://github.com/google-gemini/gemini-cli/discussions/7822" target="_blank" rel="noopener noreferrer" class="">feedback</a>,
+<a href="https://github.com/google-gemini/gemini-cli/pull/7817" target="_blank" rel="noopener noreferrer" class="">pr</a> by
+<a href="https://github.com/skeshive" target="_blank" rel="noopener noreferrer" class="">@skeshive</a>)</li>
+<li class="">**Hands on Codelab:
+**<a href="https://codelabs.developers.google.com/gemini-cli-hands-on" target="_blank" rel="noopener noreferrer" class="">https://codelabs.developers.google.com/gemini-cli-hands-on</a></li>
+<li class=""><strong>Small features, polish, reliability &amp; bug fixes:</strong> A large amount of
+changes, smaller features, UI updates, reliability and bug fixes + general
+polish made it in this week!</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_qfbg" id="announcements-v040---2025-09-01">Announcements: v0.4.0 - 2025-09-01<a href="#announcements-v040---2025-09-01" class="hash-link" aria-label="Direct link to Announcements: v0.4.0 - 2025-09-01" title="Direct link to Announcements: v0.4.0 - 2025-09-01" translate="no">​</a></h2>
+<ul>
+<li class="">🎉<strong>Gemini CLI CloudRun and Security Integrations</strong>🎉: Automate app deployment
+and security analysis with CloudRun and Security extension integrations. Once
+installed deploy your app to the cloud with <code>/deploy</code> and find and fix
+security vulnerabilities with <code>/security:analyze</code>.<!-- -->
+<ul>
+<li class="">Announcement and how to get started:
+<a href="https://cloud.google.com/blog/products/ai-machine-learning/automate-app-deployment-and-security-analysis-with-new-gemini-cli-extensions" target="_blank" rel="noopener noreferrer" class="">https://cloud.google.com/blog/products/ai-machine-learning/automate-app-deployment-and-security-analysis-with-new-gemini-cli-extensions</a></li>
+</ul>
+</li>
+<li class=""><strong>Experimental</strong>
+<ul>
+<li class=""><strong>Edit Tool:</strong> Give our new edit tool a try by setting
+<code>&quot;useSmartEdit&quot;: true</code> in <code>settings.json</code>!
+(<a href="https://github.com/google-gemini/gemini-cli/discussions/7758" target="_blank" rel="noopener noreferrer" class="">feedback</a>,
+<a href="https://github.com/google-gemini/gemini-cli/pull/6823" target="_blank" rel="noopener noreferrer" class="">pr</a> by
+<a href="https://github.com/silviojr" target="_blank" rel="noopener noreferrer" class="">@silviojr</a>)</li>
+<li class=""><strong>Model talking to itself fix:</strong> We’ve removed a model workaround that would
+encourage Gemini CLI to continue conversations on your behalf. This may be
+disruptive and can be disabled via <code>&quot;skipNextSpeakerCheck&quot;: false</code> in your
+<code>settings.json</code>
+(<a href="https://github.com/google-gemini/gemini-cli/discussions/6666" target="_blank" rel="noopener noreferrer" class="">feedback</a>,
+<a href="https://github.com/google-gemini/gemini-cli/pull/7614" target="_blank" rel="noopener noreferrer" class="">pr</a> by
+<a href="https://github.com/SandyTao520" target="_blank" rel="noopener noreferrer" class="">@SandyTao520</a>)</li>
+<li class=""><strong>Prompt completion:</strong> Get real-time AI suggestions to complete your prompts
+as you type. Enable it with <code>&quot;general&quot;: { &quot;enablePromptCompletion&quot;: true }</code>
+and share your feedback!
+(<a href="https://miro.medium.com/v2/resize:fit:2000/format:webp/1*hvegW7YXOg6N_beUWhTdxA.gif" target="_blank" rel="noopener noreferrer" class="">gif</a>,
+<a href="https://github.com/google-gemini/gemini-cli/pull/4691" target="_blank" rel="noopener noreferrer" class="">pr</a> by
+<a href="https://github.com/3ks" target="_blank" rel="noopener noreferrer" class="">@3ks</a>)</li>
+</ul>
+</li>
+<li class=""><strong>Footer visibility configuration:</strong> Customize the CLI&#x27;s footer look and feel
+in <code>settings.json</code>
+(<a href="https://github.com/google-gemini/gemini-cli/pull/7419" target="_blank" rel="noopener noreferrer" class="">pr</a> by
+<a href="https://github.com/miguelsolorio" target="_blank" rel="noopener noreferrer" class="">@miguelsolorio</a>)<!-- -->
+<ul>
+<li class=""><code>hideCWD</code>: hide current working directory.</li>
+<li class=""><code>hideSandboxStatus</code>: hide sandbox status.</li>
+<li class=""><code>hideModelInfo</code>: hide current model information.</li>
+<li class=""><code>hideContextSummary</code>: hide request context summary.</li>
+</ul>
+</li>
+<li class=""><strong>Citations:</strong> For enterprise Code Assist licenses users will now see
+citations in their responses by default. Enable this yourself with
+<code>&quot;showCitations&quot;: true</code>
+(<a href="https://github.com/google-gemini/gemini-cli/pull/7350" target="_blank" rel="noopener noreferrer" class="">pr</a> by
+<a href="https://github.com/scidomino" target="_blank" rel="noopener noreferrer" class="">@scidomino</a>)</li>
+<li class=""><strong>Pro Quota Dialog:</strong> Handle daily Pro model usage limits with an interactive
+dialog that lets you immediately switch auth or fallback.
+(<a href="https://github.com/google-gemini/gemini-cli/pull/7094" target="_blank" rel="noopener noreferrer" class="">pr</a> by
+<a href="https://github.com/JayadityaGit" target="_blank" rel="noopener noreferrer" class="">@JayadityaGit</a>)</li>
+<li class=""><strong>Custom commands @:</strong> Embed local file or directory content directly into
+your custom command prompts using <code>@{path}</code> syntax
+(<a href="https://miro.medium.com/v2/resize:fit:2000/format:webp/1*GosBAo2SjMfFffAnzT7ZMg.gif" target="_blank" rel="noopener noreferrer" class="">gif</a>,
+<a href="https://github.com/google-gemini/gemini-cli/pull/6716" target="_blank" rel="noopener noreferrer" class="">pr</a> by
+<a href="https://github.com/abhipatel12" target="_blank" rel="noopener noreferrer" class="">@abhipatel12</a>)</li>
+<li class=""><strong>2.5 Flash Lite support:</strong> You can now use the <code>gemini-2.5-flash-lite</code> model
+for Gemini CLI via <code>gemini -m …</code>.
+(<a href="https://miro.medium.com/v2/resize:fit:2000/format:webp/1*P4SKwnrsyBuULoHrFqsFKQ.gif" target="_blank" rel="noopener noreferrer" class="">gif</a>,
+<a href="https://github.com/google-gemini/gemini-cli/pull/4652" target="_blank" rel="noopener noreferrer" class="">pr</a> by
+<a href="https://github.com/psinha40898" target="_blank" rel="noopener noreferrer" class="">@psinha40898</a>)</li>
+<li class=""><strong>CLI streamlining:</strong> We have deprecated a number of command line arguments in
+favor of <code>settings.json</code> alternatives. We will remove these arguments in a
+future release. See the PR for the full list of deprecations.
+(<a href="https://github.com/google-gemini/gemini-cli/pull/7360" target="_blank" rel="noopener noreferrer" class="">pr</a> by
+<a href="https://github.com/allenhutchison" target="_blank" rel="noopener noreferrer" class="">@allenhutchison</a>)</li>
+<li class=""><strong>JSON session summary:</strong> Track and save detailed CLI session statistics to a
+JSON file for performance analysis with <code>--session-summary &lt;path&gt;</code>
+(<a href="https://github.com/google-gemini/gemini-cli/pull/7347" target="_blank" rel="noopener noreferrer" class="">pr</a> by
+<a href="https://github.com/leehagoodjames" target="_blank" rel="noopener noreferrer" class="">@leehagoodjames</a>)</li>
+<li class=""><strong>Robust keyboard handling:</strong> More reliable and consistent behavior for arrow
+keys, special keys (Home, End, etc.), and modifier combinations across various
+terminals. (<a href="https://github.com/google-gemini/gemini-cli/pull/7118" target="_blank" rel="noopener noreferrer" class="">pr</a> by
+<a href="https://github.com/deepankarsharma" target="_blank" rel="noopener noreferrer" class="">@deepankarsharma</a>)</li>
+<li class=""><strong>MCP loading indicator:</strong> Provides visual feedback during CLI initialization
+when connecting to multiple servers.
+(<a href="https://github.com/google-gemini/gemini-cli/pull/6923" target="_blank" rel="noopener noreferrer" class="">pr</a> by
+<a href="https://github.com/swissspidy" target="_blank" rel="noopener noreferrer" class="">@swissspidy</a>)</li>
+<li class=""><strong>Small features, polish, reliability &amp; bug fixes:</strong> A large amount of
+changes, smaller features, UI updates, reliability and bug fixes + general
+polish made it in this week!</li>
+</ul></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/resources/uninstall"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Uninstall</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/changelogs/latest"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Stable release</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_eoeD thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#current-releases" class="table-of-contents__link toc-highlight">Current releases</a></li><li><a href="#announcements-v0450---2026-06-03" class="table-of-contents__link toc-highlight">Announcements: v0.45.0 - 2026-06-03</a></li><li><a href="#announcements-v0440---2026-05-27" class="table-of-contents__link toc-highlight">Announcements: v0.44.0 - 2026-05-27</a></li><li><a href="#announcements-v0430---2026-05-22" class="table-of-contents__link toc-highlight">Announcements: v0.43.0 - 2026-05-22</a></li><li><a href="#announcements-v0420---2026-05-12" class="table-of-contents__link toc-highlight">Announcements: v0.42.0 - 2026-05-12</a></li><li><a href="#announcements-v0410---2026-05-05" class="table-of-contents__link toc-highlight">Announcements: v0.41.0 - 2026-05-05</a></li><li><a href="#announcements-v0400---2026-04-28" class="table-of-contents__link toc-highlight">Announcements: v0.40.0 - 2026-04-28</a></li><li><a href="#announcements-v0390---2026-04-23" class="table-of-contents__link toc-highlight">Announcements: v0.39.0 - 2026-04-23</a></li><li><a href="#announcements-v0380---2026-04-14" class="table-of-contents__link toc-highlight">Announcements: v0.38.0 - 2026-04-14</a></li><li><a href="#announcements-v0370---2026-04-08" class="table-of-contents__link toc-highlight">Announcements: v0.37.0 - 2026-04-08</a></li><li><a href="#announcements-v0360---2026-04-01" class="table-of-contents__link toc-highlight">Announcements: v0.36.0 - 2026-04-01</a></li><li><a href="#announcements-v0350---2026-03-24" class="table-of-contents__link toc-highlight">Announcements: v0.35.0 - 2026-03-24</a></li><li><a href="#announcements-v0340---2026-03-17" class="table-of-contents__link toc-highlight">Announcements: v0.34.0 - 2026-03-17</a></li><li><a href="#announcements-v0330---2026-03-11" class="table-of-contents__link toc-highlight">Announcements: v0.33.0 - 2026-03-11</a></li><li><a href="#announcements-v0320---2026-03-03" class="table-of-contents__link toc-highlight">Announcements: v0.32.0 - 2026-03-03</a></li><li><a href="#announcements-v0310---2026-02-27" class="table-of-contents__link toc-highlight">Announcements: v0.31.0 - 2026-02-27</a></li><li><a href="#announcements-v0300---2026-02-25" class="table-of-contents__link toc-highlight">Announcements: v0.30.0 - 2026-02-25</a></li><li><a href="#announcements-v0290---2026-02-17" class="table-of-contents__link toc-highlight">Announcements: v0.29.0 - 2026-02-17</a></li><li><a href="#announcements-v0280---2026-02-10" class="table-of-contents__link toc-highlight">Announcements: v0.28.0 - 2026-02-10</a></li><li><a href="#announcements-v0270---2026-02-03" class="table-of-contents__link toc-highlight">Announcements: v0.27.0 - 2026-02-03</a></li><li><a href="#announcements-v0260---2026-01-27" class="table-of-contents__link toc-highlight">Announcements: v0.26.0 - 2026-01-27</a></li><li><a href="#announcements-v0250---2026-01-20" class="table-of-contents__link toc-highlight">Announcements: v0.25.0 - 2026-01-20</a></li><li><a href="#announcements-v0240---2026-01-14" class="table-of-contents__link toc-highlight">Announcements: v0.24.0 - 2026-01-14</a></li><li><a href="#announcements-v0230---2026-01-07" class="table-of-contents__link toc-highlight">Announcements: v0.23.0 - 2026-01-07</a></li><li><a href="#announcements-v0220---2025-12-22" class="table-of-contents__link toc-highlight">Announcements: v0.22.0 - 2025-12-22</a></li><li><a href="#announcements-v0210---2025-12-15" class="table-of-contents__link toc-highlight">Announcements: v0.21.0 - 2025-12-15</a></li><li><a href="#announcements-v0200---2025-12-01" class="table-of-contents__link toc-highlight">Announcements: v0.20.0 - 2025-12-01</a></li><li><a href="#announcements-v0190---2025-11-24" class="table-of-contents__link toc-highlight">Announcements: v0.19.0 - 2025-11-24</a></li><li><a href="#announcements-v0180---2025-11-17" class="table-of-contents__link toc-highlight">Announcements: v0.18.0 - 2025-11-17</a></li><li><a href="#announcements-v0160---2025-11-10" class="table-of-contents__link toc-highlight">Announcements: v0.16.0 - 2025-11-10</a></li><li><a href="#announcements-v0150---2025-11-03" class="table-of-contents__link toc-highlight">Announcements: v0.15.0 - 2025-11-03</a></li><li><a href="#announcements-v0120---2025-10-27" class="table-of-contents__link toc-highlight">Announcements: v0.12.0 - 2025-10-27</a></li><li><a href="#announcements-v0110---2025-10-20" class="table-of-contents__link toc-highlight">Announcements: v0.11.0 - 2025-10-20</a></li><li><a href="#announcements-v0100---2025-10-13" class="table-of-contents__link toc-highlight">Announcements: v0.10.0 - 2025-10-13</a></li><li><a href="#announcements-v090---2025-10-06" class="table-of-contents__link toc-highlight">Announcements: v0.9.0 - 2025-10-06</a></li><li><a href="#announcements-v080---2025-09-29" class="table-of-contents__link toc-highlight">Announcements: v0.8.0 - 2025-09-29</a></li><li><a href="#announcements-v070---2025-09-22" class="table-of-contents__link toc-highlight">Announcements: v0.7.0 - 2025-09-22</a></li><li><a href="#announcements-v060---2025-09-15" class="table-of-contents__link toc-highlight">Announcements: v0.6.0 - 2025-09-15</a></li><li><a href="#announcements-v050---2025-09-08" class="table-of-contents__link toc-highlight">Announcements: v0.5.0 - 2025-09-08</a></li><li><a href="#announcements-v040---2025-09-01" class="table-of-contents__link toc-highlight">Announcements: v0.4.0 - 2025-09-01</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Gemini CLI. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>
