@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.1">
 <title data-rh="true">Gemini CLI configuration | Gemini CLI</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://wilhelm-tiger.github.io/gemini-cli/docs/reference/configuration"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Gemini CLI configuration | Gemini CLI"><meta data-rh="true" name="description" content="Gemini CLI offers several ways to configure its behavior, including environment"><meta data-rh="true" property="og:description" content="Gemini CLI offers several ways to configure its behavior, including environment"><link data-rh="true" rel="icon" href="/gemini-cli/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://wilhelm-tiger.github.io/gemini-cli/docs/reference/configuration"><link data-rh="true" rel="alternate" href="https://wilhelm-tiger.github.io/gemini-cli/docs/reference/configuration" hreflang="en"><link data-rh="true" rel="alternate" href="https://wilhelm-tiger.github.io/gemini-cli/docs/reference/configuration" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Configuration reference","item":"https://wilhelm-tiger.github.io/gemini-cli/docs/reference/configuration"}]}</script><link rel="stylesheet" href="/gemini-cli/assets/css/styles.001c7fc8.css">
-<script src="/gemini-cli/assets/js/runtime~main.3f17cfac.js" defer="defer"></script>
+<script src="/gemini-cli/assets/js/runtime~main.2ffeb8d2.js" defer="defer"></script>
 <script src="/gemini-cli/assets/js/main.90008108.js" defer="defer"></script>
 </head>
 <body>
@@ -720,8 +720,7 @@ session. -1 means unlimited.</li>
 <p><strong><code>model.summarizeToolOutput</code></strong> (object):</p>
 <ul>
 <li class=""><strong>Description:</strong> Enables or disables summarization of tool output. Configure
-per-tool token budgets (for example <code>{&quot;run_shell_command&quot;: {&quot;tokenBudget&quot;:</code>
-2000}}). Currently only the run_shell_command tool supports summarization.</li>
+per-tool token budgets (for example <code>{&quot;run_shell_command&quot;: {&quot;tokenBudget&quot;: 2000}}</code>). Currently only the run_shell_command tool supports summarization.</li>
 <li class=""><strong>Default:</strong> <code>undefined</code></li>
 </ul>
 </li>
