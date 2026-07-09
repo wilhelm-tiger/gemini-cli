@@ -1097,7 +1097,7 @@ const SETTINGS_SCHEMA = {
           | undefined,
         description: oneLine`
           Enables or disables summarization of tool output.
-          Configure per-tool token budgets (for example {"run_shell_command": {"tokenBudget": 2000}}).
+          Configure per-tool token budgets (for example \`{"run_shell_command": {"tokenBudget": 2000}}\`).
           Currently only the run_shell_command tool supports summarization.
         `,
         showInDialog: false,
