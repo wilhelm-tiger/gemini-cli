@@ -47,4 +47,5 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./docs-site/build
           publish_branch: gh-pages
+          cname: gemini.chiori.io
           commit_message: "docs: deploy docusaurus to gh-pages [skip ci]"
