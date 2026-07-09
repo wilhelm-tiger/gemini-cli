@@ -545,8 +545,9 @@ their corresponding top-level category object in your `settings.json` file.
 - **`model.summarizeToolOutput`** (object):
 
   - **Description:** Enables or disables summarization of tool output. Configure
-    per-tool token budgets (for example {"run_shell_command": {"tokenBudget":
-    2000}}). Currently only the run_shell_command tool supports summarization.
+    per-tool token budgets (for example
+    `{"run_shell_command": {"tokenBudget": 2000}}`). Currently only the
+    run_shell_command tool supports summarization.
   - **Default:** `undefined`
 
 - **`model.compressionThreshold`** (number):
