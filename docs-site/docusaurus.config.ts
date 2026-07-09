@@ -7,8 +7,8 @@ const config: Config = {
   tagline: 'Terminal-first, extensible, and powerful tool for developers.',
   favicon: 'img/favicon.ico',
 
-  url: 'https://wilhelm-tiger.github.io',
-  baseUrl: '/gemini-cli/',
+  url: 'https://gemini.chiori.io',
+  baseUrl: '/',
   organizationName: 'wilhelm-tiger',
   projectName: 'gemini-cli',
 
