@@ -1,4 +1,6 @@
-import { Tabs, TabItem } from '@astrojs/starlight/components';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 
 # Gemini CLI installation, execution, and releases
 
@@ -28,7 +30,7 @@ installation methods. Note that Gemini CLI comes pre-installed on
 [**Cloud Workstations**](https://cloud.google.com/workstations).
 
 <Tabs>
-  <TabItem label="npm">
+  <TabItem value="npm" label="npm">
 
   Install globally with npm:
 
@@ -37,7 +39,7 @@ installation methods. Note that Gemini CLI comes pre-installed on
   ```
 
   </TabItem>
-  <TabItem label="Homebrew (macOS/Linux)">
+  <TabItem value="Homebrew (macOS/Linux)" label="Homebrew (macOS/Linux)">
 
   Install globally with Homebrew:
 
@@ -46,7 +48,7 @@ installation methods. Note that Gemini CLI comes pre-installed on
   ```
 
   </TabItem>
-  <TabItem label="MacPorts (macOS)">
+  <TabItem value="MacPorts (macOS)" label="MacPorts (macOS)">
 
   Install globally with MacPorts:
 
@@ -55,7 +57,7 @@ installation methods. Note that Gemini CLI comes pre-installed on
   ```
 
   </TabItem>
-  <TabItem label="Anaconda">
+  <TabItem value="Anaconda" label="Anaconda">
 
   Install with Anaconda (for restricted environments):
 
@@ -85,7 +87,7 @@ For a list of options and additional commands, see the
 You can also run Gemini CLI using one of the following advanced methods:
 
 <Tabs>
-  <TabItem label="npx">
+  <TabItem value="npx" label="npx">
 
   Run instantly with npx. You can run Gemini CLI without permanent installation.
 
@@ -102,7 +104,7 @@ You can also run Gemini CLI using one of the following advanced methods:
   ```
 
   </TabItem>
-  <TabItem label="Docker/Podman Sandbox">
+  <TabItem value="Docker/Podman Sandbox" label="Docker/Podman Sandbox">
 
   For security and isolation, Gemini CLI can be run inside a container. This is
   the default way that the CLI executes tools that might have side effects.
@@ -122,7 +124,7 @@ You can also run Gemini CLI using one of the following advanced methods:
     ```
 
   </TabItem>
-  <TabItem label="From source">
+  <TabItem value="From source" label="From source">
 
   Contributors to the project will want to run the CLI directly from the source
   code.
@@ -161,7 +163,7 @@ Gemini CLI has three release channels: stable, preview, and nightly. For most
 users, we recommend the stable release, which is the default installation.
 
 <Tabs>
-  <TabItem label="Stable">
+  <TabItem value="Stable" label="Stable">
 
   Stable releases are published each week. A stable release is created from the
   previous week's preview release along with any bug fixes. The stable release
@@ -175,7 +177,7 @@ users, we recommend the stable release, which is the default installation.
   ```
 
   </TabItem>
-  <TabItem label="Preview">
+  <TabItem value="Preview" label="Preview">
 
   New preview releases will be published each week. These releases are not fully
   vetted and may contain regressions or other outstanding issues. Try out the
@@ -186,7 +188,7 @@ users, we recommend the stable release, which is the default installation.
   ```
 
   </TabItem>
-  <TabItem label="Nightly">
+  <TabItem value="Nightly" label="Nightly">
 
   Nightly releases are published every day. The nightly release includes all
   changes from the main branch at time of release. It should be assumed there are
