@@ -219,70 +219,70 @@ identify their source, for example: `shades-of-green (green-extension)`.
 
 ### ANSI
 
-<img src="/docs/assets/theme-ansi-dark.png" alt="ANSI theme" width="600">
+<img src="/docs/assets/theme-ansi-dark.png" alt="ANSI theme" width="600" />
 
 ### Atom One
 
-<img src="/docs/assets/theme-atom-one-dark.png" alt="Atom One theme" width="600">
+<img src="/docs/assets/theme-atom-one-dark.png" alt="Atom One theme" width="600" />
 
 ### Ayu
 
-<img src="/docs/assets/theme-ayu-dark.png" alt="Ayu theme" width="600">
+<img src="/docs/assets/theme-ayu-dark.png" alt="Ayu theme" width="600" />
 
 ### Default
 
-<img src="/docs/assets/theme-default-dark.png" alt="Default theme" width="600">
+<img src="/docs/assets/theme-default-dark.png" alt="Default theme" width="600" />
 
 ### Dracula
 
-<img src="/docs/assets/theme-dracula-dark.png" alt="Dracula theme" width="600">
+<img src="/docs/assets/theme-dracula-dark.png" alt="Dracula theme" width="600" />
 
 ### GitHub
 
-<img src="/docs/assets/theme-github-dark.png" alt="GitHub theme" width="600">
+<img src="/docs/assets/theme-github-dark.png" alt="GitHub theme" width="600" />
 
 ### Holiday
 
-<img src="/docs/assets/theme-holiday-dark.png" alt="Holiday theme" width="600">
+<img src="/docs/assets/theme-holiday-dark.png" alt="Holiday theme" width="600" />
 
 ### Shades Of Purple
 
-<img src="/docs/assets/theme-shades-of-purple-dark.png" alt="Shades Of Purple theme" width="600">
+<img src="/docs/assets/theme-shades-of-purple-dark.png" alt="Shades Of Purple theme" width="600" />
 
 ### Solarized Dark
 
-<img src="/docs/assets/theme-solarized-dark.png" alt="Solarized Dark theme" width="600">
+<img src="/docs/assets/theme-solarized-dark.png" alt="Solarized Dark theme" width="600" />
 
 ### Tokyo Night
 
-<img src="/docs/assets/theme-tokyonight-dark.png" alt="Tokyo Night theme" width="600">
+<img src="/docs/assets/theme-tokyonight-dark.png" alt="Tokyo Night theme" width="600" />
 
 ## Light themes
 
 ### ANSI Light
 
-<img src="/docs/assets/theme-ansi-light.png" alt="ANSI Light theme" width="600">
+<img src="/docs/assets/theme-ansi-light.png" alt="ANSI Light theme" width="600" />
 
 ### Ayu Light
 
-<img src="/docs/assets/theme-ayu-light.png" alt="Ayu Light theme" width="600">
+<img src="/docs/assets/theme-ayu-light.png" alt="Ayu Light theme" width="600" />
 
 ### Default Light
 
-<img src="/docs/assets/theme-default-light.png" alt="Default Light theme" width="600">
+<img src="/docs/assets/theme-default-light.png" alt="Default Light theme" width="600" />
 
 ### GitHub Light
 
-<img src="/docs/assets/theme-github-light.png" alt="GitHub Light theme" width="600">
+<img src="/docs/assets/theme-github-light.png" alt="GitHub Light theme" width="600" />
 
 ### Google Code
 
-<img src="/docs/assets/theme-google-light.png" alt="Google Code theme" width="600">
+<img src="/docs/assets/theme-google-light.png" alt="Google Code theme" width="600" />
 
 ### Solarized Light
 
-<img src="/docs/assets/theme-solarized-light.png" alt="Solarized Light theme" width="600">
+<img src="/docs/assets/theme-solarized-light.png" alt="Solarized Light theme" width="600" />
 
 ### Xcode
 
-<img src="/docs/assets/theme-xcode-light.png" alt="Xcode Light theme" width="600">
+<img src="/docs/assets/theme-xcode-light.png" alt="Xcode Light theme" width="600" />

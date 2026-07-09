@@ -1,3 +1,8 @@
+---
+id: CONTRIBUTING
+slug: /contributing
+title: How to contribute
+---
 # How to contribute
 
 We would love to accept your patches and contributions to this project. This
@@ -27,7 +32,7 @@ project.
 If you or your current employer have already signed the Google CLA (even if it
 was for a different project), you probably don't need to do it again.
 
-Visit <https://cla.developers.google.com/> to see your current agreements or to
+Visit [https://cla.developers.google.com/](https://cla.developers.google.com/) to see your current agreements or to
 sign a new one.
 
 ### Review our Community Guidelines

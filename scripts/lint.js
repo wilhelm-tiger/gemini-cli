@@ -7,13 +7,7 @@
  */
 
 import { execSync } from 'node:child_process';
-import {
-  mkdirSync,
-  rmSync,
-  readFileSync,
-  existsSync,
-  lstatSync,
-} from 'node:fs';
+import { mkdirSync, rmSync, readFileSync, existsSync, statSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 
@@ -287,7 +281,7 @@ export function runSensitiveKeywordLinter() {
   let violationsFound = false;
 
   for (const file of changedFiles) {
-    if (!existsSync(file) || lstatSync(file).isDirectory()) {
+    if (!existsSync(file) || statSync(file).isDirectory()) {
       continue;
     }
     const content = readFileSync(file, 'utf-8');
@@ -417,7 +411,7 @@ export function runGithubActionsPinningLinter() {
   const SHA_PATTERN = /^[0-9a-f]{40}$/i;
 
   for (const file of files) {
-    if (!existsSync(file) || lstatSync(file).isDirectory()) {
+    if (!existsSync(file) || statSync(file).isDirectory()) {
       continue;
     }
     const content = readFileSync(file, 'utf-8');

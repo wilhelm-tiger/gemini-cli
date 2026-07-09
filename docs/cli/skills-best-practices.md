@@ -22,7 +22,7 @@ The "context window" is a shared resource. Use a three-level loading system to
 manage context efficiently.
 
 1.  **Metadata (name + description)**: Always in context (~100 words).
-2.  **`SKILL.md` body**: Loaded only after the skill triggers (<5k words).
+2.  **`SKILL.md` body**: Loaded only after the skill triggers (&lt;5k words).
 3.  **Bundled resources**: Loaded only as needed by the model.
 
 **Best practice**: Keep the `SKILL.md` body focused on core procedural

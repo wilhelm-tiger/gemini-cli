@@ -1,4 +1,6 @@
-import { Tabs, TabItem } from '@astrojs/starlight/components';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 
 # Gemini CLI authentication setup
 
@@ -86,7 +88,7 @@ To authenticate and use Gemini CLI with a Gemini API key:
 2. Set the `GEMINI_API_KEY` environment variable to your key. For example:
 
    <Tabs>
-     <TabItem label="macOS/Linux">
+     <TabItem value="macOS/Linux" label="macOS/Linux">
 
      ```bash
       # Replace YOUR_GEMINI_API_KEY with the key from AI Studio
@@ -94,7 +96,7 @@ To authenticate and use Gemini CLI with a Gemini API key:
      ```
 
      </TabItem>
-     <TabItem label="Windows (PowerShell)">
+     <TabItem value="Windows (PowerShell)" label="Windows (PowerShell)">
 
      ```powershell
       # Replace YOUR_GEMINI_API_KEY with the key from AI Studio
@@ -137,7 +139,7 @@ or the location where you want to run your jobs.
 For example:
 
 <Tabs>
-  <TabItem label="macOS/Linux">
+  <TabItem value="macOS/Linux" label="macOS/Linux">
 
   ```bash
 # Replace with your project ID and desired location (for example, us-central1)
@@ -146,7 +148,7 @@ export GOOGLE_CLOUD_LOCATION="YOUR_PROJECT_LOCATION"
   ```
 
   </TabItem>
-  <TabItem label="Windows (PowerShell)">
+  <TabItem value="Windows (PowerShell)" label="Windows (PowerShell)">
 
   ```powershell
 # Replace with your project ID and desired location (for example, us-central1)
@@ -168,14 +170,14 @@ If you have previously set `GOOGLE_API_KEY` or `GEMINI_API_KEY`, you must unset
 them to use ADC.
 
 <Tabs>
-  <TabItem label="macOS/Linux">
+  <TabItem value="macOS/Linux" label="macOS/Linux">
 
   ```bash
 unset GOOGLE_API_KEY GEMINI_API_KEY
   ```
 
   </TabItem>
-  <TabItem label="Windows (PowerShell)">
+  <TabItem value="Windows (PowerShell)" label="Windows (PowerShell)">
 
   ```powershell
 Remove-Item Env:\GOOGLE_API_KEY, Env:\GEMINI_API_KEY -ErrorAction Ignore
@@ -211,14 +213,14 @@ If you have previously set `GOOGLE_API_KEY` or `GEMINI_API_KEY`, you must unset
 them:
 
 <Tabs>
-  <TabItem label="macOS/Linux">
+  <TabItem value="macOS/Linux" label="macOS/Linux">
 
   ```bash
 unset GOOGLE_API_KEY GEMINI_API_KEY
   ```
 
   </TabItem>
-  <TabItem label="Windows (PowerShell)">
+  <TabItem value="Windows (PowerShell)" label="Windows (PowerShell)">
 
   ```powershell
 Remove-Item Env:\GOOGLE_API_KEY, Env:\GEMINI_API_KEY -ErrorAction Ignore
@@ -235,7 +237,7 @@ Remove-Item Env:\GOOGLE_API_KEY, Env:\GEMINI_API_KEY -ErrorAction Ignore
     file's absolute path. For example:
 
     <Tabs>
-      <TabItem label="macOS/Linux">
+      <TabItem value="macOS/Linux" label="macOS/Linux">
 
       ```bash
         # Replace /path/to/your/keyfile.json with the actual path
@@ -243,7 +245,7 @@ Remove-Item Env:\GOOGLE_API_KEY, Env:\GEMINI_API_KEY -ErrorAction Ignore
       ```
 
       </TabItem>
-      <TabItem label="Windows (PowerShell)">
+      <TabItem value="Windows (PowerShell)" label="Windows (PowerShell)">
 
       ```powershell
         # Replace C:\path\to\your\keyfile.json with the actual path
@@ -275,7 +277,7 @@ Remove-Item Env:\GOOGLE_API_KEY, Env:\GEMINI_API_KEY -ErrorAction Ignore
 2.  Set the `GOOGLE_API_KEY` environment variable:
 
     <Tabs>
-      <TabItem label="macOS/Linux">
+      <TabItem value="macOS/Linux" label="macOS/Linux">
 
       ```bash
         # Replace YOUR_GOOGLE_API_KEY with your Vertex AI API key
@@ -283,7 +285,7 @@ Remove-Item Env:\GOOGLE_API_KEY, Env:\GEMINI_API_KEY -ErrorAction Ignore
       ```
 
       </TabItem>
-      <TabItem label="Windows (PowerShell)">
+      <TabItem value="Windows (PowerShell)" label="Windows (PowerShell)">
 
       ```powershell
         # Replace YOUR_GOOGLE_API_KEY with your Vertex AI API key
@@ -337,7 +339,7 @@ To configure Gemini CLI to use a Google Cloud project, do the following:
     For example, to set the `GOOGLE_CLOUD_PROJECT_ID` variable:
 
     <Tabs>
-      <TabItem label="macOS/Linux">
+      <TabItem value="macOS/Linux" label="macOS/Linux">
 
       ```bash
         # Replace YOUR_PROJECT_ID with your actual Google Cloud project ID
@@ -345,7 +347,7 @@ To configure Gemini CLI to use a Google Cloud project, do the following:
       ```
 
       </TabItem>
-      <TabItem label="Windows (PowerShell)">
+      <TabItem value="Windows (PowerShell)" label="Windows (PowerShell)">
 
       ```powershell
         # Replace YOUR_PROJECT_ID with your actual Google Cloud project ID
@@ -367,7 +369,7 @@ persist them with the following methods:
     the environment variable commands to your shell's startup file.
 
     <Tabs>
-      <TabItem label="macOS/Linux">
+      <TabItem value="macOS/Linux" label="macOS/Linux">
 
       (for example, `~/.bashrc`, `~/.zshrc`, or `~/.profile`):
 
@@ -377,7 +379,7 @@ persist them with the following methods:
       ```
 
       </TabItem>
-      <TabItem label="Windows (PowerShell)">
+      <TabItem value="Windows (PowerShell)" label="Windows (PowerShell)">
 
       (for example, `$PROFILE`):
 
@@ -403,7 +405,7 @@ persist them with the following methods:
     Example for user-wide settings:
 
     <Tabs>
-      <TabItem label="macOS/Linux">
+      <TabItem value="macOS/Linux" label="macOS/Linux">
 
       ```bash
         mkdir -p ~/.gemini
@@ -414,7 +416,7 @@ persist them with the following methods:
       ```
 
       </TabItem>
-      <TabItem label="Windows (PowerShell)">
+      <TabItem value="Windows (PowerShell)" label="Windows (PowerShell)">
 
       ```powershell
         New-Item -ItemType Directory -Force -Path "$env:USERPROFILE\.gemini"

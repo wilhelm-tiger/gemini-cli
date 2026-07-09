@@ -191,7 +191,8 @@ Slash commands provide meta-level control over the CLI itself.
   - **`uninstall`**:
     - **Description:** Uninstall an extension.
   - **`update`**:
-    - **Description:** Update extensions. Usage: update <extension-names>|--all
+    - **Description:** Update extensions. Usage: update
+      &lt;extension-names&gt;|--all
 
 ### `/help` (or `/?`)
 

@@ -953,6 +953,7 @@ onboarding flow completes successfully.
 <summary>Attributes (Success)</summary>
 
 - `user_tier` (string)
+</details>
 
 ##### Tools
 
