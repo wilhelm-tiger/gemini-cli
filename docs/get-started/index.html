@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.1">
 <title data-rh="true">Get started with Gemini CLI | Study Agent | Gemini CLI</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://gemini.chiori.io/docs/get-started/"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Get started with Gemini CLI | Study Agent | Gemini CLI"><meta data-rh="true" name="description" content="Welcome to Gemini CLI! This guide will help you install, configure, and start"><meta data-rh="true" property="og:description" content="Welcome to Gemini CLI! This guide will help you install, configure, and start"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://gemini.chiori.io/docs/get-started/"><link data-rh="true" rel="alternate" href="https://gemini.chiori.io/docs/get-started/" hreflang="en"><link data-rh="true" rel="alternate" href="https://gemini.chiori.io/docs/get-started/" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Quickstart","item":"https://gemini.chiori.io/docs/get-started/"}]}</script><link rel="stylesheet" href="/assets/css/styles.001c7fc8.css">
-<script src="/assets/js/runtime~main.5596823e.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.17d75e19.js" defer="defer"></script>
 <script src="/assets/js/main.0063bd66.js" defer="defer"></script>
 </head>
 <body>
@@ -27,26 +27,23 @@ editing documents.</p>
 <p>For more installation options, see
 <a class="" href="/docs/get-started/installation">Gemini CLI Installation</a>.</p>
 <h2 class="anchor anchorTargetStickyNavbar_qfbg" id="authenticate">Authenticate<a href="#authenticate" class="hash-link" aria-label="Direct link to Authenticate" title="Direct link to Authenticate" translate="no">​</a></h2>
-<p>To begin using Gemini CLI, you must authenticate with a Google service. In most
-cases, you can log in with your existing Google account:</p>
+<p>To begin using Gemini CLI, you must authenticate with a Google service. The
+simplest way to get started is by using a Gemini API key:</p>
 <ol>
 <li class="">
-<p>Run Gemini CLI after installation:</p>
+<p>Obtain a Gemini API key from the
+<a href="https://aistudio.google.com/app/apikey" target="_blank" rel="noopener noreferrer" class="">Google AI Studio</a>.</p>
+</li>
+<li class="">
+<p>Set the <code>GEMINI_API_KEY</code> environment variable in your terminal:</p>
+<div class="language-bash codeBlockContainer_EX8O theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_ww9U"><pre tabindex="0" class="prism-code language-bash codeBlock__txR thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_CCag"><div class="token-line" style="color:#393A34"><span class="token plain">export GEMINI_API_KEY=&quot;your-api-key-here&quot;</span><br></div></code></pre></div></div>
+</li>
+<li class="">
+<p>Run Gemini CLI:</p>
 <div class="language-bash codeBlockContainer_EX8O theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_ww9U"><pre tabindex="0" class="prism-code language-bash codeBlock__txR thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_CCag"><div class="token-line" style="color:#393A34"><span class="token plain">gemini</span><br></div></code></pre></div></div>
 </li>
-<li class="">
-<p>When asked &quot;How would you like to authenticate for this project?&quot; select <strong>1.
-Sign in with Google</strong>.</p>
-</li>
-<li class="">
-<p>Select your Google account.</p>
-</li>
-<li class="">
-<p>Click on <strong>Sign in</strong>.</p>
-</li>
 </ol>
-<p>Certain account types may require you to configure a Google Cloud project. For
-more information, including other authentication methods, see
+<p>For more information, including other authentication methods like Vertex AI, see
 <a class="" href="/docs/get-started/authentication">Gemini CLI Authentication Setup</a>.</p>
 <h2 class="anchor anchorTargetStickyNavbar_qfbg" id="configure">Configure<a href="#configure" class="hash-link" aria-label="Direct link to Configure" title="Direct link to Configure" translate="no">​</a></h2>
 <p>Gemini CLI offers several ways to configure its behavior, including environment
