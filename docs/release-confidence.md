@@ -80,7 +80,6 @@ manually run through this checklist.
 - **Authentication:**
 
   - [ ] In interactive mode run `/auth` and verify all sign in flows work:
-    - [ ] Sign in with Google
     - [ ] API Key
     - [ ] Vertex AI
 

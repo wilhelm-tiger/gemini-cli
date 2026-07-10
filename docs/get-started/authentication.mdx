@@ -13,8 +13,7 @@ using the CLI.
 > To compare features and find the right quota for your needs, see our
 > [Plans page](https://geminicli.com/plans/).
 
-For most users, we recommend starting Gemini CLI and logging in with your
-personal Google account.
+For most users, we recommend starting Gemini CLI and using a Gemini API key.
 
 ## Choose your authentication method <a id="auth-methods"></a>
 
@@ -22,8 +21,8 @@ Select the authentication method that matches your situation in the table below:
 
 | User Type / Scenario                                                   | Recommended Authentication Method                                | Google Cloud Project Required                               |
 | :--------------------------------------------------------------------- | :--------------------------------------------------------------- | :---------------------------------------------------------- |
-| Individual Google accounts                                             | [Sign in with Google](#login-google)                             | No, with exceptions                                         |
-| Organization users with a company, school, or Google Workspace account | [Sign in with Google](#login-google)                             | [Yes](#set-gcp)                                             |
+| Individual Google accounts                                             | [Use Gemini API Key](#gemini-api)                                | No                                                          |
+| Organization users with a company, school, or Google Workspace account | [Vertex AI](#vertex-ai)                                          | [Yes](#set-gcp)                                             |
 | AI Studio user with a Gemini API key                                   | [Use Gemini API Key](#gemini-api)                                | No                                                          |
 | Google Cloud Vertex AI user                                            | [Vertex AI](#vertex-ai)                                          | [Yes](#set-gcp)                                             |
 | [Headless mode](#headless)                                             | [Use Gemini API Key](#gemini-api) or<br /> [Vertex AI](#vertex-ai) | No (for Gemini API Key)<br /> [Yes](#set-gcp) (for Vertex AI) |
@@ -41,44 +40,7 @@ Select the authentication method that matches your situation in the table below:
   [Google AI Ultra for Business](https://support.google.com/a/answer/16345165)
   subscriptions.
 
-## (Recommended) Sign in with Google <a id="login-google"></a>
-
-If you run Gemini CLI on your local machine, the simplest authentication method
-is logging in with your Google account. This method requires a web browser on a
-machine that can communicate with the terminal running Gemini CLI (for example,
-your local machine).
-
-If you are a **Google AI Pro** or **Google AI Ultra** subscriber, use the Google
-account associated with your subscription.
-
-To authenticate and use Gemini CLI:
-
-1. Start the CLI:
-
-   ```bash
-   gemini
-   ```
-
-2. Select **Sign in with Google**. Gemini CLI opens a sign in prompt using your
-   web browser. Follow the on-screen instructions. Your credentials will be
-   cached locally for future sessions.
-
-### Do I need to set my Google Cloud project?
-
-Most individual Google accounts (free and paid) don't require a Google Cloud
-project for authentication. However, you'll need to set a Google Cloud project
-when you meet at least one of the following conditions:
-
-- You are using a company, school, or Google Workspace account.
-- You are using a Gemini Code Assist license from the Google Developer Program.
-- You are using a license from a Gemini Code Assist subscription.
-
-For instructions, see [Set your Google Cloud Project](#set-gcp).
-
 ## Use Gemini API key <a id="gemini-api"></a>
-
-If you don't want to authenticate using your Google account, you can use an API
-key from Google AI Studio.
 
 To authenticate and use Gemini CLI with a Gemini API key:
 
@@ -313,11 +275,10 @@ Remove-Item Env:\GOOGLE_API_KEY, Env:\GEMINI_API_KEY -ErrorAction Ignore
 
 > [!IMPORTANT]
 > Most individual Google accounts (free and paid) don't require a
-> Google Cloud project for authentication.
+> Google Cloud project for authentication when using a Gemini API key.
 
-When you sign in using your Google account, you may need to configure a Google
-Cloud project for Gemini CLI to use. This applies when you meet at least one of
-the following conditions:
+You may need to configure a Google Cloud project for Gemini CLI to use. This
+applies when you meet at least one of the following conditions:
 
 - You are using a Company, School, or Google Workspace account.
 - You are using a Gemini Code Assist license from the Google Developer Program.

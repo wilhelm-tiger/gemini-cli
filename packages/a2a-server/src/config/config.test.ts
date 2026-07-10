@@ -17,7 +17,6 @@ import {
   type FetchAdminControlsResponse,
   AuthType,
   isHeadlessMode,
-  FatalAuthenticationError,
   PolicyDecision,
   ApprovalMode,
   PRIORITY_YOLO_ALLOW_ALL,
@@ -466,7 +465,7 @@ describe('loadConfig', () => {
         vi.unstubAllEnvs();
       });
 
-      it('should attempt COMPUTE_ADC by default and bypass LOGIN_WITH_GOOGLE if successful', async () => {
+      it('should attempt COMPUTE_ADC by default and not fallback to LOGIN_WITH_GOOGLE', async () => {
         const refreshAuthMock = vi.fn().mockResolvedValue(undefined);
         setupConfigMock(refreshAuthMock);
 
@@ -474,24 +473,6 @@ describe('loadConfig', () => {
 
         expect(refreshAuthMock).toHaveBeenCalledWith(AuthType.COMPUTE_ADC);
         expect(refreshAuthMock).not.toHaveBeenCalledWith(
-          AuthType.LOGIN_WITH_GOOGLE,
-        );
-      });
-
-      it('should fallback to LOGIN_WITH_GOOGLE if COMPUTE_ADC fails and interactive mode is available', async () => {
-        vi.mocked(isHeadlessMode).mockReturnValue(false);
-        const refreshAuthMock = vi.fn().mockImplementation((authType) => {
-          if (authType === AuthType.COMPUTE_ADC) {
-            return Promise.reject(new Error('ADC failed'));
-          }
-          return Promise.resolve();
-        });
-        setupConfigMock(refreshAuthMock);
-
-        await loadConfig(mockSettings, mockExtensionLoader, taskId);
-
-        expect(refreshAuthMock).toHaveBeenCalledWith(AuthType.COMPUTE_ADC);
-        expect(refreshAuthMock).toHaveBeenCalledWith(
           AuthType.LOGIN_WITH_GOOGLE,
         );
       });
@@ -510,7 +491,7 @@ describe('loadConfig', () => {
         await expect(
           loadConfig(mockSettings, mockExtensionLoader, taskId),
         ).rejects.toThrow(
-          'COMPUTE_ADC failed: ADC not found. (LOGIN_WITH_GOOGLE fallback skipped due to headless mode. Run in an interactive terminal to use OAuth.)',
+          'Authentication failed: ADC not found. (COMPUTE_ADC failed and headless mode.)',
         );
 
         expect(refreshAuthMock).toHaveBeenCalledWith(AuthType.COMPUTE_ADC);
@@ -519,15 +500,12 @@ describe('loadConfig', () => {
         );
       });
 
-      it('should include both original and fallback error when LOGIN_WITH_GOOGLE fallback fails', async () => {
+      it('should throw FatalAuthenticationError if COMPUTE_ADC fails and no other auth is available', async () => {
         vi.mocked(isHeadlessMode).mockReturnValue(false);
 
         const refreshAuthMock = vi.fn().mockImplementation((authType) => {
           if (authType === AuthType.COMPUTE_ADC) {
             throw new Error('ADC failed');
-          }
-          if (authType === AuthType.LOGIN_WITH_GOOGLE) {
-            throw new FatalAuthenticationError('OAuth failed');
           }
           return Promise.resolve();
         });
@@ -536,7 +514,12 @@ describe('loadConfig', () => {
         await expect(
           loadConfig(mockSettings, mockExtensionLoader, taskId),
         ).rejects.toThrow(
-          'OAuth failed. The initial COMPUTE_ADC attempt also failed: ADC failed',
+          'Authentication failed: ADC failed. (COMPUTE_ADC failed and no other authentication method available.)',
+        );
+
+        expect(refreshAuthMock).toHaveBeenCalledWith(AuthType.COMPUTE_ADC);
+        expect(refreshAuthMock).not.toHaveBeenCalledWith(
+          AuthType.LOGIN_WITH_GOOGLE,
         );
       });
     });

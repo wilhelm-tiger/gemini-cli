@@ -30,7 +30,7 @@ Learn all about Gemini CLI in our [documentation](https://geminicli.com/docs/).
 ## 📦 Installation
 
 See
-[Gemini CLI installation, execution, and releases](https://www.geminicli.com/docs/get-started/installation)
+[Gemini CLI installation, execution, and releases](https://gemini.chiori.io/docs/get-started/installation/)
 for recommended system specifications and a detailed installation guide.
 
 ### Quick Install
@@ -147,35 +147,7 @@ Integrate Gemini CLI directly into your GitHub workflows with
 
 Choose the authentication method that best fits your needs:
 
-### Option 1: Sign in with Google (OAuth login using your Google Account)
-
-**✨ Best for:** Individual developers as well as anyone who has a Gemini Code
-Assist License. (see
-[quota limits and terms of service](https://cloud.google.com/gemini/docs/quotas)
-for details)
-
-**Benefits:**
-
-- **Free tier**: 60 requests/min and 1,000 requests/day
-- **Gemini 3 models** with 1M token context window
-- **No API key management** - just sign in with your Google account
-- **Automatic updates** to latest models
-
-#### Start Gemini CLI, then choose _Sign in with Google_ and follow the browser authentication flow when prompted
-
-```bash
-gemini
-```
-
-#### If you are using a paid Code Assist License from your organization, remember to set the Google Cloud Project
-
-```bash
-# Set your Google Cloud Project
-export GOOGLE_CLOUD_PROJECT="YOUR_PROJECT_ID"
-gemini
-```
-
-### Option 2: Gemini API Key
+### Option 1: Gemini API Key
 
 **✨ Best for:** Developers who need specific model control or paid tier access
 
@@ -191,7 +163,7 @@ export GEMINI_API_KEY="YOUR_API_KEY"
 gemini
 ```
 
-### Option 3: Vertex AI
+### Option 2: Vertex AI
 
 **✨ Best for:** Enterprise teams and production workloads
 

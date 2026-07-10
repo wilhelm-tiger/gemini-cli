@@ -58,11 +58,6 @@ describe('getAuthTypeFromEnv', () => {
     vi.unstubAllEnvs();
   });
 
-  it('should detect LOGIN_WITH_GOOGLE when GOOGLE_GENAI_USE_GCA is true', () => {
-    vi.stubEnv('GOOGLE_GENAI_USE_GCA', 'true');
-    expect(getAuthTypeFromEnv()).toBe(AuthType.LOGIN_WITH_GOOGLE);
-  });
-
   it('should detect USE_VERTEX_AI when GOOGLE_GENAI_USE_VERTEXAI is true', () => {
     vi.stubEnv('GOOGLE_GENAI_USE_VERTEXAI', 'true');
     expect(getAuthTypeFromEnv()).toBe(AuthType.USE_VERTEX_AI);
@@ -1029,6 +1024,7 @@ describe('createContentGenerator', () => {
     vi.stubEnv('GOOGLE_VERTEX_BASE_URL', 'https://vertex.test.local');
     vi.stubEnv('GOOGLE_CLOUD_PROJECT', 'my-project');
     vi.stubEnv('GOOGLE_CLOUD_LOCATION', 'us-central1');
+    vi.stubEnv('GOOGLE_API_KEY', '');
 
     const config = await createContentGeneratorConfig(
       mockConfig,

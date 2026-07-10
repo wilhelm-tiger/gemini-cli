@@ -322,7 +322,6 @@ export const DialogManager = ({
     return (
       <Box flexDirection="column">
         <AuthDialog
-          config={config}
           settings={settings}
           setAuthState={uiActions.setAuthState}
           authError={uiState.authError}

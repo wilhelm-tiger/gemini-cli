@@ -29,24 +29,25 @@ For more installation options, see
 
 ## Authenticate
 
-To begin using Gemini CLI, you must authenticate with a Google service. In most
-cases, you can log in with your existing Google account:
+To begin using Gemini CLI, you must authenticate with a Google service. The
+simplest way to get started is by using a Gemini API key:
 
-1. Run Gemini CLI after installation:
+1. Obtain a Gemini API key from the
+   [Google AI Studio](https://aistudio.google.com/app/apikey).
+
+2. Set the `GEMINI_API_KEY` environment variable in your terminal:
+
+   ```bash
+   export GEMINI_API_KEY="your-api-key-here"
+   ```
+
+3. Run Gemini CLI:
 
    ```bash
    gemini
    ```
 
-2. When asked "How would you like to authenticate for this project?" select **1.
-   Sign in with Google**.
-
-3. Select your Google account.
-
-4. Click on **Sign in**.
-
-Certain account types may require you to configure a Google Cloud project. For
-more information, including other authentication methods, see
+For more information, including other authentication methods like Vertex AI, see
 [Gemini CLI Authentication Setup](./authentication.mdx).
 
 ## Configure

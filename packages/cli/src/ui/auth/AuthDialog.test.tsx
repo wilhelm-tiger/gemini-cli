@@ -4,7 +4,6 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { act } from 'react';
 import { renderWithProviders } from '../../test-utils/render.js';
 import {
   describe,
@@ -16,15 +15,13 @@ import {
   type Mock,
 } from 'vitest';
 import { AuthDialog } from './AuthDialog.js';
-import { AuthType, type Config, debugLogger } from '@google/gemini-cli-core';
+import { AuthType } from '@google/gemini-cli-core';
 import type { LoadedSettings } from '../../config/settings.js';
 import { AuthState } from '../types.js';
 import { RadioButtonSelect } from '../components/shared/RadioButtonSelect.js';
 import { useKeypress } from '../hooks/useKeypress.js';
 import { validateAuthMethodWithSettings } from './useAuth.js';
-import { runExitCleanup } from '../../utils/cleanup.js';
 import { Text } from 'ink';
-import { RELAUNCH_EXIT_CODE } from '../../utils/processUtils.js';
 
 // Mocks
 vi.mock('@google/gemini-cli-core', async (importOriginal) => {
@@ -35,10 +32,6 @@ vi.mock('@google/gemini-cli-core', async (importOriginal) => {
     clearCachedCredentialFile: vi.fn(),
   };
 });
-
-vi.mock('../../utils/cleanup.js', () => ({
-  runExitCleanup: vi.fn(),
-}));
 
 vi.mock('./useAuth.js', () => ({
   validateAuthMethodWithSettings: vi.fn(),
@@ -64,11 +57,9 @@ vi.mock('../components/shared/RadioButtonSelect.js', () => ({
 const mockedUseKeypress = useKeypress as Mock;
 const mockedRadioButtonSelect = RadioButtonSelect as Mock;
 const mockedValidateAuthMethod = validateAuthMethodWithSettings as Mock;
-const mockedRunExitCleanup = runExitCleanup as Mock;
 
 describe('AuthDialog', () => {
   let props: {
-    config: Config;
     settings: LoadedSettings;
     setAuthState: (state: AuthState) => void;
     authError: string | null;
@@ -83,9 +74,6 @@ describe('AuthDialog', () => {
     vi.stubEnv('GEMINI_API_KEY', undefined as unknown as string);
 
     props = {
-      config: {
-        isBrowserLaunchSuppressed: vi.fn().mockReturnValue(false),
-      } as unknown as Config,
       settings: {
         merged: {
           security: {
@@ -201,8 +189,8 @@ describe('AuthDialog', () => {
       },
       {
         setup: () => {},
-        expected: AuthType.LOGIN_WITH_GOOGLE,
-        desc: 'defaults to Sign in with Google',
+        expected: AuthType.USE_GEMINI,
+        desc: 'defaults to Use Gemini API Key',
       },
     ])('selects initial auth type $desc', async ({ setup, expected }) => {
       setup();
@@ -227,19 +215,6 @@ describe('AuthDialog', () => {
       );
       expect(props.onAuthError).toHaveBeenCalledWith('Invalid method');
       expect(props.settings.setValue).not.toHaveBeenCalled();
-      unmount();
-    });
-
-    it('sets auth context with requiresRestart: true for LOGIN_WITH_GOOGLE', async () => {
-      mockedValidateAuthMethod.mockResolvedValue(null);
-      const { unmount } = await renderWithProviders(<AuthDialog {...props} />);
-      const { onSelect: handleAuthSelect } =
-        mockedRadioButtonSelect.mock.calls[0][0];
-      await handleAuthSelect(AuthType.LOGIN_WITH_GOOGLE);
-
-      expect(props.setAuthContext).toHaveBeenCalledWith({
-        requiresRestart: true,
-      });
       unmount();
     });
 
@@ -331,9 +306,8 @@ describe('AuthDialog', () => {
     it('always shows API key dialog on re-auth even if env var is present', async () => {
       mockedValidateAuthMethod.mockResolvedValue(null);
       vi.stubEnv('GEMINI_API_KEY', 'test-key-from-env');
-      // Simulate switching from a different auth method (e.g., Google Login → API key)
-      props.settings.merged.security.auth.selectedType =
-        AuthType.LOGIN_WITH_GOOGLE;
+      // Simulate switching from a different auth method (e.g., Vertex AI → API key)
+      props.settings.merged.security.auth.selectedType = AuthType.USE_VERTEX_AI;
 
       const { unmount } = await renderWithProviders(<AuthDialog {...props} />);
       const { onSelect: handleAuthSelect } =
@@ -343,32 +317,6 @@ describe('AuthDialog', () => {
       expect(props.setAuthState).toHaveBeenCalledWith(
         AuthState.AwaitingApiKeyInput,
       );
-      unmount();
-    });
-
-    it('exits process for Sign in with Google when browser is suppressed', async () => {
-      vi.useFakeTimers();
-      const exitSpy = vi
-        .spyOn(process, 'exit')
-        .mockImplementation(() => undefined as never);
-      const logSpy = vi.spyOn(debugLogger, 'log').mockImplementation(() => {});
-      vi.mocked(props.config.isBrowserLaunchSuppressed).mockReturnValue(true);
-      mockedValidateAuthMethod.mockResolvedValue(null);
-
-      const { unmount } = await renderWithProviders(<AuthDialog {...props} />);
-      const { onSelect: handleAuthSelect } =
-        mockedRadioButtonSelect.mock.calls[0][0];
-      await act(async () => {
-        await handleAuthSelect(AuthType.LOGIN_WITH_GOOGLE);
-        await vi.runAllTimersAsync();
-      });
-
-      expect(mockedRunExitCleanup).toHaveBeenCalled();
-      expect(exitSpy).toHaveBeenCalledWith(RELAUNCH_EXIT_CODE);
-
-      exitSpy.mockRestore();
-      logSpy.mockRestore();
-      vi.useRealTimers();
       unmount();
     });
   });

@@ -124,7 +124,7 @@ Standard/Plus and AI Expanded, are not supported._
 - [Purchase a Gemini Code Assist Subscription through Google Cloud](https://cloud.google.com/gemini/docs/codeassist/overview).
 
   Quotas and pricing are based on a fixed price subscription with assigned
-  license seats. For predictable costs, you can sign in with Google.
+  license seats.
 
   This includes the following request limits:
 

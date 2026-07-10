@@ -279,29 +279,14 @@ async function refreshAuthentication(
         process.env['GEMINI_CLI_USE_COMPUTE_ADC'] === 'true';
       const isHeadless = isHeadlessMode();
 
-      if (isHeadless || useComputeAdc) {
-        const reason = isHeadless
-          ? 'headless mode'
-          : 'GEMINI_CLI_USE_COMPUTE_ADC=true';
-        throw new FatalAuthenticationError(
-          `COMPUTE_ADC failed: ${adcMessage}. (LOGIN_WITH_GOOGLE fallback skipped due to ${reason}. Run in an interactive terminal to use OAuth.)`,
-        );
-      }
-
-      logger.info(
-        `[${logPrefix}] COMPUTE_ADC failed, falling back to LOGIN_WITH_GOOGLE.`,
+      const reason = isHeadless
+        ? 'headless mode'
+        : useComputeAdc
+          ? 'GEMINI_CLI_USE_COMPUTE_ADC=true'
+          : 'no other authentication method available';
+      throw new FatalAuthenticationError(
+        `Authentication failed: ${adcMessage}. (COMPUTE_ADC failed and ${reason}.)`,
       );
-      try {
-        await config.refreshAuth(AuthType.LOGIN_WITH_GOOGLE);
-      } catch (e) {
-        if (e instanceof FatalAuthenticationError) {
-          const originalMessage = e instanceof Error ? e.message : String(e);
-          throw new FatalAuthenticationError(
-            `${originalMessage}. The initial COMPUTE_ADC attempt also failed: ${adcMessage}`,
-          );
-        }
-        throw e;
-      }
     }
 
     logger.info(

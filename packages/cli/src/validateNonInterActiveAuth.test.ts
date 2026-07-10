@@ -128,19 +128,6 @@ describe('validateNonInterActiveAuth', () => {
     );
   });
 
-  it('uses LOGIN_WITH_GOOGLE if GOOGLE_GENAI_USE_GCA is set', async () => {
-    process.env['GOOGLE_GENAI_USE_GCA'] = 'true';
-    const nonInteractiveConfig = createLocalMockConfig({});
-    await validateNonInteractiveAuth(
-      undefined,
-      undefined,
-      nonInteractiveConfig,
-      mockSettings,
-    );
-    expect(processExitSpy).not.toHaveBeenCalled();
-    expect(debugLoggerErrorSpy).not.toHaveBeenCalled();
-  });
-
   it('uses USE_GEMINI if GEMINI_API_KEY is set', async () => {
     process.env['GEMINI_API_KEY'] = 'fake-key';
     const nonInteractiveConfig = createLocalMockConfig({});
@@ -183,21 +170,26 @@ describe('validateNonInterActiveAuth', () => {
     expect(debugLoggerErrorSpy).not.toHaveBeenCalled();
   });
 
-  it('uses LOGIN_WITH_GOOGLE if GOOGLE_GENAI_USE_GCA is set, even with other env vars', async () => {
-    process.env['GOOGLE_GENAI_USE_GCA'] = 'true';
-    process.env['GEMINI_API_KEY'] = 'fake-key';
-    process.env['GOOGLE_GENAI_USE_VERTEXAI'] = 'true';
-    process.env['GOOGLE_CLOUD_PROJECT'] = 'test-project';
-    process.env['GOOGLE_CLOUD_LOCATION'] = 'us-central1';
+  it('fails if no env variables are set', async () => {
     const nonInteractiveConfig = createLocalMockConfig({});
-    await validateNonInteractiveAuth(
-      undefined,
-      undefined,
-      nonInteractiveConfig,
-      mockSettings,
+    try {
+      await validateNonInteractiveAuth(
+        undefined,
+        undefined,
+        nonInteractiveConfig,
+        mockSettings,
+      );
+    } catch (e) {
+      expect((e as Error).message).toBe(
+        `process.exit(${ExitCodes.FATAL_AUTHENTICATION_ERROR}) called`,
+      );
+    }
+    expect(debugLoggerErrorSpy).toHaveBeenCalledWith(
+      expect.stringContaining('Please set an Auth method'),
     );
-    expect(processExitSpy).not.toHaveBeenCalled();
-    expect(debugLoggerErrorSpy).not.toHaveBeenCalled();
+    expect(processExitSpy).toHaveBeenCalledWith(
+      ExitCodes.FATAL_AUTHENTICATION_ERROR,
+    );
   });
 
   it('uses USE_VERTEX_AI if both GEMINI_API_KEY and GOOGLE_GENAI_USE_VERTEXAI are set', async () => {
@@ -236,7 +228,7 @@ describe('validateNonInterActiveAuth', () => {
     process.env['GEMINI_API_KEY'] = 'fake-key';
     const nonInteractiveConfig = createLocalMockConfig({});
     await validateNonInteractiveAuth(
-      AuthType.LOGIN_WITH_GOOGLE,
+      AuthType.USE_VERTEX_AI,
       undefined,
       nonInteractiveConfig,
       mockSettings,
