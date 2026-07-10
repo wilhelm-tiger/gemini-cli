@@ -1,9 +1,12 @@
+/**
+ * NOTICE: This file has been modified for compliance with Open Source Web Clone Compliance (OSWCC) procedures.
+ */
 import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
-  title: 'Gemini CLI',
+  title: 'Study Agent | Gemini CLI',
   tagline: 'Terminal-first, extensible, and powerful tool for developers.',
   favicon: 'img/favicon.ico',
 
@@ -42,11 +45,23 @@ const config: Config = {
   ],
 
   themeConfig: {
+    announcementBar: {
+      id: 'compliance_banner',
+      content:
+        '⚠️ This is an unofficial clone of <a href="https://geminicli.com/docs/">geminicli.com/docs</a> published strictly for personal study and educational purposes. It is not affiliated with or endorsed by the original creators or project trademark owners.',
+      backgroundColor: '#fafbfc',
+      textColor: '#091E42',
+      isCloseable: false,
+    },
     colorMode: {
       respectPrefersColorScheme: true,
     },
     navbar: {
       title: 'Gemini CLI',
+      logo: {
+        alt: 'Logo',
+        src: 'img/logo.svg',
+      },
       items: [
         {
           type: 'docSidebar',
@@ -63,7 +78,7 @@ const config: Config = {
     },
     footer: {
       style: 'dark',
-      copyright: `Copyright © ${new Date().getFullYear()} Gemini CLI. Built with Docusaurus.`,
+      copyright: `Original Content Copyright © ${new Date().getFullYear()} Gemini CLI. This study instance is hosted independently by wilhelm-tiger under Apache 2.0.`,
     },
     prism: {
       theme: prismThemes.github,
