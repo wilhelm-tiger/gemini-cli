@@ -41,7 +41,7 @@ jobs:
         run: pnpm build
 
       - name: Deploy to gh-pages
-        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        #if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         uses: peaceiris/actions-gh-pages@329bcc8f12caed2cefe5a5b80781499a6f3b361b # ratchet:peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
