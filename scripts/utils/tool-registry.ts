@@ -7,7 +7,7 @@
 import {
   ALL_BUILTIN_TOOL_NAMES,
   TOOL_LEGACY_ALIASES,
-} from '@google/gemini-cli-core';
+} from '@wilhelm-tiger/gemini-cli-core';
 
 export type ToolCategory =
   | 'file-system'

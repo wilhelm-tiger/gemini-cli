@@ -12,7 +12,7 @@ import {
   type Config,
   UserAccountManager,
   AuthType,
-} from '@google/gemini-cli-core';
+} from '@wilhelm-tiger/gemini-cli-core';
 import { isUltraTier } from '../../utils/tierUtils.js';
 
 interface UserIdentityProps {

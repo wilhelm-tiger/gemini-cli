@@ -14,7 +14,7 @@ import {
   checkExhaustive,
   type SubagentActivityItem,
   SubagentState,
-} from '@google/gemini-cli-core';
+} from '@wilhelm-tiger/gemini-cli-core';
 import {
   SubagentProgressDisplay,
   formatToolArgs,

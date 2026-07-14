@@ -9,7 +9,7 @@ import * as ts from 'typescript';
 import {
   ALL_BUILTIN_TOOL_NAMES,
   isValidToolName,
-} from '@google/gemini-cli-core';
+} from '@wilhelm-tiger/gemini-cli-core';
 import { buildToolRegistry } from './tool-registry.js';
 
 export const BASE_EVAL_HELPERS = [
@@ -480,7 +480,7 @@ function compareStrings(left: string, right: string) {
 
 const TOOL_NAME_TO_CONSTANT: Record<
   (typeof ALL_BUILTIN_TOOL_NAMES)[number],
-  keyof typeof import('@google/gemini-cli-core')
+  keyof typeof import('@wilhelm-tiger/gemini-cli-core')
 > = {
   glob: 'GLOB_TOOL_NAME',
   grep_search: 'GREP_TOOL_NAME',
@@ -532,7 +532,7 @@ function collectImportedToolNameConstants(
       !statement.importClause?.namedBindings ||
       !ts.isNamedImports(statement.importClause.namedBindings) ||
       !ts.isStringLiteral(statement.moduleSpecifier) ||
-      statement.moduleSpecifier.text !== '@google/gemini-cli-core'
+      statement.moduleSpecifier.text !== '@wilhelm-tiger/gemini-cli-core'
     ) {
       continue;
     }

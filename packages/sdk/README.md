@@ -1,4 +1,4 @@
-# @google/gemini-cli-sdk
+# @wilhelm-tiger/gemini-cli-sdk
 
 The Gemini CLI SDK provides a programmatic interface to interact with Gemini
 models and tools.
@@ -6,13 +6,13 @@ models and tools.
 ## Installation
 
 ```bash
-npm install @google/gemini-cli-sdk
+npm install @wilhelm-tiger/gemini-cli-sdk
 ```
 
 ## Usage
 
 ```typescript
-import { GeminiCliAgent } from '@google/gemini-cli-sdk';
+import { GeminiCliAgent } from '@wilhelm-tiger/gemini-cli-sdk';
 
 async function main() {
   const agent = new GeminiCliAgent({

@@ -23,7 +23,7 @@ import {
   AuthType,
   ToolConfirmationOutcome,
   getAutoModelDescription,
-} from '@google/gemini-cli-core';
+} from '@wilhelm-tiger/gemini-cli-core';
 import type * as acp from '@agentclientprotocol/sdk';
 import { z } from 'zod';
 import type { LoadedSettings } from '../config/settings.js';

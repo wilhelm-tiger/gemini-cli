@@ -20,7 +20,7 @@ import {
   checkPathTrust,
   isHeadlessMode,
   resolveToRealPath,
-} from '@google/gemini-cli-core';
+} from '@wilhelm-tiger/gemini-cli-core';
 import { v4 as uuidv4 } from 'uuid';
 
 import { logger } from '../utils/logger.js';
@@ -544,23 +544,23 @@ export class CoderAgentExecutor implements AgentExecutor {
             );
           }
 
-          // Check if the task is currently initializing
-          if (this.initializingTasks.has(taskId)) {
-            logger.info(
-              `[CoderAgentExecutor] Task ${taskId} is currently initializing. Waiting for initialization to complete.`,
+      // Check if the task is currently initializing
+      if (this.initializingTasks.has(taskId)) {
+        logger.info(
+          `[CoderAgentExecutor] Task ${taskId} is currently initializing. Waiting for initialization to complete.`,
+        );
+        const initPromise = this.initializationPromises.get(taskId);
+        if (initPromise) {
+          try {
+            wrapper = await initPromise;
+          } catch {
+            logger.error(
+              `[CoderAgentExecutor] Failed to wait for task ${taskId} initialization.`,
             );
-            const initPromise = this.initializationPromises.get(taskId);
-            if (initPromise) {
-              try {
-                wrapper = await initPromise;
-              } catch {
-                logger.error(
-                  `[CoderAgentExecutor] Failed to wait for task ${taskId} initialization.`,
-                );
-                return;
-              }
-            }
+            return;
           }
+        }
+      }
 
           if (!wrapper) {
             this.initializingTasks.add(taskId);

@@ -17,11 +17,11 @@ import {
   showMemory,
   listMemoryFiles,
   flattenMemory,
-} from '@google/gemini-cli-core';
+} from '@wilhelm-tiger/gemini-cli-core';
 
-vi.mock('@google/gemini-cli-core', async (importOriginal) => {
+vi.mock('@wilhelm-tiger/gemini-cli-core', async (importOriginal) => {
   const original =
-    await importOriginal<typeof import('@google/gemini-cli-core')>();
+    await importOriginal<typeof import('@wilhelm-tiger/gemini-cli-core')>();
   return {
     ...original,
     getErrorMessage: vi.fn((error: unknown) => {

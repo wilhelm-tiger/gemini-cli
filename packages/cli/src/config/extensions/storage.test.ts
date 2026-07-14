@@ -13,7 +13,7 @@ import {
   EXTENSION_SETTINGS_FILENAME,
   EXTENSIONS_CONFIG_FILENAME,
 } from './variables.js';
-import { Storage } from '@google/gemini-cli-core';
+import { Storage } from '@wilhelm-tiger/gemini-cli-core';
 
 vi.mock('node:os');
 vi.mock('node:fs', async (importOriginal) => {
@@ -26,7 +26,7 @@ vi.mock('node:fs', async (importOriginal) => {
     },
   };
 });
-vi.mock('@google/gemini-cli-core');
+vi.mock('@wilhelm-tiger/gemini-cli-core');
 
 describe('ExtensionStorage', () => {
   const mockHomeDir = '/mock/home';

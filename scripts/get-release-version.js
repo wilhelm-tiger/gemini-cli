@@ -39,9 +39,9 @@ function getArgs() {
     })
     .option('cli-package-name', {
       description:
-        'fully qualified package name with scope (e.g @google/gemini-cli)',
+        'fully qualified package name with scope (e.g @wilhelm-tiger/gemini-cli)',
       string: true,
-      default: '@google/gemini-cli',
+      default: '@wilhelm-tiger/gemini-cli',
     })
     .option('preview_version_override', {
       description: 'Override the calculated preview version.',

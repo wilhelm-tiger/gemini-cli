@@ -12,8 +12,8 @@ import {
   isTelemetrySdkInitialized,
   ExitCodes,
   resetBrowserSession,
-} from '@google/gemini-cli-core';
-import type { Config } from '@google/gemini-cli-core';
+} from '@wilhelm-tiger/gemini-cli-core';
+import type { Config } from '@wilhelm-tiger/gemini-cli-core';
 
 const cleanupFunctions: Array<(() => void) | (() => Promise<void>)> = [];
 const syncCleanupFunctions: Array<() => void> = [];

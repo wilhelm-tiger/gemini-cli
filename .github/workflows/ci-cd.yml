@@ -79,3 +79,46 @@ jobs:
           publish_branch: gh-pages
           cname: gemini.chiori.io
           commit_message: "docs: deploy docusaurus to gh-pages [skip ci]"
+
+  publish-npm:
+    name: 'Publish to NPM (@wilhelm-tiger)'
+    needs: ci
+    if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # ratchet:actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # ratchet:actions/setup-node@v4
+        with:
+          node-version: 20
+          registry-url: 'https://registry.npmjs.org/'
+          cache: 'npm'
+
+      - name: Update versions with build suffix
+        run: |
+          # Append a build-specific suffix (date + run number) to avoid conflicts
+          SUFFIX="-wilhelm.${{ github.run_number }}"
+          NEW_VERSION="$(node -p "require('./packages/cli/package.json').version" | sed 's/-.*//')$SUFFIX"
+          npm version --workspaces --no-git-tag-version "$NEW_VERSION"
+          
+          # Replace local file: links with the explicit version so npm publish includes the correct dependency
+          find packages -name package.json -exec sed -i "s/\"file:\.\.\/[a-zA-Z0-9_-]*\"/\"$NEW_VERSION\"/g" {} +
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build packages
+        run: npm run build
+
+      - name: Publish to NPM
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npm publish --workspaces --access public
+
