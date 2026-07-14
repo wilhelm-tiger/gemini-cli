@@ -43,11 +43,6 @@ export function AuthDialog({
 }: AuthDialogProps): React.JSX.Element {
   const [exiting, setExiting] = useState(false);
   let items = [
-    {
-      label: 'Sign in with Google',
-      value: AuthType.LOGIN_WITH_GOOGLE,
-      key: AuthType.LOGIN_WITH_GOOGLE,
-    },
     ...(process.env['CLOUD_SHELL'] === 'true'
       ? [
           {
@@ -103,13 +98,9 @@ export function AuthDialog({
       return item.value === defaultAuthType;
     }
 
-    if (process.env['GEMINI_API_KEY']) {
-      return item.value === AuthType.USE_GEMINI;
-    }
-
-    return item.value === AuthType.LOGIN_WITH_GOOGLE;
+    return item.value === AuthType.USE_GEMINI;
   });
-  if (settings.merged.security.auth.enforcedType) {
+  if (initialAuthIndex === -1 || settings.merged.security.auth.enforcedType) {
     initialAuthIndex = 0;
   }
 
