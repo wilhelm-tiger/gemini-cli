@@ -7,7 +7,7 @@ context.
 ## Install
 
 ```bash
-npm install -g @google/gemini-cli
+npm install -g @wilhelm-tiger/gemini-cli
 ```
 
 ## Get started

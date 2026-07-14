@@ -1,5 +1,5 @@
 {
-  "name": "@google/gemini-cli-core",
+  "name": "@wilhelm-tiger/gemini-cli-core",
   "version": "0.52.0-nightly.20260715.gfa975395b",
   "description": "Gemini CLI Core",
   "license": "Apache-2.0",
@@ -104,7 +104,7 @@
     "node-pty": "1.0.0"
   },
   "devDependencies": {
-    "@google/gemini-cli-test-utils": "file:../test-utils",
+    "@wilhelm-tiger/gemini-cli-test-utils": "file:../test-utils",
     "@types/fast-levenshtein": "0.0.4",
     "@types/js-yaml": "4.0.9",
     "@types/json-stable-stringify": "1.1.0",

@@ -9,7 +9,11 @@ import path from 'node:path';
 import toml from '@iarna/toml';
 import { glob } from 'glob';
 import { z } from 'zod';
-import { Storage, coreEvents, type Config } from '@google/gemini-cli-core';
+import {
+  Storage,
+  coreEvents,
+  type Config,
+} from '@wilhelm-tiger/gemini-cli-core';
 import type { ICommandLoader } from './types.js';
 import type {
   CommandContext,

@@ -16,7 +16,7 @@ import {
   getErrorMessage,
   unescapePath,
   type EditorType,
-} from '@google/gemini-cli-core';
+} from '@wilhelm-tiger/gemini-cli-core';
 import {
   toCodePoints,
   cpLen,

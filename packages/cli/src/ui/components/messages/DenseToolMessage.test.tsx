@@ -17,7 +17,7 @@ import {
   type ListDirectoryResult,
   type ReadManyFilesResult,
   makeFakeConfig,
-} from '@google/gemini-cli-core';
+} from '@wilhelm-tiger/gemini-cli-core';
 import type {
   SerializableConfirmationDetails,
   ToolResultDisplay,

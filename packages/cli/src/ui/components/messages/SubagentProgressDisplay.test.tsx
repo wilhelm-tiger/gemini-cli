@@ -6,7 +6,10 @@
 
 import { render, cleanup } from '../../../test-utils/render.js';
 import { SubagentProgressDisplay } from './SubagentProgressDisplay.js';
-import { type SubagentProgress, SubagentState } from '@google/gemini-cli-core';
+import {
+  type SubagentProgress,
+  SubagentState,
+} from '@wilhelm-tiger/gemini-cli-core';
 import { describe, it, expect, vi, afterEach } from 'vitest';
 
 describe('<SubagentProgressDisplay />', () => {
