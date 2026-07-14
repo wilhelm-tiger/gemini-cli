@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.1">
 <title data-rh="true">Gemini CLI authentication setup | Study Agent | Gemini CLI</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://gemini.chiori.io/docs/get-started/authentication"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Gemini CLI authentication setup | Study Agent | Gemini CLI"><meta data-rh="true" name="description" content="To use Gemini CLI, you&#x27;ll need to authenticate with Google. This guide helps you"><meta data-rh="true" property="og:description" content="To use Gemini CLI, you&#x27;ll need to authenticate with Google. This guide helps you"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://gemini.chiori.io/docs/get-started/authentication"><link data-rh="true" rel="alternate" href="https://gemini.chiori.io/docs/get-started/authentication" hreflang="en"><link data-rh="true" rel="alternate" href="https://gemini.chiori.io/docs/get-started/authentication" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Authentication","item":"https://gemini.chiori.io/docs/get-started/authentication"}]}</script><link rel="stylesheet" href="/assets/css/styles.001c7fc8.css">
-<script src="/assets/js/runtime~main.17d75e19.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.5596823e.js" defer="defer"></script>
 <script src="/assets/js/main.0063bd66.js" defer="defer"></script>
 </head>
 <body>
@@ -21,10 +21,11 @@ Looking for a high-level comparison of all available subscriptions?
 To compare features and find the right quota for your needs, see our
 <a href="https://geminicli.com/plans/" target="_blank" rel="noopener noreferrer" class="">Plans page</a>.</p>
 </blockquote>
-<p>For most users, we recommend starting Gemini CLI and using a Gemini API key.</p>
+<p>For most users, we recommend starting Gemini CLI and logging in with your
+personal Google account.</p>
 <h2 class="anchor anchorTargetStickyNavbar_qfbg" id="choose-your-authentication-method-">Choose your authentication method <a id="auth-methods"></a><a href="#choose-your-authentication-method-" class="hash-link" aria-label="Direct link to choose-your-authentication-method-" title="Direct link to choose-your-authentication-method-" translate="no">​</a></h2>
 <p>Select the authentication method that matches your situation in the table below:</p>
-<table><thead><tr><th style="text-align:left">User Type / Scenario</th><th style="text-align:left">Recommended Authentication Method</th><th style="text-align:left">Google Cloud Project Required</th></tr></thead><tbody><tr><td style="text-align:left">Individual Google accounts</td><td style="text-align:left"><a href="#gemini-api" class="">Use Gemini API Key</a></td><td style="text-align:left">No</td></tr><tr><td style="text-align:left">Organization users with a company, school, or Google Workspace account</td><td style="text-align:left"><a href="#vertex-ai" class="">Vertex AI</a></td><td style="text-align:left"><a href="#set-gcp" class="">Yes</a></td></tr><tr><td style="text-align:left">AI Studio user with a Gemini API key</td><td style="text-align:left"><a href="#gemini-api" class="">Use Gemini API Key</a></td><td style="text-align:left">No</td></tr><tr><td style="text-align:left">Google Cloud Vertex AI user</td><td style="text-align:left"><a href="#vertex-ai" class="">Vertex AI</a></td><td style="text-align:left"><a href="#set-gcp" class="">Yes</a></td></tr><tr><td style="text-align:left"><a href="#headless" class="">Headless mode</a></td><td style="text-align:left"><a href="#gemini-api" class="">Use Gemini API Key</a> or<br> <a href="#vertex-ai" class="">Vertex AI</a></td><td style="text-align:left">No (for Gemini API Key)<br> <a href="#set-gcp" class="">Yes</a> (for Vertex AI)</td></tr></tbody></table>
+<table><thead><tr><th style="text-align:left">User Type / Scenario</th><th style="text-align:left">Recommended Authentication Method</th><th style="text-align:left">Google Cloud Project Required</th></tr></thead><tbody><tr><td style="text-align:left">Individual Google accounts</td><td style="text-align:left"><a href="#login-google" class="">Sign in with Google</a></td><td style="text-align:left">No, with exceptions</td></tr><tr><td style="text-align:left">Organization users with a company, school, or Google Workspace account</td><td style="text-align:left"><a href="#login-google" class="">Sign in with Google</a></td><td style="text-align:left"><a href="#set-gcp" class="">Yes</a></td></tr><tr><td style="text-align:left">AI Studio user with a Gemini API key</td><td style="text-align:left"><a href="#gemini-api" class="">Use Gemini API Key</a></td><td style="text-align:left">No</td></tr><tr><td style="text-align:left">Google Cloud Vertex AI user</td><td style="text-align:left"><a href="#vertex-ai" class="">Vertex AI</a></td><td style="text-align:left"><a href="#set-gcp" class="">Yes</a></td></tr><tr><td style="text-align:left"><a href="#headless" class="">Headless mode</a></td><td style="text-align:left"><a href="#gemini-api" class="">Use Gemini API Key</a> or<br> <a href="#vertex-ai" class="">Vertex AI</a></td><td style="text-align:left">No (for Gemini API Key)<br> <a href="#set-gcp" class="">Yes</a> (for Vertex AI)</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_qfbg" id="what-is-my-google-account-type">What is my Google account type?<a href="#what-is-my-google-account-type" class="hash-link" aria-label="Direct link to What is my Google account type?" title="Direct link to What is my Google account type?" translate="no">​</a></h3>
 <ul>
 <li class="">
@@ -41,7 +42,38 @@ organization such as a company, school, or
 subscriptions.</p>
 </li>
 </ul>
+<h2 class="anchor anchorTargetStickyNavbar_qfbg" id="recommended-sign-in-with-google-">(Recommended) Sign in with Google <a id="login-google"></a><a href="#recommended-sign-in-with-google-" class="hash-link" aria-label="Direct link to recommended-sign-in-with-google-" title="Direct link to recommended-sign-in-with-google-" translate="no">​</a></h2>
+<p>If you run Gemini CLI on your local machine, the simplest authentication method
+is logging in with your Google account. This method requires a web browser on a
+machine that can communicate with the terminal running Gemini CLI (for example,
+your local machine).</p>
+<p>If you are a <strong>Google AI Pro</strong> or <strong>Google AI Ultra</strong> subscriber, use the Google
+account associated with your subscription.</p>
+<p>To authenticate and use Gemini CLI:</p>
+<ol>
+<li class="">
+<p>Start the CLI:</p>
+<div class="language-bash codeBlockContainer_EX8O theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_ww9U"><pre tabindex="0" class="prism-code language-bash codeBlock__txR thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_CCag"><div class="token-line" style="color:#393A34"><span class="token plain">gemini</span><br></div></code></pre></div></div>
+</li>
+<li class="">
+<p>Select <strong>Sign in with Google</strong>. Gemini CLI opens a sign in prompt using your
+web browser. Follow the on-screen instructions. Your credentials will be
+cached locally for future sessions.</p>
+</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_qfbg" id="do-i-need-to-set-my-google-cloud-project">Do I need to set my Google Cloud project?<a href="#do-i-need-to-set-my-google-cloud-project" class="hash-link" aria-label="Direct link to Do I need to set my Google Cloud project?" title="Direct link to Do I need to set my Google Cloud project?" translate="no">​</a></h3>
+<p>Most individual Google accounts (free and paid) don&#x27;t require a Google Cloud
+project for authentication. However, you&#x27;ll need to set a Google Cloud project
+when you meet at least one of the following conditions:</p>
+<ul>
+<li class="">You are using a company, school, or Google Workspace account.</li>
+<li class="">You are using a Gemini Code Assist license from the Google Developer Program.</li>
+<li class="">You are using a license from a Gemini Code Assist subscription.</li>
+</ul>
+<p>For instructions, see <a href="#set-gcp" class="">Set your Google Cloud Project</a>.</p>
 <h2 class="anchor anchorTargetStickyNavbar_qfbg" id="use-gemini-api-key-">Use Gemini API key <a id="gemini-api"></a><a href="#use-gemini-api-key-" class="hash-link" aria-label="Direct link to use-gemini-api-key-" title="Direct link to use-gemini-api-key-" translate="no">​</a></h2>
+<p>If you don&#x27;t want to authenticate using your Google account, you can use an API
+key from Google AI Studio.</p>
 <p>To authenticate and use Gemini CLI with a Gemini API key:</p>
 <ol>
 <li class="">
@@ -169,10 +201,11 @@ Vertex AI authentication methods instead.</p>
 <blockquote>
 <p>[!IMPORTANT]
 Most individual Google accounts (free and paid) don&#x27;t require a
-Google Cloud project for authentication when using a Gemini API key.</p>
+Google Cloud project for authentication.</p>
 </blockquote>
-<p>You may need to configure a Google Cloud project for Gemini CLI to use. This
-applies when you meet at least one of the following conditions:</p>
+<p>When you sign in using your Google account, you may need to configure a Google
+Cloud project for Gemini CLI to use. This applies when you meet at least one of
+the following conditions:</p>
 <ul>
 <li class="">You are using a Company, School, or Google Workspace account.</li>
 <li class="">You are using a Gemini Code Assist license from the Google Developer Program.</li>
@@ -252,6 +285,6 @@ privacy notices. Review the following pages to learn more:</p>
 <ul>
 <li class=""><a class="" href="/docs/resources/quota-and-pricing">Gemini CLI: Quotas and Pricing</a>.</li>
 <li class=""><a class="" href="/docs/resources/tos-privacy">Gemini CLI: Terms of Service and Privacy Notice</a>.</li>
-</ul></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/get-started/installation"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Installation</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/cli/cli-reference"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">CLI cheatsheet</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_eoeD thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#choose-your-authentication-method-" class="table-of-contents__link toc-highlight">Choose your authentication method <a></a></a><ul><li><a href="#what-is-my-google-account-type" class="table-of-contents__link toc-highlight">What is my Google account type?</a></li></ul></li><li><a href="#use-gemini-api-key-" class="table-of-contents__link toc-highlight">Use Gemini API key <a></a></a></li><li><a href="#use-vertex-ai-" class="table-of-contents__link toc-highlight">Use Vertex AI <a></a></a></li><li><a href="#set-your-google-cloud-project-" class="table-of-contents__link toc-highlight">Set your Google Cloud project <a></a></a></li><li><a href="#persisting-environment-variables-" class="table-of-contents__link toc-highlight">Persisting environment variables <a></a></a></li><li><a href="#running-in-google-cloud-environments-" class="table-of-contents__link toc-highlight">Running in Google Cloud environments <a></a></a></li><li><a href="#running-in-headless-mode-" class="table-of-contents__link toc-highlight">Running in headless mode <a></a></a></li><li><a href="#whats-next" class="table-of-contents__link toc-highlight">What&#39;s next?</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Original Content Copyright © 2026 Gemini CLI. This study instance is hosted independently by wilhelm-tiger under Apache 2.0.</div></div></div></footer></div>
+</ul></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/get-started/installation"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Installation</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/cli/cli-reference"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">CLI cheatsheet</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_eoeD thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#choose-your-authentication-method-" class="table-of-contents__link toc-highlight">Choose your authentication method <a></a></a><ul><li><a href="#what-is-my-google-account-type" class="table-of-contents__link toc-highlight">What is my Google account type?</a></li></ul></li><li><a href="#recommended-sign-in-with-google-" class="table-of-contents__link toc-highlight">(Recommended) Sign in with Google <a></a></a><ul><li><a href="#do-i-need-to-set-my-google-cloud-project" class="table-of-contents__link toc-highlight">Do I need to set my Google Cloud project?</a></li></ul></li><li><a href="#use-gemini-api-key-" class="table-of-contents__link toc-highlight">Use Gemini API key <a></a></a></li><li><a href="#use-vertex-ai-" class="table-of-contents__link toc-highlight">Use Vertex AI <a></a></a></li><li><a href="#set-your-google-cloud-project-" class="table-of-contents__link toc-highlight">Set your Google Cloud project <a></a></a></li><li><a href="#persisting-environment-variables-" class="table-of-contents__link toc-highlight">Persisting environment variables <a></a></a></li><li><a href="#running-in-google-cloud-environments-" class="table-of-contents__link toc-highlight">Running in Google Cloud environments <a></a></a></li><li><a href="#running-in-headless-mode-" class="table-of-contents__link toc-highlight">Running in headless mode <a></a></a></li><li><a href="#whats-next" class="table-of-contents__link toc-highlight">What&#39;s next?</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Original Content Copyright © 2026 Gemini CLI. This study instance is hosted independently by wilhelm-tiger under Apache 2.0.</div></div></div></footer></div>
 </body>
 </html>
