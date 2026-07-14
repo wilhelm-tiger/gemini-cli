@@ -1,29 +1,12 @@
 name: 'Testing: CI'
 
 on:
-  push:
-    branches:
-      - 'master'
-      - 'main'
-      - 'release/**'
-  pull_request:
-    branches:
-      - 'master'
-      - 'main'
-      - 'release/**'
-  merge_group:
-  workflow_dispatch:
+  workflow_call:
     inputs:
       branch_ref:
         description: 'Branch to run on'
-        required: true
-        default: 'main'
+        required: false
         type: 'string'
-
-concurrency:
-  group: '${{ github.workflow }}-${{ github.head_ref || github.ref }}'
-  cancel-in-progress: |-
-    ${{ github.ref != 'refs/heads/main' && !startsWith(github.ref, 'refs/heads/release/') }}
 
 permissions:
   checks: 'write'
@@ -36,7 +19,8 @@ defaults:
 
 jobs:
   merge_queue_skipper:
-    permissions: 'read-all'
+    permissions:
+      contents: 'read'
     name: 'Merge Queue Skipper'
     runs-on: 'ubuntu-latest'
     if: "github.repository == 'google-gemini/gemini-cli'"
@@ -58,7 +42,7 @@ jobs:
         uses: 'actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8' # ratchet:actions/checkout@v5
         with:
           persist-credentials: false
-          ref: '${{ github.event.inputs.branch_ref || github.ref }}'
+          ref: '${{ inputs.branch_ref || github.ref }}'
           fetch-depth: 0
 
       - name: 'Set up Node.js'
@@ -338,7 +322,7 @@ jobs:
         uses: 'actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8' # ratchet:actions/checkout@v5
         with:
           persist-credentials: false
-          ref: '${{ github.event.inputs.branch_ref || github.ref }}'
+          ref: '${{ inputs.branch_ref || github.ref }}'
 
       - name: 'Initialize CodeQL'
         uses: 'github/codeql-action/init@df559355d593797519d70b90fc8edd5db049e7a2' # ratchet:github/codeql-action/init@v3
@@ -361,7 +345,7 @@ jobs:
         uses: 'actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8' # ratchet:actions/checkout@v5
         with:
           persist-credentials: false
-          ref: '${{ github.event.inputs.branch_ref || github.ref }}'
+          ref: '${{ inputs.branch_ref || github.ref }}'
           fetch-depth: 1
 
       - uses: 'preactjs/compressed-size-action@946a292cd35bd1088e0d7eb92b69d1a8d5b5d76a'
@@ -387,7 +371,7 @@ jobs:
         uses: 'actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8' # ratchet:actions/checkout@v5
         with:
           persist-credentials: false
-          ref: '${{ github.event.inputs.branch_ref || github.ref }}'
+          ref: '${{ inputs.branch_ref || github.ref }}'
 
       - name: 'Set up Node.js 20.x'
         uses: 'actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020' # ratchet:actions/setup-node@v4
