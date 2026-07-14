@@ -88,4 +88,4 @@ ignore:
   - 'vendor/'
   - 'node_modules/'
   - 'docs-site/'
-  - '.github/workflows/deploy-docs-site.yml'
+  - '.github/workflows/ci-cd.yml'
