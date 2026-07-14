@@ -1,5 +1,5 @@
 {
-  "name": "gemini-cli-vscode-ide-companion",
+  "name": "@wilhelm-tiger/gemini-cli-vscode-ide-companion",
   "displayName": "Gemini CLI Companion",
   "description": "Enable Gemini CLI with direct access to your IDE workspace.",
   "version": "0.52.0-nightly.20260707.g27a3da3e8",

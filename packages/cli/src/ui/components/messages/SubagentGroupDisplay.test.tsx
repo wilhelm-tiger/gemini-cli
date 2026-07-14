@@ -10,7 +10,7 @@ import {
   Kind,
   CoreToolCallStatus,
   SubagentState,
-} from '@google/gemini-cli-core';
+} from '@wilhelm-tiger/gemini-cli-core';
 import type { IndividualToolCallDisplay } from '../../types.js';
 import { describe, it, expect, vi } from 'vitest';
 import { Text } from 'ink';

@@ -32,7 +32,7 @@ import {
   GitService,
   checkPathTrust,
   isHeadlessMode,
-} from '@google/gemini-cli-core';
+} from '@wilhelm-tiger/gemini-cli-core';
 import type { Command, CommandArgument } from '../commands/types.js';
 
 type CommandResponse = {

@@ -16,9 +16,9 @@ vi.mock('node:os', async (importOriginal) => {
   };
 });
 
-vi.mock('@google/gemini-cli-core', async (importOriginal) => {
+vi.mock('@wilhelm-tiger/gemini-cli-core', async (importOriginal) => {
   const actual =
-    await importOriginal<typeof import('@google/gemini-cli-core')>();
+    await importOriginal<typeof import('@wilhelm-tiger/gemini-cli-core')>();
   return {
     ...actual,
     homedir: vi.fn(() => path.resolve('/mock/home')),
@@ -29,7 +29,10 @@ import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import * as fs from 'node:fs';
 import * as os from 'node:os';
 import { loadEnvironment, type Settings } from './settings.js';
-import { GEMINI_DIR, homedir as coreHomedir } from '@google/gemini-cli-core';
+import {
+  GEMINI_DIR,
+  homedir as coreHomedir,
+} from '@wilhelm-tiger/gemini-cli-core';
 
 vi.mock('node:fs');
 

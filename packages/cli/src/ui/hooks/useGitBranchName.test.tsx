@@ -15,13 +15,13 @@ import path from 'node:path'; // For mocking fs
 import {
   spawnAsync as mockSpawnAsync,
   getAbsoluteGitDir as mockGetAbsoluteGitDir,
-} from '@google/gemini-cli-core';
+} from '@wilhelm-tiger/gemini-cli-core';
 
-// Mock @google/gemini-cli-core
-vi.mock('@google/gemini-cli-core', async () => {
+// Mock @wilhelm-tiger/gemini-cli-core
+vi.mock('@wilhelm-tiger/gemini-cli-core', async () => {
   const original = await vi.importActual<
-    typeof import('@google/gemini-cli-core')
-  >('@google/gemini-cli-core');
+    typeof import('@wilhelm-tiger/gemini-cli-core')
+  >('@wilhelm-tiger/gemini-cli-core');
   return {
     ...original,
     spawnAsync: vi.fn(),
