@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.1">
 <title data-rh="true">Gemini CLI releases | Study Agent | Gemini CLI</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://gemini.chiori.io/docs/releases"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Gemini CLI releases | Study Agent | Gemini CLI"><meta data-rh="true" name="description" content="[!IMPORTANT]"><meta data-rh="true" property="og:description" content="[!IMPORTANT]"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://gemini.chiori.io/docs/releases"><link data-rh="true" rel="alternate" href="https://gemini.chiori.io/docs/releases" hreflang="en"><link data-rh="true" rel="alternate" href="https://gemini.chiori.io/docs/releases" hreflang="x-default"><link rel="stylesheet" href="/assets/css/styles.001c7fc8.css">
-<script src="/assets/js/runtime~main.5596823e.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.3fb31f6d.js" defer="defer"></script>
 <script src="/assets/js/main.0063bd66.js" defer="defer"></script>
 </head>
 <body>
@@ -26,7 +26,7 @@ Dressing Room, which is Google&#x27;s system for managing NPM packages in the
 <p>More information can be found about these systems in the
 <a class="" href="/docs/npm">NPM Package Overview</a></p>
 <h3 class="anchor anchorTargetStickyNavbar_qfbg" id="package-scopes">Package scopes<a href="#package-scopes" class="hash-link" aria-label="Direct link to Package scopes" title="Direct link to Package scopes" translate="no">​</a></h3>
-<table><thead><tr><th>Package</th><th><code>prod</code> (Wombat Dressing Room)</th><th><code>dev</code> (GitHub Private NPM Repo)</th></tr></thead><tbody><tr><td>CLI</td><td>@google/gemini-cli</td><td>@google-gemini/gemini-cli</td></tr><tr><td>Core</td><td>@google/gemini-cli-core</td><td>@google-gemini/gemini-cli-core A2A Server</td></tr><tr><td>A2A Server</td><td>@google/gemini-cli-a2a-server</td><td>@google-gemini/gemini-cli-a2a-server</td></tr></tbody></table>
+<table><thead><tr><th>Package</th><th><code>prod</code> (Wombat Dressing Room)</th><th><code>dev</code> (GitHub Private NPM Repo)</th></tr></thead><tbody><tr><td>CLI</td><td>@wilhelm-tiger/gemini-cli</td><td>@google-gemini/gemini-cli</td></tr><tr><td>Core</td><td>@wilhelm-tiger/gemini-cli-core</td><td>@google-gemini/gemini-cli-core A2A Server</td></tr><tr><td>A2A Server</td><td>@wilhelm-tiger/gemini-cli-a2a-server</td><td>@google-gemini/gemini-cli-a2a-server</td></tr></tbody></table>
 <h2 class="anchor anchorTargetStickyNavbar_qfbg" id="release-cadence-and-tags">Release cadence and tags<a href="#release-cadence-and-tags" class="hash-link" aria-label="Direct link to Release cadence and tags" title="Direct link to Release cadence and tags" translate="no">​</a></h2>
 <p>We will follow <a href="https://semver.org/" target="_blank" rel="noopener noreferrer" class="">https://semver.org/</a> as closely as possible but will call out when
 or if we have to deviate from it. Our weekly releases will be minor version
@@ -44,18 +44,18 @@ with the final &#x27;patch&#x27; version number incrementing each time.</li>
 <h3 class="anchor anchorTargetStickyNavbar_qfbg" id="preview">Preview<a href="#preview" class="hash-link" aria-label="Direct link to Preview" title="Direct link to Preview" translate="no">​</a></h3>
 <p>These releases will not have been fully vetted and may contain regressions or
 other outstanding issues. Help us test and install with <code>preview</code> tag.</p>
-<div class="language-bash codeBlockContainer_EX8O theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_ww9U"><pre tabindex="0" class="prism-code language-bash codeBlock__txR thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_CCag"><div class="token-line" style="color:#393A34"><span class="token plain">npm install -g @google/gemini-cli@preview</span><br></div></code></pre></div></div>
+<div class="language-bash codeBlockContainer_EX8O theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_ww9U"><pre tabindex="0" class="prism-code language-bash codeBlock__txR thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_CCag"><div class="token-line" style="color:#393A34"><span class="token plain">npm install -g @wilhelm-tiger/gemini-cli@preview</span><br></div></code></pre></div></div>
 <h3 class="anchor anchorTargetStickyNavbar_qfbg" id="stable">Stable<a href="#stable" class="hash-link" aria-label="Direct link to Stable" title="Direct link to Stable" translate="no">​</a></h3>
 <p>This will be the full promotion of last week&#x27;s release + any bug fixes and
 validations. Use <code>latest</code> tag.</p>
-<div class="language-bash codeBlockContainer_EX8O theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_ww9U"><pre tabindex="0" class="prism-code language-bash codeBlock__txR thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_CCag"><div class="token-line" style="color:#393A34"><span class="token plain">npm install -g @google/gemini-cli@latest</span><br></div></code></pre></div></div>
+<div class="language-bash codeBlockContainer_EX8O theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_ww9U"><pre tabindex="0" class="prism-code language-bash codeBlock__txR thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_CCag"><div class="token-line" style="color:#393A34"><span class="token plain">npm install -g @wilhelm-tiger/gemini-cli@latest</span><br></div></code></pre></div></div>
 <h3 class="anchor anchorTargetStickyNavbar_qfbg" id="nightly">Nightly<a href="#nightly" class="hash-link" aria-label="Direct link to Nightly" title="Direct link to Nightly" translate="no">​</a></h3>
 <ul>
 <li class="">New releases will be published each day at UTC 00:00. This will be all changes
 from the main branch as represented at time of release. It should be assumed
 there are pending validations and issues. Use <code>nightly</code> tag.</li>
 </ul>
-<div class="language-bash codeBlockContainer_EX8O theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_ww9U"><pre tabindex="0" class="prism-code language-bash codeBlock__txR thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_CCag"><div class="token-line" style="color:#393A34"><span class="token plain">npm install -g @google/gemini-cli@nightly</span><br></div></code></pre></div></div>
+<div class="language-bash codeBlockContainer_EX8O theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_ww9U"><pre tabindex="0" class="prism-code language-bash codeBlock__txR thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_CCag"><div class="token-line" style="color:#393A34"><span class="token plain">npm install -g @wilhelm-tiger/gemini-cli@nightly</span><br></div></code></pre></div></div>
 <h2 class="anchor anchorTargetStickyNavbar_qfbg" id="weekly-release-promotion">Weekly release promotion<a href="#weekly-release-promotion" class="hash-link" aria-label="Direct link to Weekly release promotion" title="Direct link to Weekly release promotion" translate="no">​</a></h2>
 <p>Each Tuesday, the on-call engineer will trigger the &quot;Promote Release&quot; workflow.
 This single action automates the entire weekly release process:</p>
@@ -300,12 +300,12 @@ packages are working as expected. This can be done by installing the packages
 locally and running a set of tests to ensure that they are functioning
 correctly.</p>
 <ul>
-<li class=""><code>npx -y @google/gemini-cli@latest --version</code> to validate the push worked as
-expected if you were not doing a rc or dev tag</li>
-<li class=""><code>npx -y @google/gemini-cli@&lt;release tag&gt; --version</code> to validate the tag pushed
-appropriately</li>
+<li class=""><code>npx -y @wilhelm-tiger/gemini-cli@latest --version</code> to validate the push
+worked as expected if you were not doing a rc or dev tag</li>
+<li class=""><code>npx -y @wilhelm-tiger/gemini-cli@&lt;release tag&gt; --version</code> to validate the tag
+pushed appropriately</li>
 <li class=""><em>This is destructive locally</em>
-<code>npm uninstall @google/gemini-cli &amp;&amp; npm uninstall -g @google/gemini-cli &amp;&amp; npm cache clean --force &amp;&amp;  npm install @google/gemini-cli@&lt;version&gt;</code></li>
+<code>npm uninstall @wilhelm-tiger/gemini-cli &amp;&amp; npm uninstall -g @wilhelm-tiger/gemini-cli &amp;&amp; npm cache clean --force &amp;&amp;  npm install @wilhelm-tiger/gemini-cli@&lt;version&gt;</code></li>
 <li class="">Smoke testing a basic run through of exercising a few llm commands and tools
 is recommended to ensure that the packages are working as expected. We&#x27;ll
 codify this more in the future.</li>
@@ -374,11 +374,12 @@ first as the <code>cli</code> package depends on it.</li>
 <p><strong>Stage 3: Publishing standard packages to NPM</strong></p>
 <ul>
 <li class=""><strong>What happens:</strong> The <code>npm publish</code> command is run for the
-<code>@google/gemini-cli-core</code> and <code>@google/gemini-cli</code> packages.</li>
+<code>@wilhelm-tiger/gemini-cli-core</code> and <code>@wilhelm-tiger/gemini-cli</code> packages.</li>
 <li class=""><strong>Why:</strong> This publishes them as standard Node.js packages. Users installing
-via <code>npm install -g @google/gemini-cli</code> will download these packages, and
-<code>npm</code> will handle installing the <code>@google/gemini-cli-core</code> dependency
-automatically. The code in these packages is not bundled into a single file.</li>
+via <code>npm install -g @wilhelm-tiger/gemini-cli</code> will download these packages,
+and <code>npm</code> will handle installing the <code>@wilhelm-tiger/gemini-cli-core</code>
+dependency automatically. The code in these packages is not bundled into a
+single file.</li>
 </ul>
 <p><strong>Stage 4: Assembling and creating the GitHub release asset</strong></p>
 <p>This stage happens <em>after</em> the NPM publish and creates the single-file
@@ -432,7 +433,7 @@ and runs this specific bundled asset.</li>
 <ul>
 <li class=""><strong>NPM:</strong> Publishes standard, un-bundled Node.js packages. The primary artifact
 is the code in <code>packages/cli/dist</code>, which depends on
-<code>@google/gemini-cli-core</code>.</li>
+<code>@wilhelm-tiger/gemini-cli-core</code>.</li>
 <li class=""><strong>GitHub release:</strong> Publishes a single, bundled <code>gemini.js</code> file that contains
 all dependencies, for easy execution via <code>npx</code>.</li>
 </ul>

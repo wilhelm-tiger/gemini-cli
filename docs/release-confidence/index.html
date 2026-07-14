@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.1">
 <title data-rh="true">Release confidence strategy | Study Agent | Gemini CLI</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://gemini.chiori.io/docs/release-confidence"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Release confidence strategy | Study Agent | Gemini CLI"><meta data-rh="true" name="description" content="This document outlines the strategy for gaining confidence in every release of"><meta data-rh="true" property="og:description" content="This document outlines the strategy for gaining confidence in every release of"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://gemini.chiori.io/docs/release-confidence"><link data-rh="true" rel="alternate" href="https://gemini.chiori.io/docs/release-confidence" hreflang="en"><link data-rh="true" rel="alternate" href="https://gemini.chiori.io/docs/release-confidence" hreflang="x-default"><link rel="stylesheet" href="/assets/css/styles.001c7fc8.css">
-<script src="/assets/js/runtime~main.5596823e.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.3fb31f6d.js" defer="defer"></script>
 <script src="/assets/js/main.0063bd66.js" defer="defer"></script>
 </head>
 <body>
@@ -51,8 +51,8 @@ on Linux.</li>
 <p>After a release is published to npm, the <code>smoke-test.yml</code> workflow runs. This
 must pass to confirm the package is installable and the binary is executable.</p>
 <ul>
-<li class=""><strong>Command:</strong> <code>npx -y @google/gemini-cli@&lt;tag&gt; --version</code> must return the
-correct version without error.</li>
+<li class=""><strong>Command:</strong> <code>npx -y @wilhelm-tiger/gemini-cli@&lt;tag&gt; --version</code> must return
+the correct version without error.</li>
 <li class=""><strong>Platform:</strong> Currently runs on <code>ubuntu-latest</code>.</li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_qfbg" id="level-2-manual-verification-and-dogfooding">Level 2: Manual verification and dogfooding<a href="#level-2-manual-verification-and-dogfooding" class="hash-link" aria-label="Direct link to Level 2: Manual verification and dogfooding" title="Direct link to Level 2: Manual verification and dogfooding" translate="no">​</a></h2>
@@ -64,7 +64,7 @@ correct version without error.</li>
 <li class=""><strong>Requirement:</strong> The <code>preview</code> release must be used by maintainers for at
 least <strong>one week</strong> before being promoted to <code>stable</code>.</li>
 <li class=""><strong>Action:</strong> Maintainers should install the preview version locally:<!-- -->
-<div class="language-bash codeBlockContainer_EX8O theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_ww9U"><pre tabindex="0" class="prism-code language-bash codeBlock__txR thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_CCag"><div class="token-line" style="color:#393A34"><span class="token plain">npm install -g @google/gemini-cli@preview</span><br></div></code></pre></div></div>
+<div class="language-bash codeBlockContainer_EX8O theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_ww9U"><pre tabindex="0" class="prism-code language-bash codeBlock__txR thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_CCag"><div class="token-line" style="color:#393A34"><span class="token plain">npm install -g @wilhelm-tiger/gemini-cli@preview</span><br></div></code></pre></div></div>
 </li>
 <li class=""><strong>Goal:</strong> To catch regressions and UX issues in day-to-day usage before they
 reach the broad user base.</li>
@@ -77,9 +77,10 @@ manually run through this checklist.</p>
 <p><strong>Setup:</strong></p>
 <ul class="contains-task-list containsTaskList_hnBf">
 <li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Uninstall any existing global version:
-<code>npm uninstall -g @google/gemini-cli</code></li>
+<code>npm uninstall -g @wilhelm-tiger/gemini-cli</code></li>
 <li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Clear npx cache (optional but recommended): <code>npm cache clean --force</code></li>
-<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Install the preview version: <code>npm install -g @google/gemini-cli@preview</code></li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Install the preview version:
+<code>npm install -g @wilhelm-tiger/gemini-cli@preview</code></li>
 <li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Verify version: <code>gemini --version</code></li>
 </ul>
 </li>

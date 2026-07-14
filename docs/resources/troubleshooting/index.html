@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.1">
 <title data-rh="true">Troubleshooting guide | Study Agent | Gemini CLI</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://gemini.chiori.io/docs/resources/troubleshooting"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Troubleshooting guide | Study Agent | Gemini CLI"><meta data-rh="true" name="description" content="This guide provides solutions to common issues and debugging tips, including"><meta data-rh="true" property="og:description" content="This guide provides solutions to common issues and debugging tips, including"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://gemini.chiori.io/docs/resources/troubleshooting"><link data-rh="true" rel="alternate" href="https://gemini.chiori.io/docs/resources/troubleshooting" hreflang="en"><link data-rh="true" rel="alternate" href="https://gemini.chiori.io/docs/resources/troubleshooting" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Troubleshooting","item":"https://gemini.chiori.io/docs/resources/troubleshooting"}]}</script><link rel="stylesheet" href="/assets/css/styles.001c7fc8.css">
-<script src="/assets/js/runtime~main.5596823e.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.3fb31f6d.js" defer="defer"></script>
 <script src="/assets/js/main.0063bd66.js" defer="defer"></script>
 </head>
 <body>
@@ -129,7 +129,7 @@ system&#x27;s <code>PATH</code>.</li>
 <ul>
 <li class="">If you installed <code>gemini</code> globally, check that your <code>npm</code> global binary
 directory is in your <code>PATH</code>. You can update Gemini CLI using the command
-<code>npm install -g @google/gemini-cli@latest</code>.</li>
+<code>npm install -g @wilhelm-tiger/gemini-cli@latest</code>.</li>
 <li class="">If you are running <code>gemini</code> from source, ensure you are using the correct
 command to invoke it (for example, <code>node packages/cli/dist/index.js ...</code>).
 To update Gemini CLI, pull the latest changes from the repository, and
@@ -198,9 +198,9 @@ variables.</li>
 <code>npm WARN deprecated glob</code> during install/update</strong></p>
 <ul>
 <li class=""><strong>Issue:</strong> When installing or updating Gemini CLI globally via
-<code>npm install -g @google/gemini-cli</code> or <code>npm update -g @google/gemini-cli</code>,
-you might see deprecation warnings regarding <code>node-domexception</code> or old
-versions of <code>glob</code>.</li>
+<code>npm install -g @wilhelm-tiger/gemini-cli</code> or
+<code>npm update -g @wilhelm-tiger/gemini-cli</code>, you might see deprecation
+warnings regarding <code>node-domexception</code> or old versions of <code>glob</code>.</li>
 <li class=""><strong>Cause:</strong> These warnings occur because some dependencies (or their
 sub-dependencies, like <code>google-auth-library</code>) rely on older package
 versions. Since Gemini CLI requires Node.js 20 or higher, the platform&#x27;s
