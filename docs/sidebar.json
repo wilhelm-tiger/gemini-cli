@@ -217,6 +217,10 @@
       {
         "label": "Development",
         "items": [
+          {
+            "label": "Architecture overview",
+            "slug": "docs/architecture/index"
+          },
           { "label": "Contribution guide", "slug": "docs/contributing" },
           { "label": "Integration testing", "slug": "docs/integration-tests" },
           {
