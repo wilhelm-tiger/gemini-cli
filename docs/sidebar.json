@@ -63,6 +63,35 @@
         ]
       },
       {
+        "label": "Build from scratch",
+        "items": [
+          {
+            "label": "Overview",
+            "slug": "docs/build-from-scratch/index"
+          },
+          {
+            "label": "Milestone 1: The Chat Loop",
+            "slug": "docs/build-from-scratch/milestone-1-chat-loop"
+          },
+          {
+            "label": "Milestone 2: Memory and Context",
+            "slug": "docs/build-from-scratch/milestone-2-memory"
+          },
+          {
+            "label": "Milestone 3: System Prompts and Persona",
+            "slug": "docs/build-from-scratch/milestone-3-system-prompts"
+          },
+          {
+            "label": "Milestone 4: Tool Calling",
+            "slug": "docs/build-from-scratch/milestone-4-tool-calling"
+          },
+          {
+            "label": "Milestone 5: The \"ReAct\" Loop",
+            "slug": "docs/build-from-scratch/milestone-5-react-loop"
+          }
+        ]
+      },
+      {
         "label": "Features",
         "items": [
           {
