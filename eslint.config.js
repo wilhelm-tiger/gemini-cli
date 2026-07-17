@@ -85,7 +85,7 @@ export default tseslint.config(
   },
   {
     // Rules for packages/*/src and tools/caretaker-agent (TS/TSX)
-    files: ['packages/*/src/**/*.{ts,tsx}', 'tools/caretaker-agent/**/*.{ts,tsx}'],
+    files: ['packages/*/src/**/*.{ts,tsx}', 'packages/study/*/src/**/*.{ts,tsx}', 'tools/caretaker-agent/**/*.{ts,tsx}'],
     plugins: {
       import: importPlugin,
     },
@@ -214,7 +214,7 @@ export default tseslint.config(
   },
   {
     // Rules that only apply to product code
-    files: ['packages/*/src/**/*.{ts,tsx}'],
+    files: ['packages/*/src/**/*.{ts,tsx}', 'packages/study/*/src/**/*.{ts,tsx}'],
     ignores: ['**/*.test.ts', '**/*.test.tsx', 'packages/*/src/test-utils/**'],
     rules: {
       '@typescript-eslint/no-unsafe-type-assertion': 'error',
@@ -288,7 +288,7 @@ export default tseslint.config(
     },
   },
   {
-    files: ['packages/*/src/**/*.test.{ts,tsx}', 'tools/**/*.test.ts'],
+    files: ['packages/*/src/**/*.test.{ts,tsx}', 'packages/study/*/src/**/*.test.{ts,tsx}', 'tools/**/*.test.ts'],
     plugins: {
       vitest,
     },
