@@ -27,6 +27,8 @@ powerful tool for developers.
   - `packages/devtools`: Integrated developer tools (Network/Console inspector).
   - `packages/test-utils`: Shared test utilities and test rig.
   - `packages/vscode-ide-companion`: VS Code extension pairing with the CLI.
+  - `packages/study`: Minimal agent implementations in various languages for
+    learning purposes.
 
 ## Building and Running
 

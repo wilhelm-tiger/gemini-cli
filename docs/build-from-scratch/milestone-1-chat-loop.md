@@ -7,8 +7,8 @@ and streams the response back.
 
 We will implement this in three languages:
 
-- **TypeScript:** In `packages/agent-ts`
-- **Python:** In `packages/agent-py`
-- **Go:** In `packages/agent-go`
+- **TypeScript:** In `packages/study/agent-ts`
+- **Python:** In `packages/study/agent-py`
+- **Go:** In `packages/study/agent-go`
 
 _(Detailed tutorial coming soon)_
