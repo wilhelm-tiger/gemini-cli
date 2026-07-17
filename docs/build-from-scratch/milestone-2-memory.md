@@ -1,3 +1,3 @@
 # Milestone 2: Memory and Context
 
-*(Tutorial coming soon)*
+_(Tutorial coming soon)_

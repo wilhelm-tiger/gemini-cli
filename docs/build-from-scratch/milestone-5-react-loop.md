@@ -1,3 +1,3 @@
 # Milestone 5: The "ReAct" Loop
 
-*(Tutorial coming soon)*
+_(Tutorial coming soon)_

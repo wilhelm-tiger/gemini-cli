@@ -8,7 +8,13 @@
 
 ![Gemini CLI Screenshot](/docs/assets/gemini-screenshot.png)
 
-> **Note:** This fork is dedicated to learning how to build AI agents from scratch. As part of this educational journey, we are dissecting the core agent architecture and rebuilding it piece-by-piece in three languages: **Python**, **Go**, and **TypeScript**. You can follow along in the `packages/agent-ts`, `packages/agent-py`, and `packages/agent-go` directories, and read the [Learning Guide](https://gemini.chiori.io/docs/build-from-scratch) for more details on the multi-language curriculum.
+> **Note:** This fork is dedicated to learning how to build AI agents from
+> scratch. As part of this educational journey, we are dissecting the core agent
+> architecture and rebuilding it piece-by-piece in three languages: **Python**,
+> **Go**, and **TypeScript**. You can follow along in the `packages/agent-ts`,
+> `packages/agent-py`, and `packages/agent-go` directories, and read the
+> [Learning Guide](https://gemini.chiori.io/docs/build-from-scratch) for more
+> details on the multi-language curriculum.
 
 Gemini CLI is an open-source AI agent that brings the power of Gemini directly
 into your terminal. It provides lightweight access to Gemini, giving you the
