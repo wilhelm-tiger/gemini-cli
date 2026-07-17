@@ -53,6 +53,7 @@ export default tseslint.config(
     // Global ignores
     ignores: [
       '**/node_modules/**',
+      '**/venv/**',
       'eslint.config.js',
       '**/coverage/**',
       'packages/**/dist/**',

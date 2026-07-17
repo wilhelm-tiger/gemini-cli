@@ -1,5 +1,5 @@
 {
-  "name": "@wilhelm-tiger/agent-ts",
+  "name": "@wilhelm-tiger/study",
   "version": "1.0.0",
   "description": "Milestone 1: The Chat Loop in TypeScript",
   "main": "dist/index.js",
