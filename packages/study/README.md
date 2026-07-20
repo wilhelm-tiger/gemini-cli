@@ -9,6 +9,7 @@ your own agent from scratch.
 - **Go:** [Install Go](https://go.dev/doc/install) (1.21+)
 - **Python:** [Install Python](https://www.python.org/downloads/) (3.11+)
 - **Node.js:** [Install Node.js](https://nodejs.org/en/download/) (20+)
+- **Rust:** [Install Rust](https://rustup.rs/) (1.70+)
 
 ## Common Setup
 
@@ -94,4 +95,20 @@ From `packages/study/agent-go`:
 1.  **Run the agent directly:**
     ```bash
     go run main.go
+    ```
+
+---
+
+## Rust Agent
+
+The Rust agent uses `reqwest` and `reqwest-eventsource` to stream responses
+directly from the Gemini REST API.
+
+### Running
+
+From `packages/study/agent-rs`:
+
+1.  **Run the agent:**
+    ```bash
+    cargo run
     ```
