@@ -1,17 +1,3 @@
-## Why Google Builds With JavaScript
-
-- **Rich Terminal UIs (React Ink)**: If we look at the `gemini-cli` source code
-  (specifically `interactiveCli.tsx`), we'll see they are using a library called
-  [Ink](https://github.com/vadimdemedes/ink). Ink allows developers to build
-  complex, responsive terminal user interfaces using React. Building things like
-  live markdown rendering, multi-step confirmation dialogs, and interactive file
-  pickers is significantly easier using React's component model than manually
-  managing cursor positions in Go or Python.
-- **The Web & MCP Ecosystem**: The CLI heavily utilizes the Model Context
-  Protocol (MCP) to give the agent access to external tools and APIs. Much of
-  the tooling, SDKs, and community momentum around MCP (and web-fetching tools
-  in general) is deeply rooted in the JavaScript ecosystem.
-
 # Build agents from scratch: A multi-language journey
 
 Welcome to the core learning curriculum of this fork. The primary purpose of
@@ -51,21 +37,21 @@ simultaneously. You can find the source code for these in the
 `packages/study/agent-ts`, `packages/study/agent-py`, `packages/study/agent-go`,
 and `packages/study/agent-rs` directories.
 
-- **Milestone 1: The Chat Loop**
+- **[Milestone 1: The Chat Loop](./milestone-1-chat-loop.md)**
   - Initialize the project structures (`npm`, `poetry` or `pip`, `go mod`).
   - Set up environment variables and the Gemini SDKs.
   - Build a simple terminal loop that streams responses.
-- **Milestone 2: Memory and Context**
+- **[Milestone 2: Memory and Context](./milestone-2-memory.md)**
   - Implement an array or list to keep track of the conversation history.
   - Learn how to truncate or summarize history when the context gets too large.
-- **Milestone 3: System Prompts and Persona**
+- **[Milestone 3: System Prompts and Persona](./milestone-3-system-prompts.md)**
   - Give the agent a system instruction to dictate its behavior.
-- **Milestone 4: Tool Calling**
+- **[Milestone 4: Tool Calling](./milestone-4-tool-calling.md)**
   - Define a simple local function (for example, "get the current time" or "read
     a file").
   - Provide the JSON schema of that function to the LLM.
   - Write the execution loop: Model requests tool -> Code runs tool -> Code
     returns result to Model.
-- **Milestone 5: The "ReAct" Loop**
+- **[Milestone 5: The "ReAct" Loop](./milestone-5-react-loop.md)**
   - Allow the agent to reason, execute a tool, observe the result, and decide if
     it needs to execute another tool before answering the user.
