@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.1">
 <title data-rh="true">Milestone 1: The chat loop | Study Agent | Gemini CLI</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://gemini.chiori.io/docs/build-from-scratch/milestone-1-chat-loop"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Milestone 1: The chat loop | Study Agent | Gemini CLI"><meta data-rh="true" name="description" content="This is the foundation of our multi-language agent learning path. In this"><meta data-rh="true" property="og:description" content="This is the foundation of our multi-language agent learning path. In this"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://gemini.chiori.io/docs/build-from-scratch/milestone-1-chat-loop"><link data-rh="true" rel="alternate" href="https://gemini.chiori.io/docs/build-from-scratch/milestone-1-chat-loop" hreflang="en"><link data-rh="true" rel="alternate" href="https://gemini.chiori.io/docs/build-from-scratch/milestone-1-chat-loop" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Milestone 1: The Chat Loop","item":"https://gemini.chiori.io/docs/build-from-scratch/milestone-1-chat-loop"}]}</script><link rel="stylesheet" href="/assets/css/styles.001c7fc8.css">
-<script src="/assets/js/runtime~main.fd71f324.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.831505dd.js" defer="defer"></script>
 <script src="/assets/js/main.3854bf9a.js" defer="defer"></script>
 </head>
 <body>
@@ -18,10 +18,10 @@ Read-Eval-Print Loop (REPL) that takes user input, passes it to the Gemini API,
 and streams the response back.</p>
 <p>We implement this in four languages:</p>
 <ul>
-<li class=""><strong>TypeScript:</strong> In <code>packages/study/agent-ts</code></li>
-<li class=""><strong>Python:</strong> In <code>packages/study/agent-py</code></li>
-<li class=""><strong>Go:</strong> In <code>packages/study/agent-go</code></li>
-<li class=""><strong>Rust:</strong> In <code>packages/study/agent-rs</code></li>
+<li class=""><strong>TypeScript:</strong> In <code>packages/study/agent-ts-m1-chat</code></li>
+<li class=""><strong>Python:</strong> In <code>packages/study/agent-py-m1-chat</code></li>
+<li class=""><strong>Go:</strong> In <code>packages/study/agent-go-m1-chat</code></li>
+<li class=""><strong>Rust:</strong> In <code>packages/study/agent-rs-m1-chat</code></li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_qfbg" id="prerequisites">Prerequisites<a href="#prerequisites" class="hash-link" aria-label="Direct link to Prerequisites" title="Direct link to Prerequisites" translate="no">​</a></h2>
 <p>Before starting, you must install the development tools for the languages you
@@ -50,10 +50,10 @@ directory.</p>
 <div class="language-bash codeBlockContainer_EX8O theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_ww9U"><pre tabindex="0" class="prism-code language-bash codeBlock__txR thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_CCag"><div class="token-line" style="color:#393A34"><span class="token plain">npm install</span><br></div></code></pre></div></div>
 </li>
 <li class="">Build and run:<!-- -->
-<div class="language-bash codeBlockContainer_EX8O theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_ww9U"><pre tabindex="0" class="prism-code language-bash codeBlock__txR thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_CCag"><div class="token-line" style="color:#393A34"><span class="token plain">npm run start -w @wilhelm-tiger/agent-ts</span><br></div></code></pre></div></div>
+<div class="language-bash codeBlockContainer_EX8O theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_ww9U"><pre tabindex="0" class="prism-code language-bash codeBlock__txR thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_CCag"><div class="token-line" style="color:#393A34"><span class="token plain">npm run start -w @wilhelm-tiger/agent-ts-m1-chat</span><br></div></code></pre></div></div>
 </li>
 </ol>
-<p>To run from <code>packages/study/agent-ts</code>:</p>
+<p>To run from <code>packages/study/agent-ts-m1-chat</code>:</p>
 <ol>
 <li class="">Install dependencies:<!-- -->
 <div class="language-bash codeBlockContainer_EX8O theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_ww9U"><pre tabindex="0" class="prism-code language-bash codeBlock__txR thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_CCag"><div class="token-line" style="color:#393A34"><span class="token plain">npm install</span><br></div></code></pre></div></div>
@@ -70,7 +70,7 @@ directory.</p>
 Gemini API.</p>
 <h3 class="anchor anchorTargetStickyNavbar_qfbg" id="running-the-agent-1">Running the agent<a href="#running-the-agent-1" class="hash-link" aria-label="Direct link to Running the agent" title="Direct link to Running the agent" translate="no">​</a></h3>
 <p>Follow these steps to set up and run the Python agent from
-<code>packages/study/agent-py</code>.</p>
+<code>packages/study/agent-py-m1-chat</code>.</p>
 <ol>
 <li class="">Optional: Create and activate a virtual environment:<!-- -->
 <div class="language-bash codeBlockContainer_EX8O theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_ww9U"><pre tabindex="0" class="prism-code language-bash codeBlock__txR thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_CCag"><div class="token-line" style="color:#393A34"><span class="token plain">python -m venv venv</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">source venv/bin/activate  # On Windows: venv\Scripts\activate</span><br></div></code></pre></div></div>
@@ -85,14 +85,14 @@ Gemini API.</p>
 <h2 class="anchor anchorTargetStickyNavbar_qfbg" id="go-agent">Go agent<a href="#go-agent" class="hash-link" aria-label="Direct link to Go agent" title="Direct link to Go agent" translate="no">​</a></h2>
 <p>The Go agent uses the <code>google.golang.org/genai</code> SDK for its implementation.</p>
 <h3 class="anchor anchorTargetStickyNavbar_qfbg" id="running-the-agent-2">Running the agent<a href="#running-the-agent-2" class="hash-link" aria-label="Direct link to Running the agent" title="Direct link to Running the agent" translate="no">​</a></h3>
-<p>Run the Go agent directly from <code>packages/study/agent-go</code> using the following
-command:</p>
+<p>Run the Go agent directly from <code>packages/study/agent-go-m1-chat</code> using the
+following command:</p>
 <div class="language-bash codeBlockContainer_EX8O theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_ww9U"><pre tabindex="0" class="prism-code language-bash codeBlock__txR thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_CCag"><div class="token-line" style="color:#393A34"><span class="token plain">go run main.go</span><br></div></code></pre></div></div>
 <h2 class="anchor anchorTargetStickyNavbar_qfbg" id="rust-agent">Rust agent<a href="#rust-agent" class="hash-link" aria-label="Direct link to Rust agent" title="Direct link to Rust agent" translate="no">​</a></h2>
 <p>The Rust agent uses <code>reqwest</code> and <code>reqwest-eventsource</code> to stream responses
 directly from the Gemini REST API.</p>
 <h3 class="anchor anchorTargetStickyNavbar_qfbg" id="running-the-agent-3">Running the agent<a href="#running-the-agent-3" class="hash-link" aria-label="Direct link to Running the agent" title="Direct link to Running the agent" translate="no">​</a></h3>
-<p>Run the Rust agent from <code>packages/study/agent-rs</code> using Cargo:</p>
+<p>Run the Rust agent from <code>packages/study/agent-rs-m1-chat</code> using Cargo:</p>
 <div class="language-bash codeBlockContainer_EX8O theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_ww9U"><pre tabindex="0" class="prism-code language-bash codeBlock__txR thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_CCag"><div class="token-line" style="color:#393A34"><span class="token plain">cargo run</span><br></div></code></pre></div></div></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/build-from-scratch/"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Overview</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/build-from-scratch/milestone-2-memory"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Milestone 2: Memory and Context</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_eoeD thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#prerequisites" class="table-of-contents__link toc-highlight">Prerequisites</a></li><li><a href="#common-setup" class="table-of-contents__link toc-highlight">Common setup</a></li><li><a href="#typescript-agent" class="table-of-contents__link toc-highlight">TypeScript agent</a><ul><li><a href="#running-the-agent" class="table-of-contents__link toc-highlight">Running the agent</a></li></ul></li><li><a href="#python-agent" class="table-of-contents__link toc-highlight">Python agent</a><ul><li><a href="#running-the-agent-1" class="table-of-contents__link toc-highlight">Running the agent</a></li></ul></li><li><a href="#go-agent" class="table-of-contents__link toc-highlight">Go agent</a><ul><li><a href="#running-the-agent-2" class="table-of-contents__link toc-highlight">Running the agent</a></li></ul></li><li><a href="#rust-agent" class="table-of-contents__link toc-highlight">Rust agent</a><ul><li><a href="#running-the-agent-3" class="table-of-contents__link toc-highlight">Running the agent</a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Original Content Copyright © 2026 Gemini CLI. This study instance is hosted independently by wilhelm-tiger under Apache 2.0.</div></div></div></footer></div>
 </body>
 </html>
