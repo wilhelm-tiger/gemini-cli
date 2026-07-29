@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.1">
 <title data-rh="true">Build agents from scratch: A multi-language journey | Study Agent | Gemini CLI</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://gemini.chiori.io/docs/build-from-scratch/"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Build agents from scratch: A multi-language journey | Study Agent | Gemini CLI"><meta data-rh="true" name="description" content="Welcome to the core learning curriculum of this fork. The primary purpose of"><meta data-rh="true" property="og:description" content="Welcome to the core learning curriculum of this fork. The primary purpose of"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://gemini.chiori.io/docs/build-from-scratch/"><link data-rh="true" rel="alternate" href="https://gemini.chiori.io/docs/build-from-scratch/" hreflang="en"><link data-rh="true" rel="alternate" href="https://gemini.chiori.io/docs/build-from-scratch/" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Overview","item":"https://gemini.chiori.io/docs/build-from-scratch/"}]}</script><link rel="stylesheet" href="/assets/css/styles.001c7fc8.css">
-<script src="/assets/js/runtime~main.05f8e770.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.60397bfd.js" defer="defer"></script>
 <script src="/assets/js/main.3854bf9a.js" defer="defer"></script>
 </head>
 <body>
@@ -52,35 +52,37 @@ directories.</p>
 <ul>
 <li class=""><strong><a class="" href="/docs/build-from-scratch/milestone-1-chat-loop">Milestone 1: The Chat Loop</a></strong>
 <ul>
-<li class="">Initialize the project structures (<code>npm</code>, <code>poetry</code> or <code>pip</code>, <code>go mod</code>).</li>
+<li class="">Initialize the project structures (<code>npm</code>, <code>poetry</code> or <code>pip</code>, <code>go mod</code>) for
+our <code>minimal</code> baseline agents.</li>
 <li class="">Set up environment variables and the Gemini SDKs.</li>
 <li class="">Build a simple terminal loop that streams responses.</li>
 </ul>
 </li>
 <li class=""><strong><a class="" href="/docs/build-from-scratch/milestone-2-memory">Milestone 2: Memory and Context</a></strong>
 <ul>
-<li class="">Implement an array or list to keep track of the conversation history.</li>
-<li class="">Learn how to truncate or summarize history when the context gets too large.</li>
+<li class="">Transition to an industrial <strong>Blocks</strong> architecture.</li>
+<li class="">Implement a <code>Memory</code> component to keep track of the conversation history.</li>
+<li class="">Assemble the agent by plugging the component into the core <code>AgentEngine</code>.</li>
 </ul>
 </li>
 <li class=""><strong><a class="" href="/docs/build-from-scratch/milestone-3-system-prompts">Milestone 3: System Prompts and Persona</a></strong>
 <ul>
-<li class="">Give the agent a system instruction to dictate its behavior.</li>
+<li class="">Build a <code>Persona</code> component to inject system instructions and steer the
+model&#x27;s behavior.</li>
 </ul>
 </li>
 <li class=""><strong><a class="" href="/docs/build-from-scratch/milestone-4-tool-calling">Milestone 4: Tool Calling</a></strong>
 <ul>
-<li class="">Define a simple local function (for example, &quot;get the current time&quot; or &quot;read
-a file&quot;).</li>
-<li class="">Provide the JSON schema of that function to the LLM.</li>
-<li class="">Write the execution loop: Model requests tool -&gt; Code runs tool -&gt; Code
+<li class="">Build a <code>Tools</code> component that exposes local functions to the LLM.</li>
+<li class="">Handle the execution loop: Model requests tool -&gt; Engine runs tool -&gt; Engine
 returns result to Model.</li>
 </ul>
 </li>
 <li class=""><strong><a class="" href="/docs/build-from-scratch/milestone-5-react-loop">Milestone 5: The &quot;ReAct&quot; Loop</a></strong>
 <ul>
-<li class="">Allow the agent to reason, execute a tool, observe the result, and decide if
-it needs to execute another tool before answering the user.</li>
+<li class="">Upgrade the Engine to allow the agent to reason, execute a tool, observe the
+result, and decide if it needs to execute another tool before answering the
+user.</li>
 </ul>
 </li>
 </ul></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/cli/tutorials/automation"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Automate tasks</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/build-from-scratch/milestone-1-chat-loop"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Milestone 1: The Chat Loop</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_eoeD thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#why-a-multi-language-approach" class="table-of-contents__link toc-highlight">Why a multi-language approach?</a></li><li><a href="#the-roadmap" class="table-of-contents__link toc-highlight">The roadmap</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Original Content Copyright © 2026 Gemini CLI. This study instance is hosted independently by wilhelm-tiger under Apache 2.0.</div></div></div></footer></div>
