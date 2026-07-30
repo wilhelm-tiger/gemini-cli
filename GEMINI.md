@@ -27,6 +27,8 @@ powerful tool for developers.
   - `packages/devtools`: Integrated developer tools (Network/Console inspector).
   - `packages/test-utils`: Shared test utilities and test rig.
   - `packages/vscode-ide-companion`: VS Code extension pairing with the CLI.
+  - `packages/study`: Minimal agent implementations in various languages for
+    learning purposes.
 
 ## Building and Running
 
@@ -77,7 +79,9 @@ powerful tool for developers.
   between packages (enforced by ESLint).
 - **License Headers:** For all new source code files (`.ts`, `.tsx`, `.js`),
   include the Apache-2.0 license header with the current year. (e.g.,
-  `Copyright 2026 Google LLC`). This is enforced by ESLint.
+  `Copyright 2026 Google LLC`). This is enforced by ESLint. Always activate the
+  `copyright-header` skill when creating new source files to prevent
+  header-format errors.
 
 ## Testing Conventions
 
