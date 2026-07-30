@@ -1,0 +1,17 @@
+{
+  "name": "@wilhelm-tiger/agent-ts-blocks",
+  "version": "1.0.0",
+  "description": "Industrial Agent Building Blocks (TypeScript)",
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "dependencies": {
+    "@google/genai": "1.30.0"
+  },
+  "devDependencies": {
+    "typescript": "~5.6.3",
+    "@types/node": "^20.0.0"
+  }
+}
