@@ -544,23 +544,23 @@ export class CoderAgentExecutor implements AgentExecutor {
             );
           }
 
-      // Check if the task is currently initializing
-      if (this.initializingTasks.has(taskId)) {
-        logger.info(
-          `[CoderAgentExecutor] Task ${taskId} is currently initializing. Waiting for initialization to complete.`,
-        );
-        const initPromise = this.initializationPromises.get(taskId);
-        if (initPromise) {
-          try {
-            wrapper = await initPromise;
-          } catch {
-            logger.error(
-              `[CoderAgentExecutor] Failed to wait for task ${taskId} initialization.`,
+          // Check if the task is currently initializing
+          if (this.initializingTasks.has(taskId)) {
+            logger.info(
+              `[CoderAgentExecutor] Task ${taskId} is currently initializing. Waiting for initialization to complete.`,
             );
-            return;
+            const initPromise = this.initializationPromises.get(taskId);
+            if (initPromise) {
+              try {
+                wrapper = await initPromise;
+              } catch {
+                logger.error(
+                  `[CoderAgentExecutor] Failed to wait for task ${taskId} initialization.`,
+                );
+                return;
+              }
+            }
           }
-        }
-      }
 
           if (!wrapper) {
             this.initializingTasks.add(taskId);
